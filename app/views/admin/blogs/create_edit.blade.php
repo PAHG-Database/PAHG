@@ -1,4 +1,4 @@
-@extends('admin.layouts.modal')
+@extends('admin.blogs.modal')
 
 {{-- Content --}}
 @section('content')
@@ -33,7 +33,7 @@
 				<div class="form-group {{{ $errors->has('content') ? 'has-error' : '' }}}">
 					<div class="col-md-12">
                         <label class="control-label" for="content">Content</label>
-						<textarea class="form-control full-width wysihtml5" name="content" value="content" rows="10">{{{ Input::old('content', isset($post) ? $post->content : null) }}}</textarea>
+						<textarea class="form-control full-width wysihtml5" id="txt" name="content" value="content" rows="10">{{{ Input::old('content', isset($post) ? $post->content : null) }}}</textarea>
 						{{ $errors->first('content', '<span class="help-block">:message</span>') }}
 					</div>
 				</div>

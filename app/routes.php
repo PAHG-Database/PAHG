@@ -37,6 +37,47 @@ Route::pattern('token', '[0-9a-z]+');
 Route::group(array('prefix' => 'admin', 'before' => 'auth'), function()
 {
 
+    Route::get('hoxfamily', 'AdminFamilyController@getIndex');
+    Route::get('family/data', 'AdminFamilyController@getData');
+
+    Route::get('family/create', 'AdminFamilyController@getCreate');
+    Route::post('family/create', 'AdminFamilyController@postCreate');
+
+    Route::get('family/{fid}/edit', 'AdminFamilyController@getEdit');
+    Route::post('family/{fid}/edit', 'AdminFamilyController@postEdit');
+   
+    Route::get('family/{fid}/delete', 'AdminFamilyController@getDelete');
+    Route::post('family/{fid}/delete', 'AdminFamilyController@postDelete');
+    
+    Route::get('family/{fid}/details', 'AdminFamilyController@getDetail');
+    
+    Route::get('hoxfamily/members/{fid}', 'AdminMemberController@getIndex');
+    Route::get('members/{fid}/data', 'AdminMemberController@getData');
+    
+    Route::get('members/create/{fid}', 'AdminMemberController@getCreate');
+    Route::post('members/create/{fid}', 'AdminMemberController@postCreate');
+
+    Route::get('members/{mid}/edit', 'AdminMemberController@getEdit');
+    Route::post('members/{mid}/edit', 'AdminMemberController@postEdit');
+   
+    Route::get('members/{mid}/delete', 'AdminMemberController@getDelete');
+    Route::post('members/{mid}/delete', 'AdminMemberController@postDelete');
+
+Route::get('members/{mid}/details', 'AdminMemberController@getDetail');
+    
+    Route::get('summary', 'AdminSummaryController@getIndex');
+    Route::get('summary/data', 'AdminSummaryController@getData');
+
+Route::get('summary/create', 'AdminSummaryController@getCreate');
+    Route::post('summary/create', 'AdminSummaryController@postCreate');
+
+      Route::get('summary/{sid}/edit', 'AdminSummaryController@getEdit');
+    Route::post('summary/{sid}/edit', 'AdminSummaryController@postEdit');
+   
+    Route::get('summary/{sid}/delete', 'AdminSummaryController@getDelete');
+    Route::post('summary/{sid}/delete', 'AdminSummaryController@postDelete');
+
+
     # Comment Management
     Route::get('comments/{comment}/edit', 'AdminCommentsController@getEdit');
     Route::post('comments/{comment}/edit', 'AdminCommentsController@postEdit');
@@ -103,9 +144,14 @@ Route::get('contact-us', function()
     return View::make('site/contact-us');
 });
 
+Route::get('/hoxfamily', 'HoxFamily@index');
+Route::get('/hoxfamily/data', 'HoxFamily@getData');
+Route::get('/hoxfamily/{id}', 'HoxFamily@getMember');
+Route::get('/hoxfamily/{id}/data', 'HoxFamily@getMemberData');
+
 # Posts - Second to last set, match slug
 Route::get('{postSlug}', 'BlogController@getView');
 Route::post('{postSlug}', 'BlogController@postView');
 
 # Index Page - Last route, no matches
-Route::get('/', array('before' => 'detectLang','uses' => 'BlogController@getIndex'));
+Route::get('/', array('before' => 'detectLang','before' => 'auth.basic', 'uses' => 'FrontController@getIndex'));

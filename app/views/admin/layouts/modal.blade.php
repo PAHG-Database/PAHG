@@ -11,7 +11,7 @@
 
 	<title>
 		@section('title')
-			{{{ $title }}} :: Administration
+			Administration
 		@show
 	</title>
 
@@ -51,9 +51,10 @@
     <link rel="stylesheet" href="{{asset('assets/css/datatables-bootstrap.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/colorbox.css')}}">
 
+
 	<style>
-	.tab-pane {
-		padding-top: 20px;
+	body {
+		padding: 60px 0;
 	}
 	</style>
 
@@ -64,24 +65,9 @@
 	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 
-	<!-- Asynchronous google analytics; this is the official snippet.
-	 Replace UA-XXXXXX-XX with your site's ID and uncomment to enable.
-	<script type="text/javascript">
-		var _gaq = _gaq || [];
-	  	_gaq.push(['_setAccount', 'UA-31122385-3']);
-	  	_gaq.push(['_trackPageview']);
-
-	  	(function() {
-	   		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-	    		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-	    		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-	  	})();
-
-	</script> -->
-
 </head>
 
-<body>
+<body>	
 	<!-- Container -->
 	<div class="container">
 
@@ -116,7 +102,9 @@
     <script src="{{asset('bootstrap/js/bootstrap.min.js')}}"></script>
     <script src="{{asset('assets/js/wysihtml5/wysihtml5-0.3.0.js')}}"></script>
     <script src="{{asset('assets/js/wysihtml5/bootstrap-wysihtml5.js')}}"></script>
+    <script src="//tinymce.cachefly.net/4.1/tinymce.min.js"></script>
     <script src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+    <script src="{{asset('assets/js/wysihtml5/bootstrap-wysiwyg.js')}}"></script>
     <script src="{{asset('assets/js/datatables-bootstrap.js')}}"></script>
     <script src="{{asset('assets/js/datatables.fnReloadAjax.js')}}"></script>
     <script src="{{asset('assets/js/jquery.colorbox.js')}}"></script>
@@ -143,8 +131,25 @@ parent.oTable.fnReloadAjax();
 event.preventDefault();
 });
 });
-$('.wysihtml5').wysihtml5();
-$(prettyPrint)
+$(prettyPrint);
+tinymce.init({
+	selector: "textarea",
+		theme: "modern",
+		plugins: [
+			"advlist autolink lists link image charmap print preview hr anchor pagebreak",
+			"searchreplace wordcount visualblocks visualchars code fullscreen",
+			"insertdatetime media nonbreaking save table contextmenu directionality",
+			"emoticons template paste textcolor colorpicker textpattern"
+		],
+		toolbar1: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+		toolbar2: "print preview media | forecolor backcolor emoticons",
+		image_advtab: true,
+		templates: [
+			{title: 'Test template 1', content: 'Test 1'},
+			{title: 'Test template 2', content: 'Test 2'}
+		]
+});
+//$('.wysihtml5').wysihtml5();
 </script>
 
     @yield('scripts')

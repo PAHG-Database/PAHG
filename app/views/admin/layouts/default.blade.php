@@ -51,6 +51,7 @@
     <link rel="stylesheet" href="{{asset('assets/css/datatables-bootstrap.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/colorbox.css')}}">
 
+
 	<style>
 	body {
 		padding: 60px 0;
@@ -85,6 +86,8 @@
     					<li{{ (Request::is('admin') ? ' class="active"' : '') }}><a href="{{{ URL::to('admin') }}}"><span class="glyphicon glyphicon-home"></span> Home</a></li>
     					<li{{ (Request::is('admin/blogs*') ? ' class="active"' : '') }}><a href="{{{ URL::to('admin/blogs') }}}"><span class="glyphicon glyphicon-list-alt"></span> Blog</a></li>
     					<li{{ (Request::is('admin/comments*') ? ' class="active"' : '') }}><a href="{{{ URL::to('admin/comments') }}}"><span class="glyphicon glyphicon-bullhorn"></span> Comments</a></li>
+    					<li{{ (Request::is('admin/hoxfamily') ? ' class="active"' : '') }}><a href="{{{ URL::to('admin/hoxfamily') }}}"><span class="glyphicon glyphicon-bullhorn"></span> Families</a></li>
+    					<li{{ (Request::is('admin/summary') ? ' class="active"' : '') }}><a href="{{{ URL::to('admin/summary') }}}"><span class="glyphicon glyphicon-bullhorn"></span> Summary</a></li>
     					<li class="dropdown{{ (Request::is('admin/users*|admin/roles*') ? ' active' : '') }}">
     						<a class="dropdown-toggle" data-toggle="dropdown" href="{{{ URL::to('admin/users') }}}">
     							<span class="glyphicon glyphicon-user"></span> Users <span class="caret"></span>
@@ -137,13 +140,14 @@
     <script src="{{asset('assets/js/wysihtml5/wysihtml5-0.3.0.js')}}"></script>
     <script src="{{asset('assets/js/wysihtml5/bootstrap-wysihtml5.js')}}"></script>
     <script src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+    <script src="//tinymce.cachefly.net/4.1/tinymce.min.js"></script>
     <script src="{{asset('assets/js/datatables-bootstrap.js')}}"></script>
     <script src="{{asset('assets/js/datatables.fnReloadAjax.js')}}"></script>
     <script src="{{asset('assets/js/jquery.colorbox.js')}}"></script>
     <script src="{{asset('assets/js/prettify.js')}}"></script>
 
-    <script type="text/javascript">
-    	$('.wysihtml5').wysihtml5();
+    <script type="text/javascript"> 
+	$('.wysihtml5').wysihtml5();
         $(prettyPrint);
     </script>
 
