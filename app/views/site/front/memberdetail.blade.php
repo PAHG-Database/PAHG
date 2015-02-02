@@ -109,7 +109,7 @@
 				                    <small>{{$family['member']['ChrLocation']}}</small>
 				                </h4>
 				                <h4>HumnaProAccNo
-				                    <small>{{$family['member']['HumnaProAccNo']}}</small>
+				                    <small><a href="http://www.uniprot.org/uniprot/{{$family['member']['HumnaProAccNo']}}" target="_blank" >{{$family['member']['HumnaProAccNo']}}</a></small>
 				                </h4>
 				            </div>
 				            <!-- /.panel-body -->
