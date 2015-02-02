@@ -2,8 +2,9 @@
 
 class FrontController extends BaseController {
 
+	
     
-    public function __construct()
+    public function __construct(Genefamily $Family, Members $Members)
     {
         parent::__construct();
 
@@ -14,10 +15,41 @@ class FrontController extends BaseController {
 	 *
 	 * @return View
 	 */
+
 	public function getIndex()
 	{
-		
-		return View::make('site/front/index');
+		$posts = Genefamily::all();
+
+		return View::make('site/front/index', compact('posts'));
+	}
+
+	public function getMembers($fid)
+	{
+		$posts = Members::select(array('MemberName as name','MID as id'
+	    ))->where('FID', '=', $fid)->get()->toArray();
+
+		return Response::json($posts);
+	}
+
+	public function getSearch()
+	{
+		$get = Input::all();
+
+		if(!$get['fid']){
+
+			return Redirect::to('/');
+		}
+
+		if(!$get['mid']){
+			$family = Genefamily::where('FID', '=', $get['fid'])->first()->toArray();
+			return View::make('site/front/familydetail', compact('family'));
+		}else{
+			$family = array('family' => Genefamily::where('FID', '=', $get['fid'])->first()->toArray(), 'member' => Members::where('MID', '=', $get['mid'])->first()->toArray());
+			return View::make('site/front/memberdetail', compact('family'));
+		}
+
+		//print_r($input);exit;
+
 	}
 
 }

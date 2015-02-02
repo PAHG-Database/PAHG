@@ -51,7 +51,6 @@
     <link rel="stylesheet" href="{{asset('assets/css/datatables-bootstrap.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/colorbox.css')}}">
 
-
 	<style>
 	body {
 		padding: 60px 0;
@@ -145,6 +144,7 @@
     <script src="{{asset('assets/js/datatables.fnReloadAjax.js')}}"></script>
     <script src="{{asset('assets/js/jquery.colorbox.js')}}"></script>
     <script src="{{asset('assets/js/prettify.js')}}"></script>
+
 
     <script type="text/javascript"> 
 	$('.wysihtml5').wysihtml5();

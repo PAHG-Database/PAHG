@@ -30,7 +30,7 @@
 	    <link rel="stylesheet" href="{{asset('assets/css/wysihtml5/bootstrap-wysihtml5.css')}}">
 	    <link rel="stylesheet" href="{{asset('assets/css/datatables-bootstrap.css')}}">
 	    <link rel="stylesheet" href="{{asset('assets/css/colorbox.css')}}">
-	    <link rel="stylesheet" href="{{asset('assets/js/select2/select2.css')}}">
+	    <link rel="stylesheet" href="{{asset('assets/css/selectize.css')}}">
 
 		<style>
         body {
@@ -128,20 +128,65 @@
 	    <script src="{{asset('assets/js/datatables.fnReloadAjax.js')}}"></script>
 	    <script src="{{asset('assets/js/jquery.colorbox.js')}}"></script>
 	    <script src="{{asset('assets/js/prettify.js')}}"></script>
-	    <script src="{{asset('assets/js/select2/select2.js')}}"></script>
+	    <script src="{{asset('assets/js/selectize.js')}}"></script>
+	    <script src="{{asset('assets/js/ekko-lightbox-min.js')}}"></script>
 
 	    <script type="text/javascript">
+	    	
+	     $(document).delegate('*[data-toggle="lightbox"]:not([data-gallery="navigateTo"])', 'click', function(event) {
+                    event.preventDefault();
+                    return $(this).ekkoLightbox({
+                        onShown: function() {
+                            if (window.console) {
+                                return console.log('Checking our the events huh?');
+                            }
+                        },
+						onNavigate: function(direction, itemIndex) {
+                            if (window.console) {
+                                return console.log('Navigating '+direction+'. Current item: '+itemIndex);
+                            }
+						}
+                    });
+                });
+
+
 	    	$('.wysihtml5').wysihtml5();
 	        $(prettyPrint);
-	        $("#family").select2({
-	        		placeholder: "Select a Family",
-	        		width: 'resolve',
-	        		allowClear: true,
-        	}).on("change", function(e) { alert('test'); });
+	        
 
+	        var xhr;
+				var select_state, $select_state;
+				var select_city, $select_city;
+				$select_state = $('#select-state').selectize({
+					onChange: function(value) {
+						if (!value.length) return;
+						select_city.disable();
+						select_city.clearOptions();
+						select_city.load(function(callback) {
+							xhr && xhr.abort();
+							xhr = $.ajax({
+								url: 'index.php/getmembers/' + value,
+								success: function(results) {
+									select_city.enable();
+									callback(results);
+								},
+								error: function() {
+									callback();
+								}
+							})
+						});
+					}
+				});
+				$select_city = $('#select-city').selectize({
+					valueField: 'id',
+					labelField: 'name',
+					searchField: ['name']
+				});
+				select_city  = $select_city[0].selectize;
+				select_state = $select_state[0].selectize;
+				select_city.disable();
         	
-	     	//$("input").typeahead({ source:["GeneFamilyName","Amiloride-sensitive cation channel, neuronal","Anion exchanger family SLC4A ( AE )","ATP binding cassette","ATP synthase, H+ transporting, mitochondrial F0 complex","ATPase, H+ transporting, lysosomal V0 Subunit A","Bromodomain adjacent to zinc finger domain","Calcium binding and coiled-coil domain","Calcium channel, voltage-dependent, beta subunit","CAP-GLY domain containing linker protein","Carbohydrate sulfotransferase","Chaperonin containing T-complex polypeptide 1","Chromobox homolog","Crystallin family","Cyclin-dependent kinase","ERBB receptor protein-tyrosine kinase","Fbrillar collagen family","FK506 binding protein","Formin-like","Frizzled","GLI zinc-finger protein family","Growth factor receptor-bound protein","Hedgehog family","Heterogeneous nuclear ribonucleoprotein A","Histone deacetylase","Inhibin","Inhibitor of growth family","Insulin-like growth factor-binding protein","Integrin alpha family","Integrin beta chain family","Methyltransferase","MLX interacting protein","Myosin 1","Myosin light chain","NAC alpha domain proteins","Neurexophilin ","Neurogenic differentiation","Nuclear factor (erythroid-derived 2)","ORM1-like","Oxysterol binding protein-like","Phosphodiesterase 1, Calmodulin-dependent","Pleckstrin homology domain containing, family A","Potassium inwardly-rectifying channel, subfamily J","Potassium voltage-gated channel, subfamily H","Protein kinase gamma subunit","Protein phosphatase 1, regulatory (inhibitor)subunit","Pyruvate dehydrogenase kinase","Rap guanine nucleotide exchange factor","Receptor (G protein-coupled) activity modifying protein","Rho family GTPase","Ring finger protein family","Secernin","Solute carrier family  6","Solute carrier family 38A","Sorting nexin","Sp1 c2h2-type zinc-finger protein family","Suppressor of cytokine signaling","Tensin","Transmembrane protein 106","Vesicle-associated membrane protein ","WAS/WASL interacting protein family","Zinc finger protein 386","Zinc finger protein, subfamily 1A"] });
-		</script>
+	     </script>
 
         @yield('scripts')
 	</body>
