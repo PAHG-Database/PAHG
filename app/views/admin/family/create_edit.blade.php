@@ -61,7 +61,7 @@
 				<div class="form-group {{{ $errors->has('tp') ? 'error' : '' }}}">
 		    <div class="col-md-12">
                         <label class="control-label" for="tp">Time Period Picture</label>
-						{{ Form::file('tp','',array('id'=>'tp','class'=>'tp')) }}
+						<input class="form-control" type="file" name="tp" id="tp"/>
 						{{ $errors->first('tp', '<span class="help-block">:message</span>') }}
 					</div>
 				</div>
@@ -84,6 +84,25 @@
 					</div>
 				</div>
 				<!-- ./ post title -->
+	<!-- Post Title -->
+				<div class="form-group {{{ $errors->has('tree') ? 'error' : '' }}}">
+		    <div class="col-md-12">
+                        <label class="control-label" for="tree">Tree Picture</label>
+						<input class="form-control" type="file" name="tree" id="tree"/>
+						{{ $errors->first('tree', '<span class="help-block">:message</span>') }}
+					</div>
+				</div>
+				<!-- ./ post title -->
+<!-- Post Title -->
+				<div class="form-group {{{ $errors->has('syntany') ? 'error' : '' }}}">
+		    <div class="col-md-12">
+                        <label class="control-label" for="syntany">Syntany Picture</label>
+						<input class="form-control" type="file" name="syntany" id="syntany"/>
+						{{ $errors->first('syntany', '<span class="help-block">:message</span>') }}
+					</div>
+				</div>
+				<!-- ./ post title -->
+
 
 			</div>
 			<!-- ./ general tab -->

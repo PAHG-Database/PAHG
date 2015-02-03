@@ -68,6 +68,8 @@ class AdminFamilyController extends AdminController {
             'tp'   => 'required',
             'nj'   => 'required',
             'ml'   => 'required',
+            'tree'   => 'required',
+            'syntany'   => 'required',
         );
 
         // Validate the inputs
@@ -79,6 +81,8 @@ class AdminFamilyController extends AdminController {
 	    $tp = Input::file('tp');
 	    $nj = Input::file('nj');
 	    $ml = Input::file('ml');
+	    $tree = Input::file('tree');
+	    $syntany = Input::file('syntany');
             // Update the blog post data
             $this->family->GeneFamilyName = Input::get('genefamily');
             $this->family->NoIncludedTaxa = Input::get('taxa');
@@ -89,6 +93,8 @@ class AdminFamilyController extends AdminController {
             $this->family->TPPic = base64_encode(file_get_contents($tp->getRealPath()));
             $this->family->NJTreePic = base64_encode(file_get_contents($nj->getRealPath()));
 	    $this->family->MLTreePic = base64_encode(file_get_contents($ml->getRealPath()));
+	    $this->family->Tree = base64_encode(file_get_contents($tree->getRealPath()));
+	    $this->family->Syntany = base64_encode(file_get_contents($syntany->getRealPath()));
 	    $this->family->TPPicName = $tp->getClientOriginalName();
             $this->family->NJTreePicName = $nj->getClientOriginalName();
             $this->family->MLTreePicName = $ml->getClientOriginalName();
@@ -197,6 +203,18 @@ class AdminFamilyController extends AdminController {
 			$this->family->MLTreePic = base64_encode(file_get_contents($ml->getRealPath()));
 			$this->family->MLTreePicName = $ml->getClientOriginalName();
 		}
+		$tree = Input::file('tree');
+		if(isset($tree)){
+
+			$this->family->Tree = base64_encode(file_get_contents($tree->getRealPath()));
+		}
+		$syntany = Input::file('syntany');
+		if(isset($syntany)){
+
+			$this->family->Syntany = base64_encode(file_get_contents($syntany->getRealPath()));
+		}
+
+
 
             // Update the blog post data
             $this->family->GeneFamilyName = Input::get('genefamily');
