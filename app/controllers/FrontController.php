@@ -23,6 +23,13 @@ class FrontController extends BaseController {
 		return View::make('site/front/index', compact('posts'));
 	}
 
+	public function getSearchForm()
+	{
+		$posts = Genefamily::all();
+
+		return View::make('site/front/search', compact('posts'));
+	}
+
 	public function getMembers($fid)
 	{
 		$posts = Members::select(array('MemberName as name','MID as id'

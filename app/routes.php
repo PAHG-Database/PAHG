@@ -119,6 +119,9 @@ Route::get('summary/create', 'AdminSummaryController@getCreate');
  *  ------------------------------------------
  */
 
+Route::get('summary', 'AdminSummaryController@getIndexUser');
+    Route::get('summary/data', 'AdminSummaryController@getDataUser');
+
 // User reset routes
 Route::get('user/reset/{token}', 'UserController@getReset');
 // User password reset
@@ -134,15 +137,6 @@ Route::controller('user', 'UserController');
 
 //:: Application Routes ::
 
-# Filter for detect language
-Route::when('contact-us','detectLang');
-
-# Contact Us Static Page
-Route::get('contact-us', function()
-{
-    // Return about us page
-    return View::make('site/contact-us');
-});
 
 Route::get('/hoxfamily', 'HoxFamily@index');
 Route::get('/hoxfamily/data', 'HoxFamily@getData');
@@ -152,10 +146,11 @@ Route::get('/hoxfamily/{id}/data', 'HoxFamily@getMemberData');
 Route::get('/getmembers/{fid}', 'FrontController@getMembers');
 
 Route::get('/search', 'FrontController@getSearch');
+Route::get('/find', 'FrontController@getSearchForm');
 
 # Posts - Second to last set, match slug
 Route::get('{postSlug}', 'BlogController@getView');
 Route::post('{postSlug}', 'BlogController@postView');
 
 # Index Page - Last route, no matches
-Route::get('/', array('before' => 'detectLang','before' => 'auth.basic', 'uses' => 'FrontController@getIndex'));
+Route::get('/', array('before' => 'detectLang', 'uses' => 'FrontController@getIndex'));
