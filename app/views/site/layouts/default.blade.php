@@ -24,13 +24,14 @@
 
 		<!-- CSS
 		================================================== -->
-        <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.min.css')}}">
+            <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.min.css')}}">
 	    <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap-theme.min.css')}}">
 	    <link rel="stylesheet" href="{{asset('assets/css/wysihtml5/prettify.css')}}">
 	    <link rel="stylesheet" href="{{asset('assets/css/wysihtml5/bootstrap-wysihtml5.css')}}">
 	    <link rel="stylesheet" href="{{asset('assets/css/datatables-bootstrap.css')}}">
 	    <link rel="stylesheet" href="{{asset('assets/css/colorbox.css')}}">
 	    <link rel="stylesheet" href="{{asset('assets/css/selectize.css')}}">
+	    <link rel="stylesheet" href="{{asset('assets/css/cyto-chromosome.style.css')}}">
 
 		<style>
         body {
@@ -130,6 +131,7 @@
 	    <script src="{{asset('assets/js/prettify.js')}}"></script>
 	    <script src="{{asset('assets/js/selectize.js')}}"></script>
 	    <script src="{{asset('assets/js/ekko-lightbox-min.js')}}"></script>
+	    <script src="{{asset('assets/js/cyto-chromosome-vis.js')}}"></script>
 
 	    <script type="text/javascript">
 	    	
@@ -152,8 +154,25 @@
 
 	    	$('.wysihtml5').wysihtml5();
 	        $(prettyPrint);
-	        
+	        var Chromosome = require('Chromosome');
 
+            var c13 = new Chromosome({
+                target: "#demo",
+		segment: "12",
+		includeAxis: false,
+		width: 9000
+	    }).draw(function(){
+	    	$('[data-toggle="popover"]').popover({
+			'trigger':'hover'
+				,'container': 'body'
+				,'placement': 'right'
+				,'white-space': 'nowrap'
+				,'html':'true'
+		});
+
+	    });
+
+	
 	        var xhr;
 				var select_state, $select_state;
 				var select_city, $select_city;

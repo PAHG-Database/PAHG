@@ -22,6 +22,13 @@ class FrontController extends BaseController {
 
 		return View::make('site/front/index', compact('posts'));
 	}
+    
+    	public function getGenes()
+	{
+		//$posts = Genefamily::all();
+
+		return View::make('site/front/genes');
+	}
 
 	public function getMembers($fid)
 	{

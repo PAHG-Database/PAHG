@@ -152,6 +152,7 @@ Route::get('/hoxfamily/{id}/data', 'HoxFamily@getMemberData');
 Route::get('/getmembers/{fid}', 'FrontController@getMembers');
 
 Route::get('/search', 'FrontController@getSearch');
+Route::get('/genes', 'FrontController@getGenes');
 
 # Posts - Second to last set, match slug
 Route::get('{postSlug}', 'BlogController@getView');
