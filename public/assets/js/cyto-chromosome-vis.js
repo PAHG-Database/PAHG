@@ -22068,21 +22068,20 @@ var Chromosome = (function () {
         this.draw = function () {
 	    console.log(_options);
 	    switch(_options.segment){
-		case 2:
+		case '2':
 			var _bands = groupBands(genes_chr_2,function(item){return [item.ChrLocation]});
 			break;
-		case 7:
+		case '7':
 			var _bands = groupBands(genes_chr_7,function(item){return [item.ChrLocation]});
 			break;
-		case 12:
+		case '12':
 			var _bands = groupBands(genes_chr_12,function(item){return [item.ChrLocation]});
 			break;
-		case 17:
+		case '17':
 			var _bands = groupBands(genes_chr_17,function(item){return [item.ChrLocation]});
 			break;
 	    }
 
-		var _bands = groupBands(genes_chr_12,function(item){return [item.ChrLocation]});
             _modelLoader.loadModel(function (model) {
                 console.log(model);
                 _model = model;
