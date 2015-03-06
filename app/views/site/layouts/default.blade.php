@@ -6,7 +6,7 @@
 		<meta charset="utf-8" />
 		<title>
 			@section('title')
-			Laravel 4 Sample Site
+			Hox Database
 			@show
 		</title>
 		@section('meta_keywords')
@@ -32,11 +32,12 @@
 	    <link rel="stylesheet" href="{{asset('assets/css/colorbox.css')}}">
 	    <link rel="stylesheet" href="{{asset('assets/css/selectize.css')}}">
 	    <link rel="stylesheet" href="{{asset('assets/css/cyto-chromosome.style.css')}}">
+	     <link rel="stylesheet" href="{{asset('assets/css/styles.css')}}">
+	     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
 
 		<style>
-        body {
-            padding: 60px 0;
-        }
+        
 		@section('styles')
 		@show
 		</style>
@@ -55,11 +56,17 @@
 		<link rel="shortcut icon" href="{{{ asset('assets/ico/favicon.png') }}}">
 	</head>
 
-	<body>
+	<body >
+
+
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
 		<!-- To make sticky footer need to wrap in a div -->
 		<div id="wrap">
 		<!-- Navbar -->
-		<div class="navbar navbar-default navbar-inverse navbar-fixed-top">
+
+		<div class="navbar navbar-default navbar-inverse ">
 			 <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -68,29 +75,83 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
+                    <a class="navbar-brand" href="#"><img src=""></a>
                 </div>
-                <div class="collapse navbar-collapse navbar-ex1-collapse">
-                    <ul class="nav navbar-nav">
-						<li {{ (Request::is('/') ? ' class="active"' : '') }}><a href="{{{ URL::to('') }}}">Home</a></li>
-						<li {{ (Request::is('/hoxfamily') ? ' class="active"' : '') }}><a href="{{{ URL::to('/hoxfamily') }}}">Families</a></li>
-					</ul>
 
-                    <ul class="nav navbar-nav pull-right">
-                        @if (Auth::check())
-                        @if (Auth::user()->hasRole('admin'))
-                        <li><a href="{{{ URL::to('admin') }}}">Admin Panel</a></li>
-                        @endif
-                        <li><a href="{{{ URL::to('user') }}}">Logged in as {{{ Auth::user()->username }}}</a></li>
-                        <li><a href="{{{ URL::to('user/logout') }}}">Logout</a></li>
-                        @else
-                        <li {{ (Request::is('user/login') ? ' class="active"' : '') }}><a href="{{{ URL::to('user/login') }}}">Login</a></li>
-                        <li {{ (Request::is('user/create') ? ' class="active"' : '') }}><a href="{{{ URL::to('user/create') }}}">{{{ Lang::get('site.sign_up') }}}</a></li>
-                        @endif
+
+                
+
+                 <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav">
+						<li {{ (Request::is('/') ? ' class="active"' : '') }}><a href="{{{ URL::to('') }}}">Home</a></li>
+
+				<li class="dropdown">
+          				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> Human Paralogy Blocks <span class="caret"></span></a>
+					  <ul class="dropdown-menu" role="menu">
+
+                  <li class="divider"></li>
+                  <li class="dropdown-submenu">
+                    <a tabindex="-1" href="#">HOX</a>
+                    <ul class="dropdown-nav">
+                      <li><a tabindex="-1" href="#"> HOX Info</a></li>
+                      <li><a tabindex="-1" href="#">Synteny</a></li>
+                      <li><a tabindex="-1" href="#">Time Period</a></li>
+                      <li><a tabindex="-1" href="#">Co-duplicated groups</a></li>
+                      <li><a tabindex="-1" href="#">Trees</a></li>
+                      <li><a tabindex="-1" href="{{{ URL::to('summary') }}}">Summary Table</a></li>
                     </ul>
+                  </li>
+                  <li class="divider"></li>
+                  <li class="dropdown-submenu">
+                    <a tabindex="-1" href="#">FGFR</a>
+                    <ul class="dropdown-nav">
+                      <li><a tabindex="-1" href="#"> FGFR Info</a></li>
+                      <li><a tabindex="-1" href="#">Synteny</a></li>
+                      <li><a tabindex="-1" href="#">Time Period</a></li>
+                      <li><a tabindex="-1" href="#">Co-duplicated groups</a></li>
+                      <li><a tabindex="-1" href="#">Trees</a></li>
+                      <li><a tabindex="-1" href="{{{ URL::to('summary') }}}">Summary Table</a></li>
+                    </ul>
+                </ul>
+              </li>
+         				<li class="dropdown">
+         					 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Duplication Mechanism <span class="caret"></span></a>
+								<ul class="dropdown-menu" role="menu">
+           							 <li><a href="{{{ URL::to('introduction') }}}">Introduction</a></li>
+            						 <li><a href="{{{ URL::to('independent-gene-duplications') }}}">Independent Gene Duplications</a></li>
+           							 <li><a href="{{{ URL::to('segmental-duplication') }}}">Segmental Duplications</a></li>
+           							 <li><a href="{{{ URL::to('whole-genome-duplication-hypothesis-or-2r-hypothesis') }}}">Whole Genome Duplications</a></li>
+           							 <li><a href="{{{ URL::to('piecemeal-theory') }}}">Piecemeal Theory</a></li>
+        
+         						 </ul>
+         				</li>
+        	 			<li class="dropdown">
+          					 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> Search <span class="caret"></span></a>
+					 			<ul class="dropdown-menu" role="menu">
+            				 		<li><a href="{{{ URL::to('/find') }}}">Family</a></li>
+         			 			</ul>		
+         			 	</li>
+						 			         
+         </ul>
+         
+         
+           
+            
+        			  		<ul class="nav navbar-nav pull-right">
+        			  			<li><a href="{{{ URL::to('contact-us') }}}">Contact</a></li> 
+                      			<li><a href="{{{ URL::to('admin') }}}">Admin Panel</a></li>
+                      	  
+                      		</ul>
+
 					<!-- ./ nav-collapse -->
+
+				
 				</div>
+
 			</div>
+
 		</div>
+		 
 		<!-- ./ navbar -->
 
 		<!-- Container -->
@@ -105,6 +166,7 @@
 		</div>
 		<!-- ./ container -->
 
+
 		<!-- the following div is needed to make a sticky footer -->
 		<div id="push"></div>
 		</div>
@@ -112,10 +174,37 @@
 
 
 	    <div id="footer">
+
 	      <div class="container">
-	        <p class="muted credit">Department of Bioinformatics <a href="#">Quaid-e-Azam University</a>.</p>
+	       
 	      </div>
+
 	    </div>
+	    <!-- Start of footer-->
+	<footer class="site-footer ">
+	    <div class="container">
+	    	<div class="row">
+
+	      		<p class="muted credit">National Center for Bioinformatics <a href="http://ncb.qau.edu.pk/">Quaid-e-Azam University</a>.</p>
+			
+				<div class="bottom-footer">	
+					<div class="col-md-2">@ Copyright HOX 2015</div>
+					<div class="col-md-10">
+						<ul class="footer-nav"> 		
+							<li><a href="http://twitter.com" onclick="_gaq.push(['_trackEvent', 'exit', 'footer', 'Twitter']);"><i class="fa fa-twitter"></i> Twitter</a></li>	
+							<li><a href="http://github.com/m-waqas" onclick="_gaq.push(['_trackEvent', 'exit', 'footer', 'GitHub']);"><i class="fa fa-github"></i> GitHub</a></li>
+							<li><a href="https://www.facebook.com/waqaskhokhar7" onclick="_gaq.push(['_trackEvent', 'exit', 'footer', 'Facebook']);"><i class="fa fa-facebook"></i> Facebook</a></li>
+						
+						</ul>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</footer>
+	    <!-- End of footer-->
+
+	    
 
 		<!-- Javascripts
 		================================================== -->
@@ -156,11 +245,11 @@
 	        $(prettyPrint);
 	        var Chromosome = require('Chromosome');
 
-            var c13 = new Chromosome({
-                target: "#demo",
+            var c12 = new Chromosome({
+                target: "#c12",
 		segment: "12",
 		includeAxis: false,
-		width: 9000
+		width: 1000
 	    }).draw(function(){
 	    	$('[data-toggle="popover"]').popover({
 			'trigger':'hover'
@@ -173,6 +262,51 @@
 	    });
 
 	
+            var c2 = new Chromosome({
+                target: "#c2",
+		segment: "2",
+		includeAxis: false,
+		width: 1000
+	    }).draw(function(){
+	    	$('[data-toggle="popover"]').popover({
+			'trigger':'hover'
+				,'container': 'body'
+				,'placement': 'right'
+				,'white-space': 'nowrap'
+				,'html':'true'
+		});
+
+	    });
+            var c7 = new Chromosome({
+                target: "#c7",
+		segment: "7",
+		includeAxis: false,
+		width: 1000
+	    }).draw(function(){
+	    	$('[data-toggle="popover"]').popover({
+			'trigger':'hover'
+				,'container': 'body'
+				,'placement': 'right'
+				,'white-space': 'nowrap'
+				,'html':'true'
+		});
+
+	    });
+            var c17 = new Chromosome({
+                target: "#c17",
+		segment: "17",
+		includeAxis: false,
+		width: 1000
+	    }).draw(function(){
+	    	$('[data-toggle="popover"]').popover({
+			'trigger':'hover'
+				,'container': 'body'
+				,'placement': 'right'
+				,'white-space': 'nowrap'
+				,'html':'true'
+		});
+
+	    });
 	        var xhr;
 				var select_state, $select_state;
 				var select_city, $select_city;

@@ -36,6 +36,18 @@ class AdminSummaryController extends AdminController {
         return View::make('admin/summary/index', compact('posts', 'title'));
     }
 
+    public function getIndexUser()
+    {
+        // Title
+        $title = 'Summary Management';
+
+        // Grab all the blog posts
+        $posts = $this->summary;
+
+        // Show the page
+        return View::make('admin/summary/index-user', compact('posts', 'title'));
+    }
+
 	/**
 	 * Show the form for creating a new resource.
 	 *
@@ -236,6 +248,18 @@ class AdminSummaryController extends AdminController {
            <a href="{{{ URL::to(\'admin/summary/\' . $id . \'/delete\' ) }}}" class="btn btn-xs btn-danger iframe">{{{ Lang::get(\'button.delete\') }}}</a>
           
            ')
+ ->remove_column('id')
+        ->make();
+    }
+
+    public function getDataUser()
+    {
+    $posts = Summary::select(array('SID as id', 'summary.Family_Name as Name', 'summary.Hsa21', 'summary.Hsa73', 'summary.Hsa12', 'summary.Hsa17', 'Consistency_with_HOX_Phylogeny', 'Topology'
+            //, 'genefamily.TPPic as tppic' 
+            //, 'genefamily.NJTreePic as njtppic' 
+            //, 'genefamily.MLTreePic as mltppic')
+        ));
+        return Datatables::of($posts)
  ->remove_column('id')
         ->make();
     }
