@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="row">
-	<h1 class="text-center">HOX GENE Search Page</h1>
+	<h1 class="text-center"> Search Page</h1>
 	<div class="well">
 		<form method="GET" action="index.php/search">
 			<div class="form-group control-group">
