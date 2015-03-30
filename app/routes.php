@@ -77,6 +77,10 @@ Route::get('summary/create', 'AdminSummaryController@getCreate');
     Route::get('summary/{sid}/delete', 'AdminSummaryController@getDelete');
     Route::post('summary/{sid}/delete', 'AdminSummaryController@postDelete');
 
+    # summary 2012 
+    Route::get('summary2012', 'AdminSummaryController@getIndex2012');
+    Route::get('summary2012/data', 'AdminSummaryController@getData2012');
+
 
     # Comment Management
     Route::get('comments/{comment}/edit', 'AdminCommentsController@getEdit');
@@ -118,9 +122,21 @@ Route::get('summary/create', 'AdminSummaryController@getCreate');
  *  Frontend Routes
  *  ------------------------------------------
  */
-
+# Lab Page
+Route::get('/lab', 'FrontController@getLabForm');
+# Lines of Research
+Route::get('/labresearch', 'FrontController@getLabResearchForm');
+# Scholars
+Route::get('/scholars', 'FrontController@getScholarsForm');
+# Lab contact Form
+Route::get('/labcontact', 'FrontController@getLabContactForm');
+# contact Form
+Route::get('/contact', 'FrontController@getContactForm');
 Route::get('summary', 'AdminSummaryController@getIndexUser');
     Route::get('summary/data', 'AdminSummaryController@getDataUser');
+
+    Route::get('summary2012', 'AdminSummaryController@getIndex2012');
+    Route::get('summary2012/data', 'AdminSummaryController@getData2012');
 
 // User reset routes
 Route::get('user/reset/{token}', 'UserController@getReset');
@@ -139,6 +155,8 @@ Route::controller('user', 'UserController');
 
 
 Route::get('/hoxfamily', 'HoxFamily@index');
+
+Route::post('/download/seq', array('as' => 'seq.download', 'uses' => 'HoxFamily@downloadSeq'));
 Route::get('/hoxfamily/data', 'HoxFamily@getData');
 Route::get('/hoxfamily/{id}', 'HoxFamily@getMember');
 Route::get('/hoxfamily/{id}/data', 'HoxFamily@getMemberData');
@@ -148,6 +166,10 @@ Route::get('/getmembers/{fid}', 'FrontController@getMembers');
 Route::get('/search', 'FrontController@getSearch');
 Route::get('/genes', 'FrontController@getGenes');
 Route::get('/find', 'FrontController@getSearchForm');
+# Search paralogon 1/2/8/20
+Route::get('/search', 'FrontController@getSearch');
+Route::get('/genes', 'FrontController@getGenes');
+Route::get('/fetch', 'FrontController@getfetchForm');
 
 # Posts - Second to last set, match slug
 Route::get('{postSlug}', 'BlogController@getView');

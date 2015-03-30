@@ -70,6 +70,7 @@ class AdminFamilyController extends AdminController {
             'ml'   => 'required',
             'tree'   => 'required',
             'syntany'   => 'required',
+            'seqfile' => 'required',
         );
 
         // Validate the inputs
@@ -88,6 +89,7 @@ class AdminFamilyController extends AdminController {
             $this->family->NoIncludedTaxa = Input::get('taxa');
             $this->family->Function = Input::get('function');
             $this->family->NoSeqIncluded = Input::get('seq');
+            $this->family->seqfile = Input::get('seqfile');
             //$this->family->TPName = Str::slug(Input::get('title'));
             $this->family->Year = Input::get('year');
             $this->family->TPPic = base64_encode(file_get_contents($tp->getRealPath()));
@@ -175,6 +177,7 @@ class AdminFamilyController extends AdminController {
             'taxa'   => 'required',
             'function'   => 'required',
             'seq'   => 'required',
+            'seqfile' => 'required',
         );
 
         // Validate the inputs
@@ -213,6 +216,12 @@ class AdminFamilyController extends AdminController {
 
 			$this->family->Syntany = base64_encode(file_get_contents($syntany->getRealPath()));
 		}
+        $seqfile = Input::file('seqfile');
+        if(isset($seqfile)){
+
+            $this->family->seqfile = file_get_contents($seqfile->getRealPath());
+        }
+
 
 
 

@@ -30,6 +30,7 @@
 				                <h4>Year:
 				                    <small>{{$family['family']['Year']}}</small>
 				                </h4>
+
 				               
 				            </div>
 				            <!-- /.panel-body -->
@@ -61,7 +62,7 @@
 										<img src="data:image/jpeg;base64, {{{ $family['family']['NjTreePic'] }}}" class="img-responsive" title="" style="width:200px">
 									</a>
 								      <div class="caption">
-								        <h3>NJ Tree</h3>
+								        <h3>Neighbour Joining Tree</h3>
 								      </div>
 								    </div>
 								  </div>
@@ -71,7 +72,7 @@
 										<img src="data:image/jpeg;base64, {{{ $family['family']['MLTreePic'] }}}" class="img-responsive" title="" style="width:200px">
 									</a>
 								      <div class="caption">
-								        <h3>ML Tree</h3>
+								        <h5>Maximum Likelihood Tree</h5>
 								      </div>
 								    </div>
 								  </div>
@@ -107,6 +108,26 @@
 				                </h4>
 				                <h4>Humnan Protein Accession Number:
 				                    <small><a href="http://www.uniprot.org/uniprot/{{$family['member']['HumnaProAccNo']}}" target="_blank" >{{$family['member']['HumnaProAccNo']}}</a></small>
+				                </h4>
+				                <h4>Sequence File:
+				                	{{ Form::open( array(
+										    'route' => 'seq.download',
+										    'method' => 'post',
+										    'accept-charset' => 'UTF-8',
+										    'id' => 'form-seq-download'
+										) ) }}
+
+				                    <select name="output" class="fselect required _stt valid" id="output">
+				                    	<optgroup label="Bed Format"><option value="bed">BED Format</option></optgroup>
+				                    	<optgroup label="FASTA sequence"><option value="fasta" selected="selected">FASTA sequence</option></optgroup>
+				                    	<optgroup label="Feature File"><option value="csv">CSV (Comma separated values)</option><option value="tab">Tab separated values</option><option value="gtf">Gene Transfer Format (GTF)</option><option value="gff">Generic Feature Format</option><option value="gff3">Generic Feature Format Version 3</option></optgroup>
+				                    	<optgroup label="Flat File"><option value="embl">EMBL</option><option value="genbank">GenBank</option></optgroup>
+				                    </select>
+				                    {{ Form::submit( 'Download', array(
+									    'id' => 'btn-download',
+									) ) }}
+				
+									{{ Form::close() }}
 				                </h4>
 				            </div>
 				            <!-- /.panel-body -->
@@ -157,4 +178,55 @@
 </div>
 
 
+@stop
+
+@section('scripts')
+<script>
+function getUrlParameter(sParam)
+{
+    var sPageURL = window.location.search.substring(1);
+    var sURLVariables = sPageURL.split('&');
+    for (var i = 0; i < sURLVariables.length; i++) 
+    {
+        var sParameterName = sURLVariables[i].split('=');
+        if (sParameterName[0] == sParam) 
+        {
+            return sParameterName[1];
+        }
+    }
+}  
+jQuery( document ).ready( function( $ ) {
+ 
+    $( '#form-seq-download' ).on( 'submit', function() {
+ 
+        //.....
+        //show some spinner etc to indicate operation in progress
+        //.....
+ 
+        $.post(
+            $( this ).prop( 'action' ),
+            {
+                "_token": $( this ).find( 'input[name=_token]' ).val(),
+                "format": $( '#output' ).val(),
+                "mid"	: getUrlParameter('mid')
+            },
+            function( data ) {
+                //do something with data/response returned by server
+                console.log(data);
+                document.location = data;
+            },
+            'json'
+        );
+ 
+        //.....
+        //do anything else you might want to do
+        //.....
+ 
+        //prevent the form from actually submitting in browser
+        return false;
+    } );
+ 
+} );
+
+</script>
 @stop

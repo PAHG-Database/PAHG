@@ -27,7 +27,6 @@
 				<th class="col-md-4">Name</th>
 				<th class="col-md-4">ChrLocation</th>
 				<th class="col-md-4">Protein Accession Number</th>
-				
 				<th class="col-md-4">Operations</th>
 			</tr>
 		</thead>

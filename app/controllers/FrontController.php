@@ -36,6 +36,12 @@ class FrontController extends BaseController {
 
 		return View::make('site/front/search', compact('posts'));
 	}
+	public function getfetchForm()
+	{
+		$posts = Genefamily::where('year','=','2015')-> get();
+
+		return View::make('site/front/search', compact('posts'));
+	}
 
 	public function getMembers($fid)
 	{
@@ -65,5 +71,41 @@ class FrontController extends BaseController {
 		//print_r($input);exit;
 
 	}
+	#Contact Form
+	public function getContactForm()
+	{
+		
+
+		return View::make('site/front/contact');
+	}
+		#Lab Contact Form
+	public function getLabContactForm()
+	{
+		
+
+		return View::make('site/front/labcontact');
+	}
+	#Lab Form
+	public function getLabForm()
+	{
+		
+
+		return View::make('site/front/lab');
+	}
+	#Lines of Research 
+	public function getLabResearchForm()
+	{
+		
+
+		return View::make('site/front/labresearch');
+	}
+	#Scholars
+	public function getScholarsForm()
+	{
+		
+
+		return View::make('site/front/scholars');
+	}
+
 
 }

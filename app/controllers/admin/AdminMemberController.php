@@ -80,7 +80,8 @@ public function getDetail($mid)
             'loc' => 'required',
             'acc' => 'required',
             'tp' => 'required',
-            'sn' => 'required'
+            'sn' => 'required',
+             'seqfile' => 'required'
         );
 
         // Validate the inputs
@@ -94,6 +95,7 @@ public function getDetail($mid)
             $this->members->MemberName = Input::get('name');
             $this->members->ChrLocation = Input::get('loc');
 	    $this->members->HumnaProAccNo = Input::get('acc');
+         $this->members->seqfile = Input::get('seqfile');
 	    
 	    $tp = Input::file('tp');
 	    $sn = Input::file('sn');
@@ -159,9 +161,11 @@ public function getDetail($mid)
             'name'   => 'required',
             'loc' => 'required',
             'acc' => 'required',
+            'seqfile' => 'required',
+
             
         );
-
+       
         // Validate the inputs
         $validator = Validator::make(Input::all(), $rules);
 
@@ -185,6 +189,12 @@ public function getDetail($mid)
 
 		    $this->members->Syntany = base64_encode(file_get_contents($sn->getRealPath()));
 	    }
+
+        $seqfile = Input::file('seqfile');
+        if(isset($seqfile)){
+
+            $this->members->seqfile = file_get_contents($seqfile->getRealPath());
+        }
 
 	    // Was the blog post created?
             if($this->members->update())

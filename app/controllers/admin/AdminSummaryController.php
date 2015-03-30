@@ -47,7 +47,18 @@ class AdminSummaryController extends AdminController {
         // Show the page
         return View::make('admin/summary/index-user', compact('posts', 'title'));
     }
+//summary2012
+public function getIndex2012()
+    {
+        // Title
+        $title = 'Summary Management';
 
+        // Grab all the blog posts
+       // $posts = $this->summary;
+
+        // Show the page
+        return View::make('admin/summary/summary2012', compact('title'));
+    }
 	/**
 	 * Show the form for creating a new resource.
 	 *
@@ -217,10 +228,6 @@ class AdminSummaryController extends AdminController {
     {
          $id = $sid;
         $summary = Summary::find($id);
-        $summary->delete();
-
-        // Was the blog post deleted?
-        $summary = Summary::find($id);
         if(empty($summary))
         {
             // Redirect to the blog posts management page
@@ -234,6 +241,10 @@ class AdminSummaryController extends AdminController {
      * Show a list of all the blog posts formatted for Datatables.
      *
      * @return Datatables JSON
+        $summary->delete();
+
+        // Was the blog post deleted?
+        $summary = Summary::find($id);
      */
     public function getData()
     {
@@ -252,9 +263,36 @@ class AdminSummaryController extends AdminController {
         ->make();
     }
 
+
+    public function getData2012()
+    {
+    $posts = DB::table('summary2012')->select(array('summary2012.Family_Name as Name', 'summary2012.Hsa1', 'summary2012.Hsa2/6a', 'summary2012.Hsa8/18b', 'summary2012.Hsa20', 'Topology'
+            //, 'genefamily.TPPic as tppic' 
+            //, 'genefamily.NJTreePic as njtppic' 
+            //, 'genefamily.MLTreePic as mltppic')
+        ));
+        return Datatables::of($posts)
+
+
+        ->make();
+
+    }
+
     public function getDataUser()
     {
     $posts = Summary::select(array('SID as id', 'summary.Family_Name as Name', 'summary.Hsa21', 'summary.Hsa73', 'summary.Hsa12', 'summary.Hsa17', 'Consistency_with_HOX_Phylogeny', 'Topology'
+            //, 'genefamily.TPPic as tppic' 
+            //, 'genefamily.NJTreePic as njtppic' 
+            //, 'genefamily.MLTreePic as mltppic')
+        ));
+        return Datatables::of($posts)
+ ->remove_column('id')
+        ->make();
+    }
+    // summary 2012
+     public function getDataUsers()
+    {
+    $posts = Summary::select(array('SID as id', 'summary2012.Family_Name as Name', 'summary2012.Hsa1', 'summary2012.Hsa2/6a ', 'summary2012.Hsa8/18b ', 'summary2012.Hsa20', 'Topology'
             //, 'genefamily.TPPic as tppic' 
             //, 'genefamily.NJTreePic as njtppic' 
             //, 'genefamily.MLTreePic as mltppic')

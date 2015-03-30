@@ -8,9 +8,10 @@
 			<tr>
 				<th class="col-md-4">Name</th>
 				<th class="col-md-1">Chrm Location</th>
-				<th class="col-md-2">Human PA No.</th>
+				<th class="col-md-1">Human Protein  Acession Number</th>
 				<th class="col-md-4">Topology</th>
 				<th class="col-md-1">Syntany</th>
+				<th class="col-md-1">Sequence</th>
 				
 			</tr>
 		</thead>

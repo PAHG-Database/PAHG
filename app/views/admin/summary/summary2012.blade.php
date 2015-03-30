@@ -1,4 +1,4 @@
-@extends('admin.layouts.default')
+@extends('site.layouts.default')
 
 {{-- Web site Title --}}
 @section('title')
@@ -14,21 +14,18 @@
 	<div class="page-header">
 		<h3>
 			{{{ $title }}}
-
-			<div class="pull-right">
-				<a href="{{{ URL::to('admin/family/create') }}}" class="btn btn-small btn-info iframe"><span class="glyphicon glyphicon-plus-sign"></span> Create</a>
-			</div>
 		</h3>
 	</div>
 
 	<table id="blogs" class="table table-striped table-hover">
 		<thead>
 			<tr>
-				<th class="col-md-4">Gene Family Name</th>
-				<th class="col-md-1">Year</th>
-				<th class="col-md-2">Number of Included Taxa</th>
-				<th class="col-md-4">Function</th>
-				<th class="col-md-1">Operations</th>
+				<th class="col-md-2">Family Name</th>
+				<th class="col-md-1">Hsa1</th>
+				<th class="col-md-1">Hsa2/6a</th>
+				<th class="col-md-1">Hsa8/18b</th>
+				<th class="col-md-1">Hsa20</th>
+				<th class="col-md-2">Topology</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -49,7 +46,7 @@
 				},
 				"bProcessing": true,
 		        "bServerSide": true,
-		        "sAjaxSource": "{{ URL::to('admin/family/data') }}",
+			"sAjaxSource": "{{ URL::to('admin/summary2012/data') }}",
 		        "fnDrawCallback": function ( oSettings ) {
 	           		$(".iframe").colorbox({iframe:true, width:"80%", height:"80%"});
 	     		}

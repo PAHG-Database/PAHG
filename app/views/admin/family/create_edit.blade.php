@@ -56,6 +56,14 @@
 						{{ $errors->first('seq', '<span class="help-block">:message</span>') }}
 					</div>
 				</div>
+
+				<div class="form-group {{{ $errors->has('seqfile') ? 'error' : '' }}}">
+		    <div class="col-md-12">
+                        <label class="control-label" for="syntany">Sequence</label>
+						{{ Form::file('seqfile','',array('id'=>'seq','class'=>'seq')) }}
+						{{ $errors->first('sequence', '<span class="help-block">:message</span>') }}
+					</div>
+				</div>
 				<!-- ./ post title -->
 	<!-- Post Title -->
 				<div class="form-group {{{ $errors->has('tp') ? 'error' : '' }}}">

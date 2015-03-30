@@ -33,6 +33,24 @@ class HoxFamily extends \BaseController {
 
 	}
 
+	public function downloadSeq(){
+
+		//get format from the database which member is currently used
+		$member = Members::where('MID', '=', Input::get('mid'))->first()->toArray();
+		
+		//generate file from the content according to the format
+		$fileToSave = strtolower($member['MemberName']).'.'.Input::get('format');
+		File::put($fileToSave, $member['seqfile']);
+		
+		//save file to disk 
+		//print_r();exit;
+
+		//use the path above in $pathToFile
+		return public_path().'/'.$fileToSave;
+		
+
+	}
+
 	/**
 	 * Display a listing of the resource.
 	 * GET /hoxfamily
