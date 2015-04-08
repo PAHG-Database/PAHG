@@ -28,6 +28,7 @@
 				<th class="col-md-1">Year</th>
 				<th class="col-md-2">Number of Included Taxa</th>
 				<th class="col-md-4">Function</th>
+				<th class="col-md-4">Number of Included Sequences</th>
 				<th class="col-md-1">Operations</th>
 			</tr>
 		</thead>

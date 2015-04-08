@@ -41,12 +41,12 @@ class HoxFamily extends \BaseController {
 		//generate file from the content according to the format
 		$fileToSave = strtolower($member['MemberName']).'.'.Input::get('format');
 		File::put($fileToSave, $member['seqfile']);
-		
+		return Response::json(array('url'=>public_path().'/'.$fileToSave));
 		//save file to disk 
 		//print_r();exit;
 
 		//use the path above in $pathToFile
-		return public_path().'/'.$fileToSave;
+		
 		
 
 	}

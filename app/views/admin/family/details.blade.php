@@ -6,7 +6,8 @@
 	<table id="blogs" class="table table-striped table-hover">
 		<thead>
 			<tr>
-				<th class="col-md-4">Gene Family Name</th>
+				<th class="col-md-3">Gene Family Name</th>
+				<th class="col-md-1">Sequence</th>
 				<th class="col-md-1">Year</th>
 				<th class="col-md-2">Number of Included Taxa</th>
 				<th class="col-md-4">Function</th>
@@ -19,6 +20,7 @@
 		<tbody>
 			<tr>
 				<td>{{{ $post->GeneFamilyName }}}</td> 
+				<td>{{{ $post->seqfile }}}</td> 
 				<td>{{{ $post->Year }}}</td> 
 				<td>{{{ $post->NoIncludedTaxa }}}</td> 
 				<td>{{{ $post->Function }}}</td> 

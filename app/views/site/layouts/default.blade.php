@@ -35,7 +35,7 @@
 	     <link rel="stylesheet" href="{{asset('assets/css/styles.css')}}">
 	     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
-
+		
 		<style>
         
 		@section('styles')
@@ -58,6 +58,7 @@
 
 	<body >
 
+
 		<!-- To make sticky footer need to wrap in a div -->
 		<div id="wrap">
 		  <!-- Navbar -->
@@ -65,7 +66,7 @@
 	   	<nav class="navbar  navbar-inverse navbar-static-top ">
 			   <div class="container-fluid">
                 <div class="navbar-header">
-              
+
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
@@ -82,21 +83,23 @@
 
      <div class="collapse navbar-collapse navbar-ex1-collapse">
          <ul class="nav navbar-nav nav-tabs">
+         
 
 					<li ><a href="{{{ URL::to('') }}}">Home</a></li>
+
 				       <li  class="dropdown">
           				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> Human Paralogy Blocks <span class="caret"></span></a>
 					           <ul class="dropdown-menu" role="menu">
-                       <li class="divider"></li>
+                       
                           <li class="dropdown-submenu">
                             <a tabindex="-1" href="#">HSA:2/7/12/17 (HOX-cluster paralogon)</a>
-                              <ul class="dropdown-nav">
+                              <ul class="nav nav-tabs nav-stacked">
                                 <li><a tabindex="-1" href="#"> HOX Info</a></li>
                                 <li><a tabindex="-1" href="#">Synteny</a></li>
                                 <li><a tabindex="-1" href="#">Time Period</a></li>
                                 <li><a tabindex="-1" href="#">Co-duplicated groups</a></li>
                                 <li><a tabindex="-1" href="#">Trees</a></li>
-                                <li><a tabindex="-1" href="{{{ URL::to('sequence-files') }}}">Sequence Files</a></li>
+                                <li><a tabindex="-1" href="{{{ URL::to('/find') }}}">Sequence Files</a></li>
                                 <li><a tabindex="-1" href="{{{ URL::to('summary') }}}">Summary Table</a></li>
                               </ul>
                             </li>
@@ -105,32 +108,22 @@
                    <li class="divider"></li>
                     <li class="dropdown-submenu">
                         <a tabindex="-1" href="#">HSA:1/2/8/20</a>
-                          <ul class="dropdown-nav">
+                          <ul class="nav nav-tabs nav-stacked">
                              <li><a tabindex="-1" href="#">Info</a></li>
                               <li><a tabindex="-1" href="#">Synteny</a></li>
                               <li><a tabindex="-1" href="#">Time Period</a></li>
                               <li><a tabindex="-1" href="#">Co-duplicated groups</a></li>
                               <li><a tabindex="-1" href="#">Trees</a></li>
+                              <li><a tabindex="-1" href="{{{ URL::to('/fetch') }}}">Sequence Files</a></li>
                               <li><a tabindex="-1" href="{{{ URL::to('summary2012') }}}">Summary Table</a></li>
                           </ul>
                     </li>
-                  <li class="divider"></li>
-                  <li class="dropdown-submenu">
-                    <a tabindex="-1" href="#">HSA:4/5/8/10 (FGFR bearing paralogon)</a>
-                    <ul class="dropdown-nav">
-                      <li><a tabindex="-1" href="#"> FGFR Info</a></li>
-                      <li><a tabindex="-1" href="#">Synteny</a></li>
-                      <li><a tabindex="-1" href="#">Time Period</a></li>
-                      <li><a tabindex="-1" href="#">Co-duplicated groups</a></li>
-                      <li><a tabindex="-1" href="#">Trees</a></li>
-                      <li><a tabindex="-1" href="#">Summary Table</a></li>
-                    </ul>
-                   </li>
+                  
                    </ul>
                    </li>
-         				<li class="dropdown">
+                   <li class="dropdown">
          					 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Duplication Mechanism <span class="caret"></span></a>
-								      <ul class="dropdown-menu" role="menu">
+								<ul class="dropdown-menu" role="menu">
            							 <li><a href="{{{ URL::to('introduction') }}}">Introduction</a></li>
             						 <li><a href="{{{ URL::to('independent-gene-duplications') }}}">Independent Gene Duplications</a></li>
            							 <li><a href="{{{ URL::to('segmental-duplication') }}}">Segmental Duplications</a></li>
@@ -139,7 +132,12 @@
         
          						 </ul>
          				</li>
-                    <li class="dropdown">
+         				<li>
+                          <ul class="nav navbar-nav nav-tabs ">
+                            <li><a href="{{{ URL::to('/contact') }}}">Contact</a></li> 
+                            <li><a href="{{{ URL::to('admin') }}}">Admin</a></li>
+                          </ul> </li>
+                          <li class="dropdown">
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Search <span class="caret"></span></a>
                       <ul class="dropdown-menu" role="menu">
                        <li><a href="{{{ URL::to('/find') }}}">HSA:2/7/12/17 (HOX-cluster paralogon) Search</a></li>
@@ -147,21 +145,14 @@
                         <li><a href="{{{ URL::to('/fetch') }}}">HSA:1/2/8/20 Search</a></li>
                       </ul>
                     </li>
+                    
                     <form class="navbar-form navbar-left" role="search">
                      <div class="form-group">
                        <input type="text" class="form-control" placeholder="Search">
                       </div>
                      <button type="submit" class="btn btn-primary btn-xs">Submit</button>
                    </form>
- 
-              </ul>
-                          <ul class="nav navbar-nav nav-tabs pull-right">
-                            <li><a href="{{{ URL::to('/contact') }}}">Contact</a></li> 
-                            <li><a href="{{{ URL::to('admin') }}}">Admin</a></li>
-                          </ul>
-
-					<!-- ./ nav-collapse -->
-
+					 </ul>
 				
 				</div>
 

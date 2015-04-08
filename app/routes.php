@@ -123,6 +123,9 @@ Route::get('summary/create', 'AdminSummaryController@getCreate');
  *  ------------------------------------------
  */
 # Lab Page
+Route::get('/blast', 'FrontController@getBlastForm');
+# Lines of Research
+# Lab Page
 Route::get('/lab', 'FrontController@getLabForm');
 # Lines of Research
 Route::get('/labresearch', 'FrontController@getLabResearchForm');

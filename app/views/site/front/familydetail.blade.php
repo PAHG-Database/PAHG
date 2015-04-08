@@ -23,8 +23,26 @@
                 <h4>Year:
                     <small>{{$family['Year']}}</small>
                 </h4>
-                 
-               
+                 <h4>Sequence:
+				                	{{ Form::open( array(
+										    'route' => 'seq.download',
+										    'method' => 'post',
+										    'accept-charset' => 'UTF-8',
+										    'id' => 'form-seq-download'
+										) ) }}
+
+				                    <select name="output" class="fselect required _stt valid" id="output">
+				                    	<optgroup label="Bed Format"><option value="bed">BED Format</option></optgroup>
+				                    	<optgroup label="FASTA sequence"><option value="fasta" selected="selected">FASTA sequence</option></optgroup>
+				                    	<optgroup label="Feature File"><option value="csv">CSV (Comma separated values)</option><option value="tab">Tab separated values</option><option value="gtf">Gene Transfer Format (GTF)</option><option value="gff">Generic Feature Format</option><option value="gff3">Generic Feature Format Version 3</option></optgroup>
+				                    	<optgroup label="Flat File"><option value="embl">EMBL</option><option value="genbank">GenBank</option></optgroup>
+				                    </select>
+				                    {{ Form::submit( 'Download', array(
+									    'id' => 'btn-download',
+									) ) }}
+				
+									{{ Form::close() }}
+				                </h4>
             </div>
             <!-- /.panel-body -->
         </div>

@@ -2,6 +2,7 @@
 {{-- Content --}}
 @section('content')
 
+<div class= "col-sm-6 col-md-12">
 <div class="row">
 	<h1 class="text-center"> Search Page</h1>
 	<div class="well">

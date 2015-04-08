@@ -106,6 +106,12 @@ class FrontController extends BaseController {
 
 		return View::make('site/front/scholars');
 	}
+#Blast
+	public function getBlastForm()
+	{
+		
 
+		return View::make('site/front/blast');
+	}
 
 }
