@@ -6,7 +6,7 @@
 <div class="row">
 	<h1 class="text-center"> Search Page</h1>
 	<div class="well">
-		<form method="GET" action="index.php/search">
+		<form method="GET" action="{{url('search')}}">
 			<div class="form-group control-group">
 				<label for="select-beast">Family:</label>
 				<select id="select-state" name="fid" placeholder="Pick a Family...">
