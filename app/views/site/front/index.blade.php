@@ -9,7 +9,7 @@
         			 		 <img src="{{asset('assets/img/main.png')}}" class="img-responsive img-rounded pull-right" alt="Responsive image" style="width:400px;height:300px;">
  							  <h2 class="no-margin text-primary">VGA~ Vertebrate Genome Architecture</h2>
  							  <p> VGA is a database which throws light on the concept of 2R and !2R. It elucidate the evolution of organismal complexity in animal lineage.</p>
-					 		  <p><a button type="button" class="btn btn-info" href="#" role="button">Read more</a></p>
+					 		  <p><a button type="button" class="btn btn-primary" href="#" role="button">Read more</a></p>
 				 		</div>
 					</div>
 </div>
@@ -17,17 +17,38 @@
 <aside class= " col-md-2 col-md-pull-11 " >
    					<div class="panel panel-primary">
    						<div class="panel-heading">
-							 <h4 class="panel-title"><span class="glyphicon glyphicon-hand-right"> Get Start </span></h4>
+							 <h4 class="panel-title">Vertebrate History</h4>
 				 		</div>
    							<div class="panel-body">
+   								<ul class="nav nav-tabs nav-stacked">	
+	   							  <li><a href="{{{ URL::to('background') }}}">Background</a></li>
+					              <li class="dropdown">
+	         					 		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Duplication Mechanism </span></a>
+									<ul class="dropdown-menu" role="menu">
+	           							 <li><a href="{{{ URL::to('introduction') }}}">Introduction</a></li>
+	            						 <li><a href="{{{ URL::to('independent-gene-duplications') }}}">Independent Gene Duplications</a></li>
+	           							 <li><a href="{{{ URL::to('segmental-duplication') }}}">Segmental Duplications</a></li>
+	           							 <li><a href="{{{ URL::to('whole-genome-duplication-hypothesis-or-2r-hypothesis') }}}">Whole Genome Duplications</a></li>
+	           							 <li><a href="{{{ URL::to('piecemeal-theory') }}}">Piecemeal Theory</a></li>
+	         						</ul>
+         						  </li>
+         								<li><a href="{{{ URL::to('methodology') }}}">Methodology</a></li>
+					             </ul>       
+				              </div>
+   						<div class="panel-heading">
+							 <h4 class="panel-title"><span class="glyphicon glyphicon-th-large"> Latest </span></h4>
+				 		</div>
+				              <div class="panel-body">
    								<ul class="nav nav-tabs nav-stacked">
-				                    <li><a href="{{{ URL::to('background') }}}">Background</a></li>
-				                    <li><a href="{{{ URL::to('methodology') }}}">Methodology</a></li>
 				                    <li><a href="{{{ URL::to('/lab') }}}">Evolutionary Genomics Lab</a></li>
-				                    <li><a href="{{{ URL::to('/blast') }}}">Blast</a></li>
+				                    <li><a href="{{{ URL::to('/blast') }}}">VLAST</a></li>
+				                    
+				                    <li><a href="{{{ URL::to('/faqs') }}}">FAQs</a></li>
 				                    
                					</ul>
    							</div>
+   						
+				          
   					</div>
   				</aside>
 </div>
@@ -35,20 +56,46 @@
 		 <div class= "col-sm-6 col-md-3">
 		 	<div class="panel panel-primary">
 		 		<div class="panel-heading">
-				 	<p><a href="{{{ URL::to('synteny-info') }}}" ><b> <font color="#FFFFFF" >Synteny</font></b></a></p>
+				 	<p><a href="{{{ URL::to('synteny') }}}" ><b> <font color="#FFFFFF" >Synteny</font></b></a></p>
 				 </div>
    			<div class="panel-body">
-
-                      <p><a href="{{{ URL::to('synteny-info') }}}" class="nodeco"><img src="{{asset('assets/img/synteny.png')}}" alt="Synteny" style="width:200px;height:120px;"></a></p>
-                   	  
-             </div>
+								<style>
+								        #carousel-example-generic
+								        {
+								        	width:200px;
+								        }
+								</style>
+							<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+								<ol class="carousel-indicators">
+									<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+									<li data-target="#carousel-example-generic" data-slide-to="1" ></li>
+									
+									
+								</ol>
+										<div class="carousel-inner">
+												<div class="item active">
+													<img src="{{asset('assets/img/Synteny/hoxblack.png')}}" alt="Synteny" style="width:200px;height:130px;">
+														
+												</div>
+												<div class="item">
+													<img src="{{asset('assets/img/Synteny/one.png')}}" alt="Synteny" style="width:200px;height:130px;">
+														
+												</div>
+																							
+										</div>
+								<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+								<span class="glyphicon glyphicon-chevron-left"></span></a>
+								<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+								<span class="glyphicon glyphicon-chevron-right"></span></a>
+							</div>
+			  			</div>
 		</div>
 		</div>
 
 		<div class= "col-sm-6 col-md-3">
 			<div class="panel panel-primary">
 				<div class="panel-heading">
-					<p><a href="{{asset('assets/img/topology/ci.png')}}" ><b> <font color="#FFFFFF" >Co-duplicated groups</font></b></a></p>
+					<p><a href="{{{ URL::to('topology-comparision-approach') }}}" ><b> <font color="#FFFFFF" >Co-duplicated groups</font></b></a></p>
 				 </div>
 				 <div class="panel-body">
 								<style>
@@ -62,29 +109,21 @@
 									<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
 									<li data-target="#carousel-example-generic" data-slide-to="1" ></li>
 									<li data-target="#carousel-example-generic" data-slide-to="2" ></li>
-									<li data-target="#carousel-example-generic" data-slide-to="3" ></li>
-									<li data-target="#carousel-example-generic" data-slide-to="4" ></li>
+									
 								</ol>
 										<div class="carousel-inner">
 												<div class="item active">
-													<img src="{{asset('assets/img/topology/a.png')}}" alt="Topology" style="width:200px;height:130px;">
+													<img src="{{asset('assets/img/topology/one.png')}}" alt="Topology" style="width:200px;height:130px;">
 														
 												</div>
 												<div class="item">
-													<img src="{{asset('assets/img/topology/b.png')}}" alt="Topology" style="width:200px;height:130px;">
+													<img src="{{asset('assets/img/topology/three.png')}}" alt="Topology" style="width:200px;height:130px;">
 														
 												</div>
 												<div class="item">
-													<img src="{{asset('assets/img/topology/c.png')}}" alt="Topology" style="width:200px;height:130px;">
+													<img src="{{asset('assets/img/topology/two.png')}}" alt="Topology" style="width:200px;height:130px;">
 														
-												</div>
-												<div class="item">
-													<img src="{{asset('assets/img/topology/d.png')}}" alt="Topology" style="width:200px;height:130px;">
-														
-												</div>
-												<div class="item">
-													<img src="{{asset('assets/img/topology/e.png')}}" alt="Topology" style="width:200px;height:130px;">
-												</div>
+												</div>												
 										</div>
 								<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
 								<span class="glyphicon glyphicon-chevron-left"></span></a>
@@ -98,11 +137,39 @@
 	<div class= "col-sm-6 col-md-3">
 		<div class="panel panel-primary">
 			<div class="panel-heading">
-				<p><a href="{{asset('assets/img/TP.png')}}" ><b> <font color="#FFFFFF" >Time Period</font></b></a></p>
+				<p><a href="{{{ URL::to('relative-dating') }}}" ><b> <font color="#FFFFFF" >Time Period</font></b></a></p>
 				 </div>
    			<div class="panel-body">
-		 	   <p><a href="{{asset('assets/img/TP.png')}}" class="nodeco"><img src="{{asset('assets/img/TP.png')}}" alt="Topology" style="width:200px;height:120px;"></a></p>
-			</div>
+								<style>
+								        #carousel-example-generic
+								        {
+								        	width:200px;
+								        }
+								</style>
+							<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+								<ol class="carousel-indicators">
+									<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+									<li data-target="#carousel-example-generic" data-slide-to="1" ></li>
+									
+									
+								</ol>
+										<div class="carousel-inner">
+												<div class="item active">
+													<img src="{{asset('assets/img/timeperiod/tpg.png')}}" alt="timeperiod" style="width:200px;height:130px;">
+														
+												</div>
+												<div class="item">
+													<img src="{{asset('assets/img/timeperiod/two.png')}}" alt="timeperiod" style="width:200px;height:130px;">
+														
+												</div>
+																							
+										</div>
+								<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+								<span class="glyphicon glyphicon-chevron-left"></span></a>
+								<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+								<span class="glyphicon glyphicon-chevron-right"></span></a>
+							</div>
+			  			</div>
 		</div>
 	</div>
 	<div class= "col-sm-6 col-md-3">

@@ -106,12 +106,62 @@ class FrontController extends BaseController {
 
 		return View::make('site/front/scholars');
 	}
-#Blast
+#Blast Front
 	public function getBlastForm()
 	{
 		
 
 		return View::make('site/front/blast');
+	}
+
+	public function getBlastResult()
+	{
+		
+		$query = Input::get('QUERY');
+		
+		$member = Members::where('seqfile', 'like', '%'.$query.'%')->get();
+		
+		if($member->count() != 0){
+				$member = $member->first()->toArray();
+				$family = array('family' => Genefamily::where('FID', '=', $member['FID'])->first()->toArray(), 'member' => $member);
+				return View::make('site/front/memberdetail', compact('family'));
+
+		}else{
+				$family = Genefamily::where('seqfile', 'like', '%'.$query.'%')->get();
+				if($family->count() != 0){
+					$family = $family->first()->toArray();
+					return View::make('site/front/familydetail', compact('family'));
+				}else{
+					//show no result page
+				}
+		}
+
+
+		
+
+
+		
+			
+
+
+		print_r($result);
+		exit;
+
+	}
+
+	#Blast Result
+	public function getVlastForm()
+	{
+		
+
+		return View::make('site/front/vlast');
+	}
+	#FAQs
+	public function getFaqForm()
+	{
+		
+
+		return View::make('site/front/faqs');
 	}
 
 }

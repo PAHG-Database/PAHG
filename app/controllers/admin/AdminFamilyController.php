@@ -176,8 +176,7 @@ class AdminFamilyController extends AdminController {
             'genefamily'   => 'required',
             'taxa'   => 'required',
             'function'   => 'required',
-            'seq'   => 'required',
-            'seqfile' => 'required',
+            
         );
 
         // Validate the inputs

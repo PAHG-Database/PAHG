@@ -34,6 +34,7 @@
 	    <link rel="stylesheet" href="{{asset('assets/css/cyto-chromosome.style.css')}}">
 	     <link rel="stylesheet" href="{{asset('assets/css/styles.css')}}">
 	     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	     <link rel="stylesheet" href="{{asset('assets/css/theme.css')}}">
 
 		
 		<style>
@@ -56,109 +57,95 @@
 		<link rel="shortcut icon" href="{{{ asset('assets/ico/favicon.png') }}}">
 	</head>
 
-	<body >
-
-
-		<!-- To make sticky footer need to wrap in a div -->
-		<div id="wrap">
-		  <!-- Navbar -->
-
-	   	<nav class="navbar  navbar-inverse navbar-static-top ">
-			   <div class="container-fluid">
+<body  style="background:#F2EFFB" >
+<!-- To make sticky footer need to wrap in a div -->
+<div id="wrap">
+	<!-- Navbar -->
+	<nav class="navbar  navbar-default navbar-static-top ">
+		<div class="container-fluid">
                 <div class="navbar-header">
-
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <div id="logo-title">
-                      <div id="logo"><a href="{{{ URL::to('') }}}" title="Home" rel="home"><img src="{{asset('assets/img/w.png')}}" alt="Home" id="logo-image"></a></div>
-                                      </div> 
-                       
+                  		<div id="logo-title">
+                     		 <div id="logo"><a href="{{{ URL::to('') }}}" title="Home" rel="home"><img src="{{asset('assets/img/w.png')}}" alt="Home" id="logo-image"></a></div>
+                        </div> 
                 </div>
-
-
-
-     <div class="collapse navbar-collapse navbar-ex1-collapse">
-         <ul class="nav navbar-nav nav-tabs">
-         
-
-					<li ><a href="{{{ URL::to('') }}}">Home</a></li>
-
-				       <li  class="dropdown">
-          				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> Human Paralogy Blocks <span class="caret"></span></a>
-					           <ul class="dropdown-menu" role="menu">
-                       
-                          <li class="dropdown-submenu">
-                            <a tabindex="-1" href="#">HSA:2/7/12/17 (HOX-cluster paralogon)</a>
-                              <ul class="nav nav-tabs nav-stacked">
-                                <li><a tabindex="-1" href="#"> HOX Info</a></li>
-                                <li><a tabindex="-1" href="#">Synteny</a></li>
-                                <li><a tabindex="-1" href="#">Time Period</a></li>
-                                <li><a tabindex="-1" href="#">Co-duplicated groups</a></li>
-                                <li><a tabindex="-1" href="#">Trees</a></li>
-                                <li><a tabindex="-1" href="{{{ URL::to('/find') }}}">Sequence Files</a></li>
-                                <li><a tabindex="-1" href="{{{ URL::to('summary') }}}">Summary Table</a></li>
-                              </ul>
-                            </li>
-
-                    
-                   <li class="divider"></li>
-                    <li class="dropdown-submenu">
-                        <a tabindex="-1" href="#">HSA:1/2/8/20</a>
-                          <ul class="nav nav-tabs nav-stacked">
-                             <li><a tabindex="-1" href="#">Info</a></li>
-                              <li><a tabindex="-1" href="#">Synteny</a></li>
-                              <li><a tabindex="-1" href="#">Time Period</a></li>
-                              <li><a tabindex="-1" href="#">Co-duplicated groups</a></li>
-                              <li><a tabindex="-1" href="#">Trees</a></li>
-                              <li><a tabindex="-1" href="{{{ URL::to('/fetch') }}}">Sequence Files</a></li>
-                              <li><a tabindex="-1" href="{{{ URL::to('summary2012') }}}">Summary Table</a></li>
-                          </ul>
-                    </li>
-                  
-                   </ul>
-                   </li>
-                   <li class="dropdown">
-         					 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Duplication Mechanism <span class="caret"></span></a>
-								<ul class="dropdown-menu" role="menu">
-           							 <li><a href="{{{ URL::to('introduction') }}}">Introduction</a></li>
-            						 <li><a href="{{{ URL::to('independent-gene-duplications') }}}">Independent Gene Duplications</a></li>
-           							 <li><a href="{{{ URL::to('segmental-duplication') }}}">Segmental Duplications</a></li>
-           							 <li><a href="{{{ URL::to('whole-genome-duplication-hypothesis-or-2r-hypothesis') }}}">Whole Genome Duplications</a></li>
-           							 <li><a href="{{{ URL::to('piecemeal-theory') }}}">Piecemeal Theory</a></li>
-        
-         						 </ul>
-         				</li>
-         				<li>
-                          <ul class="nav navbar-nav nav-tabs ">
-                            <li><a href="{{{ URL::to('/contact') }}}">Contact</a></li> 
-                            <li><a href="{{{ URL::to('admin') }}}">Admin</a></li>
-                          </ul> </li>
-                          <li class="dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Search <span class="caret"></span></a>
-                      <ul class="dropdown-menu" role="menu">
-                       <li><a href="{{{ URL::to('/find') }}}">HSA:2/7/12/17 (HOX-cluster paralogon) Search</a></li>
-                        <li class="divider"></li>
-                        <li><a href="{{{ URL::to('/fetch') }}}">HSA:1/2/8/20 Search</a></li>
-                      </ul>
-                    </li>
-                    
-                    <form class="navbar-form navbar-left" role="search">
-                     <div class="form-group">
-                       <input type="text" class="form-control" placeholder="Search">
-                      </div>
-                     <button type="submit" class="btn btn-primary btn-xs">Submit</button>
-                   </form>
-					 </ul>
-				
+               
+     			<div class="collapse navbar-collapse navbar-ex1-collapse">
+         			<ul class="nav navbar-nav nav-tabs">
+								<li ><a href="{{{ URL::to('') }}}">Home</a></li>
+								<li  class="dropdown">
+          							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="menu" aria-expanded="false"> Human Paralogy Blocks <span class="caret"></span></a>
+					           		<ul class="dropdown-menu" role="menu">
+			                      		<li class="dropdown-submenu">
+			                            	  <a tabindex="-1" href="#"><b>HSA:2/7/12/17</b> (HOX-cluster paralogon)</a>
+				                              <ul class="nav nav-tabs nav-stacked">
+				                                <li><a tabindex="-1" href="{{{ URL::to('hox-info') }}}"> HOX Info</a></li>
+				                                <li><a tabindex="-1" href="{{{ URL::to('hox-synteny') }}}">Synteny</a></li>
+				                                <li><a tabindex="-1" href="{{{ URL::to('hox-time-period') }}}">Time Period</a></li>
+				                                <li><a tabindex="-1" href="{{{ URL::to('hox-co-duplicated-groups') }}}">Co-duplicated groups</a></li>
+				                                <li><a tabindex="-1" href="#">Trees</a></li>
+				                                <li><a tabindex="-1" href="{{{ URL::to('/find') }}}">Sequence Files</a></li>
+				                                <li><a tabindex="-1" href="{{{ URL::to('summary') }}}">Summary Table</a></li> 
+				                              </ul>
+                            			</li>
+                   							<li class="divider"></li>
+				                    	<li class="dropdown-submenu">
+				                        	<a tabindex="-1" href="#"><b>HSA:1/2/8/20</b></a>
+					                          <ul class="nav nav-tabs nav-stacked">
+					                             <li><a tabindex="-1" href="#">Info</a></li>
+					                              <li><a tabindex="-1" href="#">Synteny</a></li>
+					                              <li><a tabindex="-1" href="#">Time Period</a></li>
+					                              <li><a tabindex="-1" href="#">Co-duplicated groups</a></li>
+					                              <li><a tabindex="-1" href="#">Trees</a></li>
+					                              <li><a tabindex="-1" href="{{{ URL::to('/fetch') }}}">Sequence Files</a></li>
+					                              <li><a tabindex="-1" href="{{{ URL::to('summary2012') }}}">Summary Table</a></li>
+					                          </ul>
+				                   		</li>                  
+                  					</ul>
+                  				</li>
+                   				
+         						<li class="dropdown">
+	         					 	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Useful Links <span class="caret"></span></a>
+									<ul class="dropdown-menu" role="menu">
+									<ul class="nav nav-tabs nav-stacked">
+	           							 <li><a href="http://www.ensembl.org/index.html">Ensembl</a></li>
+	           							  <li><a href="http://www.genenames.org/">HGNC</a></li>
+	           							   <li><a href="http://www.uniprot.org/">UniProt</a></li>
+	            						</ul> 
+	         						</ul>
+         						</li>
+         		                <li class="dropdown">
+                      				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Search <span class="caret"></span></a>
+					                    	<ul class="dropdown-menu" role="menu">
+						                       <li><a href="{{{ URL::to('/find') }}}">HSA:2/7/12/17 (HOX-cluster paralogon) Search</a></li>
+						                        <li class="divider"></li>
+						                        <li><a href="{{{ URL::to('/fetch') }}}">HSA:1/2/8/20 Search</a></li>
+						                    </ul>
+						                    <li>
+							                    <ul>
+							                        <form class="navbar-form navbar-left" role="search">
+							                    		 <div class="form-group">
+							                      			 <input type="text" class="form-control" placeholder="Search">
+							                      		 </div>
+							                    		 <button type="submit" class="btn btn-primary btn-xs">Submit</button>
+							                   		</form>
+											 	</ul> 
+										 	</li>
+								</li>
+			                        <li> 
+			                         	<ul class="nav navbar-nav nav-tabs pull-right ">
+			                            	<li><a href="{{{ URL::to('admin') }}}">Admin</a></li>
+			                          	</ul> 
+			                        </li>
 				</div>
-
 			</div>
       </nav>
-		</div>
+
 
 		 
 		<!-- ./ navbar -->
@@ -168,15 +155,12 @@
 			<!-- Notifications -->
 			@include('notifications')
 			<!-- ./ notifications -->
-
 			<!-- Content -->
 			@yield('content')
 			<!-- ./ content -->
 		</div>
 		
 		<!-- ./ container -->
-
-
 		<!-- the following div is needed to make a sticky footer -->
 		<div id="push"></div>
 		
@@ -195,9 +179,7 @@
 	<footer class="site-footer ">
 	    <div class="container">
 	    	<div class="row">
-
-	      		<p class="muted credit">National Center for Bioinformatics <a href="http://ncb.qau.edu.pk/">Quaid-e-Azam University</a>.</p>
-			
+	      		<p class="muted credit"><a href="http://ncb.qau.edu.pk/">National Center for Bioinformatics <a href="http://ncb.qau.edu.pk/">Quaid-e-Azam University</a>.</p>
 				<div class="bottom-footer">	
 					<div class="col-md-2">@ Copyright HOX 2015</div>
 					<div class="col-md-10">
@@ -205,17 +187,16 @@
 							<li><a href="http://twitter.com" onclick="_gaq.push(['_trackEvent', 'exit', 'footer', 'Twitter']);"><i class="fa fa-twitter"></i> Twitter</a></li>	
 							<li><a href="http://github.com/m-waqas" onclick="_gaq.push(['_trackEvent', 'exit', 'footer', 'GitHub']);"><i class="fa fa-github"></i> GitHub</a></li>
 							<li><a href="https://www.facebook.com/waqaskhokhar7" onclick="_gaq.push(['_trackEvent', 'exit', 'footer', 'Facebook']);"><i class="fa fa-facebook"></i> Facebook</a></li>
-						
+							<li><a href="{{{ URL::to('/contact') }}} "><span class="glyphicon glyphicon-phone-alt"> Contact</a></li> 
 						</ul>
 					</div>
 				</div>
 			</div>
-      </nav>
 		</div>
 	</footer>
 	    <!-- End of footer-->
 
-	    
+</div>	    
 
 		<!-- Javascripts
 		================================================== -->
@@ -232,6 +213,8 @@
 	    <script src="{{asset('assets/js/selectize.js')}}"></script>
 	    <script src="{{asset('assets/js/ekko-lightbox-min.js')}}"></script>
 	    <script src="{{asset('assets/js/cyto-chromosome-vis.js')}}"></script>
+	    <script src="{{asset('assets/js/script.js')}}"></script>
+
 
 	 
 	    <script type="text/javascript">

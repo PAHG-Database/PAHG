@@ -95,7 +95,7 @@
 	<!-- Post Title -->
 				<div class="form-group {{{ $errors->has('tree') ? 'error' : '' }}}">
 		    <div class="col-md-12">
-                        <label class="control-label" for="tree">Tree Picture</label>
+                        <label class="control-label" for="tree">Combine Topology</label>
 						<input class="form-control" type="file" name="tree" id="tree"/>
 						{{ $errors->first('tree', '<span class="help-block">:message</span>') }}
 					</div>
@@ -104,7 +104,7 @@
 <!-- Post Title -->
 				<div class="form-group {{{ $errors->has('syntany') ? 'error' : '' }}}">
 		    <div class="col-md-12">
-                        <label class="control-label" for="syntany">Syntany Picture</label>
+                        <label class="control-label" for="syntany">Combine Synteny </label>
 						<input class="form-control" type="file" name="syntany" id="syntany"/>
 						{{ $errors->first('syntany', '<span class="help-block">:message</span>') }}
 					</div>

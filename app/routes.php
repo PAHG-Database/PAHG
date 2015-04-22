@@ -122,9 +122,14 @@ Route::get('summary/create', 'AdminSummaryController@getCreate');
  *  Frontend Routes
  *  ------------------------------------------
  */
-# Lab Page
+# FAQs Page
+Route::get('/faqs', 'FrontController@getFaqForm');
+# Blast front Page
 Route::get('/blast', 'FrontController@getBlastForm');
-# Lines of Research
+
+Route::post('/blastresult', 'FrontController@getBlastResult');
+# Blast Result Page
+Route::get('/vlast', 'FrontController@getVlastForm');
 # Lab Page
 Route::get('/lab', 'FrontController@getLabForm');
 # Lines of Research
@@ -158,8 +163,9 @@ Route::controller('user', 'UserController');
 
 
 Route::get('/hoxfamily', 'HoxFamily@index');
+Route::get('/download/seqs/{fid}', array('as' => 'seq.download', 'uses' => 'HoxFamily@downloadSequence'));
 
-Route::post('/download/seq', array('as' => 'seq.download', 'uses' => 'HoxFamily@downloadSeq'));
+Route::get('/download/seq/{mid}', array('as' => 'seq.download', 'uses' => 'HoxFamily@downloadSeq'));
 Route::get('/hoxfamily/data', 'HoxFamily@getData');
 Route::get('/hoxfamily/{id}', 'HoxFamily@getMember');
 Route::get('/hoxfamily/{id}/data', 'HoxFamily@getMemberData');

@@ -161,7 +161,7 @@ public function getDetail($mid)
             'name'   => 'required',
             'loc' => 'required',
             'acc' => 'required',
-            'seqfile' => 'required',
+            
 
             
         );

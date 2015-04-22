@@ -33,15 +33,40 @@ class HoxFamily extends \BaseController {
 
 	}
 
-	public function downloadSeq(){
+	public function downloadSeq($mid){
 
 		//get format from the database which member is currently used
-		$member = Members::where('MID', '=', Input::get('mid'))->first()->toArray();
-		
+		$member = Members::where('MID', '=', $mid)->first()->toArray();
+		$family = Genefamily::where('FID', '=', $member['FID'])->first()->toArray();
 		//generate file from the content according to the format
-		$fileToSave = strtolower($member['MemberName']).'.'.Input::get('format');
-		File::put($fileToSave, $member['seqfile']);
-		return Response::json(array('url'=>public_path().'/'.$fileToSave));
+		$fileToSave = strtolower($member['MemberName']).'.fasta';
+
+		File::put($fileToSave, $member['seqfile'] .  $family['seqfile']);
+
+		return Response::download(public_path().'/'.$fileToSave);
+
+		//return Response::json(array('url'=>public_path().'/'.$fileToSave));
+		//save file to disk 
+		//print_r();exit;
+
+		//use the path above in $pathToFile
+		
+		
+
+	}
+	public function downloadSequence($fid){
+
+		//get format from the database which member is currently used
+		//$member = Members::where('MID', '=', $mid)->first()->toArray();
+		$family = Genefamily::where('FID', '=', $fid)->first()->toArray();
+		//generate file from the content according to the format
+		$fileToSave = strtolower($family['GeneFamilyName']).'.fasta';
+
+		File::put($fileToSave, $family['seqfile']);
+
+		return Response::download(public_path().'/'.$fileToSave);
+
+		//return Response::json(array('url'=>public_path().'/'.$fileToSave));
 		//save file to disk 
 		//print_r();exit;
 
