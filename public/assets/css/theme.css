@@ -1,9 +1,9 @@
 .jumbotron{
 background-color: #FFFFFF;
-border-top: 1px solid #7401DF;
-border-bottom: 1px solid #7401DF;
-border-right: 1px solid #7401DF;
-border-left: 1px solid #7401DF;
+border-top: 1px solid #3E87C6;
+border-bottom: 1px solid #3E87C6;
+border-right: 1px solid #3E87C6;
+border-left: 1px solid #3E87C6;
 /*background-color:none !important;*/
 }
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
@@ -14,8 +14,8 @@ border-left: 1px solid #7401DF;
 
 .navbar {
 	
-border-top: 1px solid #7401DF;
-border-bottom: 1px solid #7401DF;
-border-right: 1px solid #7401DF;
-border-left: 1px solid #7401DF;
+border-top: 1px solid #3E87C6;
+border-bottom: 1px solid #3E87C6;
+border-right: 1px solid #3E87C6;
+border-left: 1px solid #3E87C6;
 }

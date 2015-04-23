@@ -50,7 +50,7 @@
 									      				<div class="qs">
 									        				<div class="formblock all" id="qseq">
 									           					 <label for="seq">Please enter Protein FASTA sequence of minimum 100 in aminoacid length.               
-									               						<a href="#" title="Clear query" class="clearlink" fieldtoclear="seq" id="clearquery">Clear</a>                              
+									               						                            
 									           					 </label>
 									            
 									           						 <textarea id="seq" class="reset" rows="5" cols="80" name="QUERY"></textarea>
@@ -60,19 +60,10 @@
 									         				</div>        
 									       				</div><!-- /.qs -->
 
-															      	<label for="upl" class="m">Or, upload file</label>
-															     	<div class="input  all">
-															      		<input type="file" id="upl" name="QUERYFILE">             
-															      			<a class="helplink jig-ncbitoggler ui-ncbitoggler ui-widget" title="Upload query file help" id="uploadHelp" href="#" aria-disabled="false" role="button" aria-expanded="false"><span class="ui-ncbitoggler-master-text"><span>[?]</span></span>
-																				<span class="ui-icon ui-icon-triangle-1-e"></span></a>
-															     					<div class="ui-helper-reset" aria-live="assertive">
-															      						<p class="helpbox ui-ncbitoggler-slave ui-ncbitoggler" aria-hidden="true">
-															      							 Use the browse button to upload sequence file in fasta from your local disk.     
-															      						</p>      
-															      					</div><!-- ARIA -->
-															        </div>																  
+															      											  
 									   			</fieldset>   
 											</div>
+
 
 									       		<div id="choosedb" class="section">
 													<div class="searchInfo all">
@@ -98,6 +89,7 @@
 						</div>
 					</div>
 				</div>	
+
 			</div>
 	</div>
 </div>

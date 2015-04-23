@@ -78,11 +78,12 @@
      			<div class="collapse navbar-collapse navbar-ex1-collapse">
          			<ul class="nav navbar-nav nav-tabs">
 								<li ><a href="{{{ URL::to('') }}}">Home</a></li>
+								<li ><a href="#">About</a></li>
 								<li  class="dropdown">
           							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="menu" aria-expanded="false"> Human Paralogy Blocks <span class="caret"></span></a>
 					           		<ul class="dropdown-menu" role="menu">
 			                      		<li class="dropdown-submenu">
-			                            	  <a tabindex="-1" href="#"><b>HSA:2/7/12/17</b> (HOX-cluster paralogon)</a>
+			                            	  <a tabindex="-1" href="#"><span style="color:#80BFFF">HSA:2/7/12/17 (HOX-cluster paralogon)</span></a>
 				                              <ul class="nav nav-tabs nav-stacked">
 				                                <li><a tabindex="-1" href="{{{ URL::to('hox-info') }}}"> HOX Info</a></li>
 				                                <li><a tabindex="-1" href="{{{ URL::to('hox-synteny') }}}">Synteny</a></li>
@@ -113,9 +114,15 @@
 	         					 	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Useful Links <span class="caret"></span></a>
 									<ul class="dropdown-menu" role="menu">
 									<ul class="nav nav-tabs nav-stacked">
+									 <li><a href="http://www.ncbi.nlm.nih.gov/">Ncbi</a></li>
+	           							  <li><a href="http://www.genecards.org/">GeneCard</a></li>
 	           							 <li><a href="http://www.ensembl.org/index.html">Ensembl</a></li>
 	           							  <li><a href="http://www.genenames.org/">HGNC</a></li>
 	           							   <li><a href="http://www.uniprot.org/">UniProt</a></li>
+	           							   <li><a href="http://www.megasoftware.net/">Mega</a></li>
+	           							  <li><a href="https://genome.ucsc.edu/">UCSC</a></li>
+	           							   <li><a href="http://source-search.princeton.edu/">Source</a></li>
+	           							   <li><a href="http://jgi.doe.gov/">JGI</a></li>
 	            						</ul> 
 	         						</ul>
          						</li>
@@ -126,19 +133,10 @@
 						                        <li class="divider"></li>
 						                        <li><a href="{{{ URL::to('/fetch') }}}">HSA:1/2/8/20 Search</a></li>
 						                    </ul>
-						                    <li>
-							                    <ul>
-							                        <form class="navbar-form navbar-left" role="search">
-							                    		 <div class="form-group">
-							                      			 <input type="text" class="form-control" placeholder="Search">
-							                      		 </div>
-							                    		 <button type="submit" class="btn btn-primary btn-xs">Submit</button>
-							                   		</form>
-											 	</ul> 
-										 	</li>
+						                    
 								</li>
 			                        <li> 
-			                         	<ul class="nav navbar-nav nav-tabs pull-right ">
+			                         	<ul class="nav navbar-nav nav-tabs nav-pull-right ">
 			                            	<li><a href="{{{ URL::to('admin') }}}">Admin</a></li>
 			                          	</ul> 
 			                        </li>
