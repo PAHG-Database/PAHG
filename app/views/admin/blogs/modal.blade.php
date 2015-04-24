@@ -162,45 +162,46 @@
 
  <script type="text/javascript">
 $(document).ready(function(){
-$('.close_popup').click(function(){
-parent.oTable.fnReloadAjax();
-parent.jQuery.fn.colorbox.close();
-return false;
-});
-$('#deleteForm').submit(function(event) {
-var form = $(this);
-$.ajax({
-type: form.attr('method'),
-url: form.attr('action'),
+    $('.close_popup').click(function(){
+        parent.oTable.fnReloadAjax();
+        parent.jQuery.fn.colorbox.close();
+        return false;
+    });
+    $('#deleteForm').submit(function(event) {
+        var form = $(this);
+        $.ajax({
+            type: form.attr('method'),
+                url: form.attr('action'),
 data: form.serialize()
-}).done(function() {
-parent.jQuery.colorbox.close();
-parent.oTable.fnReloadAjax();
-}).fail(function() {
-});
-event.preventDefault();
-});
+        }).done(function() {
+            parent.jQuery.colorbox.close();
+            parent.oTable.fnReloadAjax();
+        }).fail(function() {
+        });
+        event.preventDefault();
+    });
 });
 $(prettyPrint);
 tinymce.init({
-	selector: "textarea",
-		theme: "modern",
-		plugins: [
-			"advlist autolink lists link image charmap print preview hr anchor pagebreak",
-			"searchreplace wordcount visualblocks visualchars code fullscreen",
-			"insertdatetime media nonbreaking save table contextmenu directionality",
+    selector: "textarea",
+        theme: "modern",
+        plugins: [
+            "advlist autolink lists link image charmap print preview hr anchor pagebreak",
+            "searchreplace wordcount visualblocks visualchars code fullscreen",
+            "insertdatetime media nonbreaking save table contextmenu directionality",
             "emoticons template paste textcolor colorpicker textpattern"
         ],
-        external_filemanager_path:"http://spacecog.com/lab/public/filemanager/",
+        relative_urls:false,
+        external_filemanager_path:"/lab/public/filemanager/",
         filemanager_title:"Responsive Filemanager" ,
-        external_plugins: { "filemanager" : "http://spacecog.com/lab/public/assets/js/filemanager/plugin.min.js"},
+        external_plugins: { "filemanager" : "/lab/public/assets/js/filemanager/plugin.min.js"},
         toolbar1: "undo redo | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | styleselect",
         toolbar2: "| responsivefilemanager | link unlink anchor | image media | forecolor backcolor  | print preview code ",
-		image_advtab: true,
-		templates: [
-			{title: 'Test template 1', content: 'Test 1'},
-			{title: 'Test template 2', content: 'Test 2'}
-		]
+        image_advtab: true,
+        templates: [
+            {title: 'Test template 1', content: 'Test 1'},
+            {title: 'Test template 2', content: 'Test 2'}
+        ]
 });
 
 //$('.wysihtml5').wysihtml5();

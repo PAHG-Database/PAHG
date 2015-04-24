@@ -5,7 +5,6 @@
 
     {{-- Delete Post Form --}}
     <form id="deleteForm" class="form-horizontal" method="post" action="@if (isset($fid)){{ URL::to('admin/family/' . $fid . '/delete') }}@endif" autocomplete="off">
-        
         <!-- CSRF Token -->
         <input type="hidden" name="_token" value="{{{ csrf_token() }}}" />
         <input type="hidden" name="id" value="{{ $fid }}" />
