@@ -11,11 +11,11 @@
 
 {{-- Content --}}
 @section('content')
-	<div class="page-header">
-		<h3>
-			{{{ $title }}}
-		</h3>
-	</div>
+	
+		<div class="well" style="padding: 15px">
+   			 <h4><strong> Summary Table </strong></h4><h6> Summary of the phylogenetic analysis of gene families whose three or more members are residing on human paralogon HSA 1/2/8/20 </h6>
+		</div>
+	<div class="well" style="padding: 5px">
 
 	<table id="blogs" class="table table-striped table-hover">
 		<thead>
@@ -31,6 +31,7 @@
 		<tbody>
 		</tbody>
 	</table>
+</div>
 @stop
 
 {{-- Scripts --}}

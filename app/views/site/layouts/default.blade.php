@@ -35,6 +35,7 @@
 	     <link rel="stylesheet" href="{{asset('assets/css/styles.css')}}">
 	     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	     <link rel="stylesheet" href="{{asset('assets/css/theme.css')}}">
+	     <link rel="stylesheet" href="{{asset('assets/css/submenu.css')}}">
 
 		
 		<style>
@@ -57,7 +58,7 @@
 		<link rel="shortcut icon" href="{{{ asset('assets/ico/favicon.png') }}}">
 	</head>
 
-<body  style="background:#F2EFFB" >
+<body   >
 <!-- To make sticky footer need to wrap in a div -->
 <div id="wrap">
 	<!-- Navbar -->
@@ -78,52 +79,67 @@
      			<div class="collapse navbar-collapse navbar-ex1-collapse">
          			<ul class="nav navbar-nav nav-tabs">
 								<li ><a href="{{{ URL::to('') }}}">Home</a></li>
-								<li ><a href="#">About</a></li>
-								<li  class="dropdown">
-          							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="menu" aria-expanded="false"> Human Paralogy Blocks <span class="caret"></span></a>
-					           		<ul class="dropdown-menu" role="menu">
-			                      		<li class="dropdown-submenu">
-			                            	  <a tabindex="-1" href="#"><span style="color:#80BFFF">HSA:2/7/12/17 (HOX-cluster paralogon)</span></a>
-				                              <ul class="nav nav-tabs nav-stacked">
-				                                <li><a tabindex="-1" href="{{{ URL::to('hox-info') }}}"> HOX Info</a></li>
-				                                <li><a tabindex="-1" href="{{{ URL::to('hox-synteny') }}}">Synteny</a></li>
-				                                <li><a tabindex="-1" href="{{{ URL::to('hox-time-period') }}}">Time Period</a></li>
-				                                <li><a tabindex="-1" href="{{{ URL::to('hox-co-duplicated-groups') }}}">Co-duplicated groups</a></li>
-				                                <li><a tabindex="-1" href="#">Trees</a></li>
-				                                <li><a tabindex="-1" href="{{{ URL::to('/find') }}}">Sequence Files</a></li>
-				                                <li><a tabindex="-1" href="{{{ URL::to('summary') }}}">Summary Table</a></li> 
-				                              </ul>
-                            			</li>
-                   							<li class="divider"></li>
-				                    	<li class="dropdown-submenu">
-				                        	<a tabindex="-1" href="#"><b>HSA:1/2/8/20</b></a>
-					                          <ul class="nav nav-tabs nav-stacked">
-					                             <li><a tabindex="-1" href="#">Info</a></li>
-					                              <li><a tabindex="-1" href="#">Synteny</a></li>
-					                              <li><a tabindex="-1" href="#">Time Period</a></li>
-					                              <li><a tabindex="-1" href="#">Co-duplicated groups</a></li>
-					                              <li><a tabindex="-1" href="#">Trees</a></li>
-					                              <li><a tabindex="-1" href="{{{ URL::to('/fetch') }}}">Sequence Files</a></li>
-					                              <li><a tabindex="-1" href="{{{ URL::to('summary2012') }}}">Summary Table</a></li>
-					                          </ul>
-				                   		</li>                  
-                  					</ul>
-                  				</li>
+								
+								<li class="dropdown">
+                      				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">About <span class="caret"></span></a>
+					                    	<ul class="dropdown-menu" role="menu">
+						                       <li><a href="{{{ URL::to('/about') }}}">VGA</a></li>
+						                        <li class="divider"></li>
+						                        <li><a href="{{{ URL::to('/lab') }}}">CEGRG</a></li>
+						                    </ul>
+						                    
+								</li>
+								<li ><a href="{{{ URL::to('/hoxfamily') }}}">Browse</a></li>
+
+
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="menu" aria-expanded="false"> Human Paralogy Blocks <span class="caret"></span></a>
+    		<ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+              
+                <li class="dropdown-submenu">
+                  <a tabindex="-1" href="#">HSA:2/7/12/17 (HOX-cluster paralogon)</a>
+	                <ul class="dropdown-menu">
+		                 <li><a tabindex="-1" href="{{{ URL::to('hox-info') }}}"> HOX Info</a></li>
+						 <li><a tabindex="-1" href="{{{ URL::to('hox-synteny') }}}">Synteny</a></li>
+						 <li><a tabindex="-1" href="{{{ URL::to('hox-time-period') }}}">Time Period</a></li>
+						 <li><a tabindex="-1" href="{{{ URL::to('hox-co-duplicated-groups') }}}">Co-duplicated groups</a></li>
+		                  <li><a tabindex="-1" href="#">Trees</a></li>
+		                  <li><a tabindex="-1" href="{{{ URL::to('/find') }}}">Sequence Files</a></li>
+						  <li><a tabindex="-1" href="{{{ URL::to('summary') }}}">Summary Table</a></li>
+	                </ul>
+                </li>
+                <li class="divider"></li>
+                <li class="dropdown-submenu">
+                  <a tabindex="-1" href="#">HSA:1/2/8/20</a>
+	                <ul class="dropdown-menu">
+		                 <li><a tabindex="-1" href="{{{ URL::to('hox-info') }}}">Info</a></li>
+						 <li><a tabindex="-1" href="{{{ URL::to('hox-synteny') }}}">Synteny</a></li>
+						 <li><a tabindex="-1" href="{{{ URL::to('hox-time-period') }}}">Time Period</a></li>
+						 <li><a tabindex="-1" href="{{{ URL::to('hox-co-duplicated-groups') }}}">Co-duplicated groups</a></li>
+		                 <li><a tabindex="-1" href="#">Trees</a></li>
+		                  <li><a tabindex="-1" href="{{{ URL::to('/find') }}}">Sequence Files</a></li>
+						  <li><a tabindex="-1" href="{{{ URL::to('summary') }}}">Summary Table</a></li>
+	                </ul>
+                </li>
+            </ul>
+        </li>
+
+								
                    				
          						<li class="dropdown">
 	         					 	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Useful Links <span class="caret"></span></a>
 									<ul class="dropdown-menu" role="menu">
-									<ul class="nav nav-tabs nav-stacked">
-									 <li><a href="http://www.ncbi.nlm.nih.gov/">Ncbi</a></li>
-	           							  <li><a href="http://www.genecards.org/">GeneCard</a></li>
+									
+									 <li><a href="http://www.ncbi.nlm.nih.gov/">NCBI</a></li>
+	           							  <li><a href="http://www.genecards.org/">GeneCards</a></li>
 	           							 <li><a href="http://www.ensembl.org/index.html">Ensembl</a></li>
 	           							  <li><a href="http://www.genenames.org/">HGNC</a></li>
 	           							   <li><a href="http://www.uniprot.org/">UniProt</a></li>
-	           							   <li><a href="http://www.megasoftware.net/">Mega</a></li>
+	           							   <li><a href="http://www.megasoftware.net/">MEGA</a></li>
 	           							  <li><a href="https://genome.ucsc.edu/">UCSC</a></li>
-	           							   <li><a href="http://source-search.princeton.edu/">Source</a></li>
+	           							   <li><a href="http://source-search.princeton.edu/">SOURCE</a></li>
 	           							   <li><a href="http://jgi.doe.gov/">JGI</a></li>
-	            						</ul> 
+	            						 
 	         						</ul>
          						</li>
          		                <li class="dropdown">
@@ -183,7 +199,7 @@
 					<div class="col-md-10">
 						<ul class="footer-nav"> 		
 							<li><a href="http://twitter.com" onclick="_gaq.push(['_trackEvent', 'exit', 'footer', 'Twitter']);"><i class="fa fa-twitter"></i> Twitter</a></li>	
-							<li><a href="http://github.com/m-waqas" onclick="_gaq.push(['_trackEvent', 'exit', 'footer', 'GitHub']);"><i class="fa fa-github"></i> GitHub</a></li>
+							<li><a href="{{{ URL::to('/faqs') }}}" onclick="_gaq.push(['_trackEvent', 'exit', 'footer', 'FAQs']);"><i class="fa fa-github"></i> FAQs</a></li>
 							<li><a href="https://www.facebook.com/waqaskhokhar7" onclick="_gaq.push(['_trackEvent', 'exit', 'footer', 'Facebook']);"><i class="fa fa-facebook"></i> Facebook</a></li>
 							<li><a href="{{{ URL::to('/contact') }}} "><span class="glyphicon glyphicon-phone-alt"> Contact</a></li> 
 						</ul>

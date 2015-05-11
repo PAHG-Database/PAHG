@@ -164,4 +164,12 @@ class FrontController extends BaseController {
 		return View::make('site/front/faqs');
 	}
 
+#About
+	public function getAboutForm()
+	{
+		
+
+		return View::make('site/front/about');
+	}
+
 }

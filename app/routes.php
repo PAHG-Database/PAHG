@@ -124,6 +124,8 @@ Route::get('summary/create', 'AdminSummaryController@getCreate');
  */
 # FAQs Page
 Route::get('/faqs', 'FrontController@getFaqForm');
+# About Page
+Route::get('/about', 'FrontController@getAboutForm');
 # Blast front Page
 Route::get('/blast', 'FrontController@getBlastForm');
 

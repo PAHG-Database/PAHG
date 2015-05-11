@@ -11,16 +11,14 @@
 
 {{-- Content --}}
 @section('content')
-	<div class="page-header">
-		<h3>
-			{{{ $title }}}
-		</h3>
-	</div>
-
+	<div class="well" style="padding: 15px">
+   			 <h4><strong> Summary Table </strong></h4><h6> Summary of the phylogenetic analysis of gene families whose three or more members are residing on HOX-cluster paralogons. </h6>
+		</div>
+	<div class="well" style="padding: 5px">
 	<table id="blogs" class="table table-striped table-hover">
 		<thead>
 			<tr>
-				<th class="col-md-2">Family Name</th>
+				<th class="col-md-2">Family Names</th>
 				<th class="col-md-1">Hsa21</th>
 				<th class="col-md-1">Hsa7</th>
 				<th class="col-md-1">Hsa12</th>
@@ -32,6 +30,7 @@
 		<tbody>
 		</tbody>
 	</table>
+	</div>
 @stop
 
 {{-- Scripts --}}

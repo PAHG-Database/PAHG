@@ -40,3 +40,15 @@ border-left: 1px solid #3E87C6;
 	background-color: #3E87C6;
     color: #FFFFFF;
 }
+#blogs_filter label{
+	font-size: 18px;
+}
+#pubs {
+
+
+	padding: 10px;
+}
+#figs {
+	padding: 25px;
+
+}

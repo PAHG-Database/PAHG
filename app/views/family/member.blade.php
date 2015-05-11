@@ -12,14 +12,14 @@
 {{-- Content --}}
 @section('content')
 	<div class="page-header">
-		<h3>
-			{{{ $title }}}
-			<div class="pull-right">
-				<a href="{{{ URL::to('admin/blogs/create') }}}" class="btn btn-small btn-info iframe"><span class="glyphicon glyphicon-plus-sign"></span> Create</a>
-			</div>
-		</h3>
+		<div class="well" style="padding: 15px">
+		<h4>
+			Members
+			<a class="btn btn-primary pull-right" type="button" href="{{{ URL::to('/hoxfamily') }}}"><i class="icon-arrow-left icon-white"></i> Back to Famlies</a>
+		</h4>
+		</div>
 	</div>
-
+<div class="well" style="padding: 5px">
 	<table id="blogs" class="table table-striped table-hover">
 		<thead>
 			<tr>
@@ -31,6 +31,7 @@
 		<tbody>
 		</tbody>
 	</table>
+</div>
 @stop
 
 {{-- Scripts --}}

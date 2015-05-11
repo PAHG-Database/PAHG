@@ -47,11 +47,9 @@
 				    	<div class="caption">
 				        <h6 ><b>Neighbour Joining Tree</b></h6>
 				      </div>
-				    <a href="data:image/jpeg;base64, {{{ $family['NjTreePic'] }}}" data-toggle="lightbox" data-title="NjTreePic" data-footer="" title="">
+				    <a href="data:image/jpeg;base64, {{{ $family['NjTreePic'] }}}" data-toggle="lightbox" data-title='<div class="content"> <ul> <li class="green"><a href="#">Vertebrate Specific Duplication:- Prior to teleost fish-tetrapod split</a></li><li class="red"><a href="#">Ancient Duplication:- Prior to vertebrate-invertebrate split</a> </li> <li class="blue"><a href="#">Tetrapod Specific duplication:- In Mammalian History</a></li> </ul> </div>' data-footer='<div class="content pull-left"> <ul> <li class="green"><a href="#">Vertebrate Specific Duplication</a></li><li class="blue"><a href="#">Tetrapod Specific duplication:- In Mammalian History</a></li> </ul> </div>'>
 							<img src="data:image/jpeg;base64, {{{ $family['NjTreePic'] }}}" class="img-responsive" title="" style="width:200px">
 						</a>
-				      
-				      
 				    </div>
 				  </div>
 				  <div class="col-sm-12 col-md-4 col-md-offset-4">
@@ -71,7 +69,7 @@
 				    	<div class="caption">
 				        <h6><b>Synteny</b></h6>
 				      </div>
-				     <a href="data:image/jpeg;base64, {{{ $family['Syntany'] }}}" data-toggle="lightbox"  data-html="true" @if($family['Year'] != "2015") data-title='<div class="content"> <ul> <li class="red"><a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2235844/">Abbasi et al., 2007</a> </li> <li class="blue"><a href="http://www.ncbi.nlm.nih.gov/pubmed/20696259">Abbasi et al., 2010</a></li> <li class="pink"><a href="http://www.ncbi.nlm.nih.gov/pubmed/23142696">Asrar et al., 2013</a></li> <li class="green"><a href="http://www.ncbi.nlm.nih.gov/pubmed/24821622">Ambreen et al., 2014</a></li> </ul> </div>' @endif data-footer="" title="">
+				     <a href="data:image/jpeg;base64, {{{ $family['Syntany'] }}}" data-toggle="lightbox"  data-html="true" @if($family['Year'] != "2015") data-title="Synteny" @endif data-footer="" title="">
 							<img src="data:image/jpeg;base64, {{{ $family['Syntany'] }}}" class="img-responsive" title="" style="width:200px">
 						</a>
 				    </div>
@@ -82,7 +80,7 @@
 				    	<div class="caption">
 				        <h6><b>Co-duplicated groups</b></h6>
 				      </div>
-				    <a href="data:image/jpeg;base64, {{{ $family['Tree'] }}}" data-toggle="lightbox" data-html="true"  @if($family['Year'] != "2015") data-title='<div class="content"> <ul> <li class="red"><a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2235844/">Abbasi et al., 2007</a> </li> <li class="blue"><a href="http://www.ncbi.nlm.nih.gov/pubmed/20696259">Abbasi et al., 2010</a></li> <li class="pink"><a href="http://www.ncbi.nlm.nih.gov/pubmed/23142696">Asrar et al., 2013</a></li> <li class="green"><a href="http://www.ncbi.nlm.nih.gov/pubmed/24821622">Ambreen et al., 2014</a></li> </ul> </div>' @endif data-footer="" title="">
+				    <a href="data:image/jpeg;base64, {{{ $family['Tree'] }}}" data-toggle="lightbox" data-html="true"  @if($family['Year'] != "2015") data-title="Coduplicated groups" @endif data-footer="" title="">
 							<img src="data:image/jpeg;base64, {{{ $family['Tree'] }}}" class="img-responsive" title="" style="width:200px">
 						</a>
 				    </div>
@@ -92,7 +90,7 @@
 				    	<div class="caption ">
 				        <h6><b>Time Period</b></h6>
 				      </div>
-						<a href="data:image/jpeg;base64, {{{ $family['TPPic'] }}}" data-toggle="lightbox" data-html="true"   @if($family['Year'] != "2015") data-title='<div class="content"> <ul> <li class="red"><a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2235844/">Abbasi et al., 2007</a> </li> <li class="blue"><a href="http://www.ncbi.nlm.nih.gov/pubmed/20696259">Abbasi et al., 2010</a></li> <li class="pink"><a href="http://www.ncbi.nlm.nih.gov/pubmed/23142696">Asrar et al., 2013</a></li> <li class="green"><a href="http://www.ncbi.nlm.nih.gov/pubmed/24821622">Ambreen et al., 2014</a></li> </ul> </div>' @endif data-footer="" title="">
+						<a href="data:image/jpeg;base64, {{{ $family['TPPic'] }}}" data-toggle="lightbox" data-html="true"   @if($family['Year'] != "2015") data-title="Time Period" @endif data-footer="" title="">
 							<img src="data:image/jpeg;base64, {{{ $family['TPPic'] }}}" class="img-responsive" title="" style="width:200px">
 						</a>
 				      

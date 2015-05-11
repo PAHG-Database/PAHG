@@ -192,9 +192,9 @@ tinymce.init({
             "emoticons template paste textcolor colorpicker textpattern"
         ],
         relative_urls:false,
-        external_filemanager_path:"/lab/public/filemanager/",
+        external_filemanager_path:"/genomedb/public/filemanager/",
         filemanager_title:"Responsive Filemanager" ,
-        external_plugins: { "filemanager" : "/lab/public/assets/js/filemanager/plugin.min.js"},
+        external_plugins: { "filemanager" : "/genomedb/public/assets/js/filemanager/plugin.min.js"},
         toolbar1: "undo redo | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | styleselect",
         toolbar2: "| responsivefilemanager | link unlink anchor | image media | forecolor backcolor  | print preview code ",
         image_advtab: true,

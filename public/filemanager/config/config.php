@@ -56,7 +56,7 @@ $config = array(
 	|
 	*/
 
-	'base_url' => 'http://spacecog.com/',
+	'base_url' => 'http://localhost/',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -66,7 +66,7 @@ $config = array(
 	| with start and final /
 	|
 	*/
-	'upload_dir' => 'lab/public/source/',
+	'upload_dir' => 'genomedb/public/source/',
 
 	/*
 	|--------------------------------------------------------------------------
