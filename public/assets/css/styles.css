@@ -40,3 +40,16 @@ border-left: 1px solid #3E87C6;
 	background-color: #3E87C6;
     color: #FFFFFF;
 }
+.modal-dialog {
+        width: 80%; /* respsonsive width */   
+    }
+    .tooltip{
+        z-index: 2000 !important;
+    }
+        #tip {
+        background-color:white;
+        border:1px solid blue;
+        position:absolute;
+        left:-400px;
+        top:100px;
+    }

@@ -46,7 +46,26 @@
 				        <div class="panel panel-default">
 				            <div class="panel-heading">
 				                Images
-				            </div>
+                            </div>
+<!-- Modal -->
+<div class="modal fade large" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        <canvas id="tree"></canvas>
+        <canvas id="tip" width=100 height=25></canvas>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 				            <div class="panel-body">
 					            <div class="row">
 								  <div class="col-sm-6 col-md-4">
@@ -58,13 +77,11 @@
 								      <div class="caption">
 								        <h3>Time Period</h3>
 								      </div>
-								    </div>
+                                    </div>
 								  </div>
 								  <div class="col-sm-6 col-md-4">
 								    <div class="thumbnail">
-								    <a href="data:image/jpeg;base64, {{{ $family['family']['NjTreePic'] }}}" data-toggle="lightbox" data-title="NjTreePic" data-footer="" title="">
-										<img src="data:image/jpeg;base64, {{{ $family['family']['NjTreePic'] }}}" class="img-responsive" title="" style="width:200px">
-									</a>
+                                        <img id="njt" src="data:image/jpeg;base64, {{{ $family['family']['NjTreePic'] }}}" class="img-responsive" title="" style="width:200px">
 								      <div class="caption">
 								        <h3>Neighbour Joining Tree</h3>
 								      </div>
@@ -218,6 +235,162 @@ jQuery( document ).ready( function( $ ) {
     } );
  
 } );
+var draw = false;
+$('#myModal').on('shown.bs.modal', function (e) {
+    if(!draw){
+        draw = true;
+        console.clear();
+        var canvas = $('canvas#tree');
+        var ctx = canvas[0].getContext( '2d' );
 
+        var tipCanvas = document.getElementById("tip");
+        var tipCtx = tipCanvas.getContext("2d");
+
+        var img = new Image;
+        img.crossOrigin = '';
+        img.src = $('#njt').attr('src');
+        img.onload = function() {
+        var width = img.width;
+        var height = img.height;
+        canvas.attr( 'width', width );
+        canvas.attr( 'height', height );
+
+        setTimeout( function() {
+            ctx.clearRect( 0, 0, width, height );
+            ctx.drawImage( img, 0, 0, width, height );
+            img.remove();
+
+            canvas.setHover([
+    {
+        color: [ 121, 145, 71, 255 ],
+            newColor: [ 121, 145, 71, 255 ],            // you can set this to show the detected area
+            difference: 36,                          // the color/alpha values can have a difference of 36
+            func: function() {                       // this is called on hover of the detected points
+                showTooltip( canvas, 'Tooltip-Content!', event );
+            }
+    }
+            ]);
+
+            canvas.setHover([
+    {
+        color: [ 251, 2, 0, 255 ],
+            newColor: [ 251, 2, 0, 255 ],            // you can set this to show the detected area
+            difference: 36,                          // the color/alpha values can have a difference of 36
+            func: function() {                       // this is called on hover of the detected points
+                showTooltip( canvas, 'Content!', event );
+            }
+    }
+            ]);
+
+
+            canvas.tooltip({
+                items: '*',
+                    content: '',
+                    track: true
+            });
+        });
+        }
+};
+
+$.fn.setHover = function( options ) {
+    var canvas = this;
+    var ctx = this[0].getContext( '2d' );
+    var imgData = ctx.getImageData( 0, 0, this.width(), this.height() );
+    var rgbaData = imgData.data;
+    var hover = [];
+
+    for( var i = 0; i < rgbaData.length; i += 4 ) {
+        $.each( options, function() {
+                if( rgbaData[i + 0] - this.difference < this.color[0] && rgbaData[i + 0] + this.difference > this.color[0] &&
+                    rgbaData[i + 1] - this.difference < this.color[1] && rgbaData[i + 1] + this.difference > this.color[1] &&
+                    rgbaData[i + 2] - this.difference < this.color[2] && rgbaData[i + 2] + this.difference > this.color[2] &&
+                    rgbaData[i + 3] - this.difference < this.color[3] && rgbaData[i + 3] + this.difference > this.color[3]
+                  ) {
+                // x-Coord: (i / 4) % canvas.width()
+                // y-Coord: Math.floor((i / 4) / canvas.width())
+                if( !hover[(i / 4) % canvas.width()] ) hover[(i / 4) % canvas.width()] = [];
+                hover[(i / 4) % canvas.width()].push({
+y: Math.floor((i / 4) / canvas.width()),
+props: this
+});
+                if( this.newColor ) {
+                rgbaData[i] = this.newColor[0];
+                rgbaData[i + 1] = this.newColor[1];
+                rgbaData[i + 2] = this.newColor[2];
+                rgbaData[i + 3] = this.newColor[3];
+                }
+                }
+                });
+}
+
+imgData.data = rgbaData;
+ctx.putImageData( imgData, 0, 0 );
+
+var show = false;
+
+canvas.on( 'mousemove.tooltipDetection', function( event ) {
+        if( hover[event.offsetX || event.originalEvent.layerX] ) {
+        show = false;
+        $.each( hover[event.offsetX || event.originalEvent.layerX], function( i, data ) {
+            if( data.y === (event.offsetY || event.originalEvent.layerY) ) {
+            show = data;
+            }
+            });
+
+        if( show ) {
+        show.props.func( event );
+        } else {
+        hideTooltip( canvas );
+        }
+        } else {
+        hideTooltip( canvas );
+        }
+        });
+};
+
+var tooltipVisible = true;
+
+function showTooltip( element, content, e ) {
+    mouseX = parseInt(e.clientX );
+    mouseY = parseInt(e.clientY );
+
+    // Put your mousemove stuff here
+    canvas.css( 'cursor', 'pointer' );
+
+    var dx = mouseX;
+    var dy = mouseY;
+    var pos = getCursorPosition(element, e);
+    tipCanvas.style.left = (pos[0])+"px";
+    tipCanvas.style.top = (pos[1])+"px";
+    tipCtx.clearRect(0, 0, tipCanvas.width, tipCanvas.height);
+    //                  tipCtx.rect(0,0,tipCanvas.width,tipCanvas.height);
+    tipCtx.fillText(content, 5, 15);
+
+
+
+}
+
+function hideTooltip( element ) {
+    canvas.css( 'cursor', '' );
+    tipCanvas.style.left = "-400px";
+}
+
+}); 
+
+function getCursorPosition(canvas, event) {
+    var x, y;
+
+    canoffset = $(canvas).offset();
+    x = event.clientX + document.body.scrollLeft + document.documentElement.scrollLeft - Math.floor(canoffset.left);
+    y = event.clientY + document.body.scrollTop + document.documentElement.scrollTop - Math.floor(canoffset.top) + 1;
+
+    return [x,y];
+}
+
+$('#njt').click(function(){
+
+    $('#myModal').modal('show');
+
+});
 </script>
 @stop
