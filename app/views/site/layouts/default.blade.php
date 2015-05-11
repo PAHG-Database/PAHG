@@ -34,6 +34,7 @@
 	    <link rel="stylesheet" href="{{asset('assets/css/cyto-chromosome.style.css')}}">
 	     <link rel="stylesheet" href="{{asset('assets/css/styles.css')}}">
 	     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css">
 	     <link rel="stylesheet" href="{{asset('assets/css/theme.css')}}">
 	     <link rel="stylesheet" href="{{asset('assets/css/submenu.css')}}">
 
@@ -215,7 +216,7 @@
 		<!-- Javascripts
 		================================================== -->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-	    <script src="{{asset('bootstrap/js/bootstrap.min.js')}}"></script>
+	    <script src="{{asset('bootstrap/js/bootstrap.js')}}"></script>
 	    <script src="{{asset('assets/js/bootstrap3-typeahead.js')}}"></script>
 	    <script src="{{asset('assets/js/wysihtml5/wysihtml5-0.3.0.js')}}"></script>
 	    <script src="{{asset('assets/js/wysihtml5/bootstrap-wysihtml5.js')}}"></script>
@@ -226,7 +227,9 @@
 	    <script src="{{asset('assets/js/prettify.js')}}"></script>
 	    <script src="{{asset('assets/js/selectize.js')}}"></script>
 	    <script src="{{asset('assets/js/ekko-lightbox-min.js')}}"></script>
-	    <script src="{{asset('assets/js/cyto-chromosome-vis.js')}}"></script>
+	    <script src="{{asset('assets/js/lightbox.js')}}"></script>
+        <script src="{{asset('assets/js/cyto-chromosome-vis.js')}}"></script>
+        <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 	    <script src="{{asset('assets/js/script.js')}}"></script>
 
 
