@@ -71,7 +71,7 @@
 				    	<div class="caption">
 				        <h6><b>Maximum Likelihood Tree</b></h6>
 				      </div>
-				     <a href="data:image/jpeg;base64, {{{ $family['MLTreePic'] }}}" data-toggle="lightbox" data-html="true" data-title="NLTreePic" data-footer="" title="">
+				     <a href="data:image/jpeg;base64, {{{ $family['MLTreePic'] }}}" data-toggle="lightbox" data-html="true" data-title="Maximum Likelihood Tree" data-footer="" title="">
 							<img src="data:image/jpeg;base64, {{{ $family['MLTreePic'] }}}" class="img-responsive" title="" style="width:200px">
 						</a>
 				    </div>
@@ -81,7 +81,7 @@
 				    	<div class="caption">
 				        <h6><b>Synteny</b></h6>
 				      </div>
-				     <a href="data:image/jpeg;base64, {{{ $family['Syntany'] }}}" data-toggle="lightbox"  data-html="true" @if($family['Year'] != "2015") data-title="Synteny" @endif data-footer="" title="">
+				     <a href="data:image/jpeg;base64, {{{ $family['Syntany'] }}}" data-toggle="lightbox"  data-html="true" data-title="Synteny" @if($family['Year'] != "2015")  @endif data-footer="" title="">
 							<img src="data:image/jpeg;base64, {{{ $family['Syntany'] }}}" class="img-responsive" title="" style="width:200px">
 						</a>
 				    </div>
@@ -92,7 +92,7 @@
 				    	<div class="caption">
 				        <h6><b>Co-duplicated groups</b></h6>
 				      </div>
-				    <a href="data:image/jpeg;base64, {{{ $family['Tree'] }}}" data-toggle="lightbox" data-html="true"  @if($family['Year'] != "2015") data-title="Coduplicated groups" @endif data-footer="" title="">
+				    <a href="data:image/jpeg;base64, {{{ $family['Tree'] }}}" data-toggle="lightbox" data-html="true" data-title="Coduplicated groups" @if($family['Year'] != "2015")  @endif data-footer="" title="">
 							<img src="data:image/jpeg;base64, {{{ $family['Tree'] }}}" class="img-responsive" title="" style="width:200px">
 						</a>
 				    </div>
@@ -102,7 +102,7 @@
 				    	<div class="caption ">
 				        <h6><b>Time Period</b></h6>
 				      </div>
-						<a href="data:image/jpeg;base64, {{{ $family['TPPic'] }}}" data-toggle="lightbox" data-html="true"   @if($family['Year'] != "2015") data-title="Time Period" @endif data-footer="" title="">
+						<a href="data:image/jpeg;base64, {{{ $family['TPPic'] }}}" data-toggle="lightbox" data-html="true" data-title="Time Period"   @if($family['Year'] != "2015")  @endif data-footer="" title="">
 							<img src="data:image/jpeg;base64, {{{ $family['TPPic'] }}}" class="img-responsive" title="" style="width:200px">
 						</a>
 				      

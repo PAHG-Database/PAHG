@@ -1,21 +1,17 @@
 .site-footer
 {
-	background-color:#FFFFFF;
-	padding-top: 5px; 
-	border-top: 1px solid #3E87C6;
+background-color:#FFFFFF;
+padding-top: 5px; 
+border-top: 1px solid #3E87C6;
 border-bottom: 1px solid #3E87C6;
 border-right: 1px solid #3E87C6;
 border-left: 1px solid #3E87C6;
-
-  
 }
   
 .bottom-footer
 {
-
 	margin-top: 0px;
 	padding-top: 2px;
-
 } 
 .footer-nav
 {
@@ -66,9 +62,6 @@ border-left: 1px solid #3E87C6;
 	margin-top: 50px;
 
 }
-
-
-
 .modal-dialog {
         width: 90%; /* respsonsive width */   
     }
@@ -82,12 +75,29 @@ border-left: 1px solid #3E87C6;
         left:-800px;
         top:100px;
     }
-
-.carousel-control .glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right, .carousel-control .icon-prev, .carousel-control .icon-next{
+.carousel-control .glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right, .carousel-control .icon-prev, .carousel-control .icon-next
+{
 
 	color: #357ebd
 }
-.panel-heading p{
+.panel-heading p
+{
 
 	margin: 0px;
 }
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to { 
+    -webkit-transform: rotate(360deg);
+  }
+}
+#rotateimage
+{
+    -webkit-animation-name:             rotate; 
+    -webkit-animation-duration:         10.0s; 
+    -webkit-animation-iteration-count:  infinite;
+    -webkit-animation-timing-function: linear;
+}
+

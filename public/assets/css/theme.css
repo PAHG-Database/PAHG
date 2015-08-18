@@ -1,36 +1,31 @@
-
 .jumbotron{
-
 background-color: #F2EFFB;
 border-top: 1px solid #3E87C6;
 border-bottom: 1px solid #3E87C6;
 border-right: 1px solid #3E87C6;
 border-left: 1px solid #3E87C6;
-
+width: 700px;
+height: 400px;
 /*background-color:none !important;*/
 }
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-    background-color: #3E87C6 ;
-    color: #FFFFFF;
+ background-color: #3E87C6 ;
+ color: #FFFFFF;
 }
-
-
 .navbar {
-	margin-bottom: 0px;
+margin-bottom: 0px;
 border-top: 1px solid #3E87C6;
 border-bottom: 1px solid #3E87C6;
 border-right: 1px solid #3E87C6;
 border-left: 1px solid #3E87C6;
 }
-
 #njt{
-    cursor:pointer;
+cursor:pointer;
 }
 .jumbotrona {
-
-	margin-bottom: 10px;
-	text-align: center;
-	background-color: #F2EFFB;
+margin-bottom: 10px;
+text-align: center;
+background-color: #F2EFFB;
 border-top: 1px solid #3E87C6;
 border-bottom: 1px solid #3E87C6;
 border-right: 1px solid #3E87C6;

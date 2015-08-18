@@ -267,10 +267,8 @@ public function getIndexfgfr()
 		));
         return Datatables::of($posts)
 
-->add_column('actions', '<a href="{{{ URL::to(\'admin/summary/\' . $id . \'/edit\' ) }}}" class="btn btn-default btn-xs iframe" >{{{ Lang::get(\'button.edit\') }}}</a>
-           <a href="{{{ URL::to(\'admin/summary/\' . $id . \'/delete\' ) }}}" class="btn btn-xs btn-danger iframe">{{{ Lang::get(\'button.delete\') }}}</a>
-          
-           ')
+
+
  ->remove_column('id')
         ->make();
     }
@@ -283,8 +281,13 @@ public function getIndexfgfr()
             //, 'genefamily.MLTreePic as mltppic')
         ));
         return Datatables::of($posts)
+<<<<<<< HEAD
 
 
+=======
+
+
+>>>>>>> origin/master
         ->make();
 
     }

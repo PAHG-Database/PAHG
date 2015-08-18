@@ -149,7 +149,7 @@ Islamabad Pakistan</b></font><div><font size="3"><b>
 </div> 
 </div> 
 <div id="sites-chrome-adminfooter-container">
-<div xmlns="http://www.w3.org/1999/xhtml" class="sites-adminfooter" role="navigation"><p><p class="muted credit"> Copyright @ 2015 National Center for Bioinformatics<a href="http://ncb.qau.edu.pk/">Quaid-e-Azam University</a></p></div>
+<div xmlns="http://www.w3.org/1999/xhtml" class="sites-adminfooter" role="navigation"><p><p class="muted credit"> Copyright @ 2015 National Center for Bioinformatics<a href="http://ncb.qau.edu.pk/">Quaid-i-Azam University</a></p></div>
 </div>
 </div> 
 </div> 

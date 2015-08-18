@@ -170,7 +170,7 @@ Route::post('user/login', 'UserController@postLogin');
 Route::controller('user', 'UserController');
 
 //:: Application Routes ::
-
+Route::get('labtest', 'LabtestController@getIndex');
 
 Route::get('/hoxfamily', 'HoxFamily@index');
 Route::get('/download/seqs/{fid}', array('as' => 'seq.download', 'uses' => 'HoxFamily@downloadSequence'));
@@ -190,6 +190,10 @@ Route::get('/search', 'FrontController@getSearch');
 Route::get('/genes', 'FrontController@getGenes');
 Route::get('/fetch', 'FrontController@getfetchForm');
 
+# Search paralogon FGFR
+Route::get('/search', 'FrontController@getSearch');
+Route::get('/genes', 'FrontController@getGenes');
+Route::get('/fetchfgfr', 'FrontController@getfetchfgfrForm');
 # Posts - Second to last set, match slug
 Route::get('{postSlug}', 'BlogController@getView');
 Route::post('{postSlug}', 'BlogController@postView');

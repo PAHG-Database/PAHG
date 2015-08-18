@@ -35,7 +35,7 @@
             <div class="page-header">
                 <h3>General Information</h3>                                
             </div>
-            <p><i>VGA</i> database (Vertebrate Genome Architucture) is  database that throws light on the genome duplication mechanism and elobrates the concept of 2r and not 2r.</p>
+            <p><i>VGA</i> database (Vertebrate Genome Architucture) A complete refference to 2R and !2R evidence, elucidating evolution of organismal complexity in animal lineage..</p>
         </section>
         <section id="ack">
             <div class="page-header">

@@ -5,6 +5,7 @@
 <div class="content row">	
 <div class= "col-md-8 col-md-push-2 ">
 	<div class="jumbotron " >
+
         	<a href=" {{asset('assets/img/sfinal.jpg')}}" data-toggle="lightbox" data-html="true" data-title="Synteny" data-footer="" title="">
 				<img  src=" {{asset('assets/img/sfinal.jpg')}}" class="img-responsive img-rounded pull-right" title="Synteny" style="width:300px;height:300px;">
 			</a>		
@@ -12,6 +13,16 @@
 		 	<p> VGA is a database which throws light on the concept of 2R and !2R. It elucidate the evolution of organismal complexity in animal lineage.</p>
 		    <p><a button type="button" class="btn btn-primary btn-xs" href="{{{ URL::to('hox-main') }}}" role="button">Read more</a></p>			 		
 		
+
+        	<a href=" {{asset('assets/img/sfinal.png')}}" data-toggle="lightbox" data-html="true" data-title="Synteny" data-footer="" title="">
+				<img  src=" {{asset('assets/img/sfinal.png')}}"  id="rotateimage" class="img-responsive img-rounded pull-right" title="Synteny" style="width:300px;height:300px;">
+			
+			</a>		
+		    <h2 class="no-margin text-primary">VGA~ Vertebrate Genome Architecture</h2>
+		 	<h4>VGA: Vertebrate genome Architechture. A complete refference to 2R and !2R evidence, elucidating evolution of organismal complexity in animal lineage.</h4>
+		    <p><a button type="button" class="btn btn-primary btn-xs" href="{{{ URL::to('hox-main') }}}" role="button">Read more</a></p>			 		
+
+
 	</div>
 </div>
 

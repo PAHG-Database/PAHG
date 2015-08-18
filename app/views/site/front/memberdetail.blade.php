@@ -66,7 +66,7 @@
 					            <div class="row">
 								  <div class="col-sm-6 col-md-4">
 								    <div class="thumbnail">
-								    <a href="data:image/jpeg;base64, {{{ $family['family']['TPPic'] }}}" data-toggle="lightbox" data-title="TPPic" data-footer="" title="">
+								    <a href="data:image/jpeg;base64, {{{ $family['family']['TPPic'] }}}" data-toggle="lightbox" data-title="Time Period" data-footer="" title="">
 										<img src="data:image/jpeg;base64, {{{ $family['family']['TPPic'] }}}" class="img-responsive" title="" style="width:200px">
 									</a>
 								      
@@ -78,7 +78,7 @@
 								  <div class="col-sm-6 col-md-4">
 								    <div class="thumbnail">
 
-                                        <img id="njt" src="data:image/jpeg;base64, {{{ $family['family']['NjTreePic'] }}}" class="img-responsive" title="" style="width:200px">
+                                        <img id="njt" src="data:image/jpeg;base64, {{{ $family['family']['NjTreePic'] }}}" class="img-responsive" title=" Neighbour Joining Tree" style="width:200px">
 								      <div class="caption">
 								        <h6><b>Neighbour Joining Tree</b></h6>
 								      </div>
@@ -86,7 +86,7 @@
 								  </div>
 								  <div class="col-sm-6 col-md-4">
 								    <div class="thumbnail">
-								    <a href="data:image/jpeg;base64, {{{ $family['family']['MLTreePic'] }}}" data-toggle="lightbox" data-title="MLTreePic" data-footer="" title="">
+								    <a href="data:image/jpeg;base64, {{{ $family['family']['MLTreePic'] }}}" data-toggle="lightbox" data-title="Maximum Likelihood Tree" data-footer="" title="">
 										<img src="data:image/jpeg;base64, {{{ $family['family']['MLTreePic'] }}}" class="img-responsive" title="" style="width:200px">
 									</a>
 								      <div class="caption">
@@ -146,7 +146,7 @@
 					            <div class="row">
 								  <div class="col-sm-6 col-md-4">
 								    <div class="thumbnail">
-								    <a href="data:image/jpeg;base64, {{{ $family['member']['Topology'] }}}" data-toggle="lightbox" data-html="true" data-title="#" data-footer="" title="">
+								    <a href="data:image/jpeg;base64, {{{ $family['member']['Topology'] }}}" data-toggle="lightbox" data-html="true" data-title="Co-duplicated groups" data-footer="" title="">
 										<img src="data:image/jpeg;base64, {{{ $family['member']['Topology'] }}}" class="img-responsive" title="" style="width:200px">
 									</a>
 								      
@@ -157,7 +157,7 @@
 								  </div>
 								  <div class="col-sm-6 col-md-4">
 								    <div class="thumbnail">
-								    <a href="data:image/jpeg;base64, {{{ $family['member']['Syntany'] }}}" data-toggle="lightbox" data-html="true" data-title="#" data-footer="" title="">
+								    <a href="data:image/jpeg;base64, {{{ $family['member']['Syntany'] }}}" data-toggle="lightbox" data-html="true" data-title="Synteny" data-footer="" title="">
 										<img src="data:image/jpeg;base64, {{{ $family['member']['Syntany'] }}}" class="img-responsive" title="" style="width:200px">
 									</a>
 								      

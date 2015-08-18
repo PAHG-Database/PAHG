@@ -162,6 +162,8 @@
 						                       <li><a href="{{{ URL::to('/find') }}}">HSA:2/7/12/17 (HOX-cluster paralogon) Search</a></li>
 						                        <li class="divider"></li>
 						                        <li><a href="{{{ URL::to('/fetch') }}}">HSA:1/2/8/20 Search</a></li>
+						                        <li class="divider"></li>
+						                        <li><a href="{{{ URL::to('/fetchfgfr') }}}">HSA:4/5/8/10 Search</a></li>
 						                    </ul>
 						                    
 								</li>
@@ -227,12 +229,12 @@
 
 		<!-- Javascripts
 		================================================== -->
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        <script src="{{asset('assets/js/jquery.min.js')}}"></script>
 	    <script src="{{asset('bootstrap/js/bootstrap.js')}}"></script>
 	    <script src="{{asset('assets/js/bootstrap3-typeahead.js')}}"></script>
 	    <script src="{{asset('assets/js/wysihtml5/wysihtml5-0.3.0.js')}}"></script>
 	    <script src="{{asset('assets/js/wysihtml5/bootstrap-wysihtml5.js')}}"></script>
-	    <script src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+	    <script src="{{asset('assets/js/jquery.dataTables.min.js')}}"></script>
 	    <script src="{{asset('assets/js/datatables-bootstrap.js')}}"></script>
 	    <script src="{{asset('assets/js/datatables.fnReloadAjax.js')}}"></script>
 	    <script src="{{asset('assets/js/jquery.colorbox.js')}}"></script>
@@ -241,7 +243,7 @@
 	    <script src="{{asset('assets/js/ekko-lightbox-min.js')}}"></script>
 	    <script src="{{asset('assets/js/lightbox.js')}}"></script>
         <script src="{{asset('assets/js/cyto-chromosome-vis.js')}}"></script>
-        <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+        <script src="{{asset('assets/js/jquery-ui.js')}}"></script>
 	    <script src="{{asset('assets/js/script.js')}}"></script>
 
 

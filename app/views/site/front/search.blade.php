@@ -41,7 +41,7 @@
 						<div class="panel-body">
 							<div class="row">
 								<div class="well">
-									<form name="searchForm" action="{{url('blastresult')}}" enctype="multipart/form-data" method="post" class="f-wrap-1 all" id="searchForm">
+									<form name="searchForm" action="{{url('blastresult')}}" target="_blank" enctype="multipart/form-data" method="post" class="f-wrap-1 all" id="searchForm">
 									      <input type="hidden" name="_token" value="{{{ csrf_token() }}}" />
 									        <div id="query" class="section">                
 									   			<fieldset>
@@ -76,8 +76,7 @@
 															      <span class="infoTitle">by</span>
 															      <span class="progInfo">performing</span>
 									    						  <span class="progDescr">protein-protein search approach </span><br>
-									      							<input class="newwin" type="checkbox" name="NEWWIN" id="nw1" form="searchForm" wintype="random">
-									        						<label class="inlineLabel all" for="nw1">Show results in a new window</label>
+									      							
 									     					 </div>
 									  					</div>
 													</div>

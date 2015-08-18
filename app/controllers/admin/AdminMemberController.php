@@ -95,14 +95,15 @@ public function getDetail($mid)
             $this->members->MemberName = Input::get('name');
             $this->members->ChrLocation = Input::get('loc');
 	    $this->members->HumnaProAccNo = Input::get('acc');
-         $this->members->seqfile = Input::get('seqfile');
+         //$this->members->seqfile = Input::get('seqfile');
 	    
 	    $tp = Input::file('tp');
 	    $sn = Input::file('sn');
+         $seq = Input::file('seqfile');
         
 	    $this->members->Topology = base64_encode(file_get_contents($tp->getRealPath()));
             $this->members->Syntany = base64_encode(file_get_contents($sn->getRealPath()));
-	    
+	    $this->members->seqfile = (file_get_contents($seq->getRealPath()));
 
 	    // Was the blog post created?
             if($this->members->save())
