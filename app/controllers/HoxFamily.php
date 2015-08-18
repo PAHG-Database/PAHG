@@ -24,12 +24,12 @@ class HoxFamily extends \BaseController {
 	{
 		// Title
 		$title = 'Family';
-
+		$banner_title = 'Families Records';
 		// Grab all the blog posts
 		$families = $this->family;
 
 		// Show the page
-		return View::make('family/index', compact('families', 'title'));
+		return View::make('family/index', compact('families', 'title', 'banner_title'));
 
 	}
 
@@ -86,7 +86,7 @@ class HoxFamily extends \BaseController {
 	{
 		// Title
 		$title = 'Members of Family '. $id;
-
+		
 		// Grab all the blog posts
 		$memberId = $id;
 

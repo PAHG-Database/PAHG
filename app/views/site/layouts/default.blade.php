@@ -59,7 +59,7 @@
 		<link rel="shortcut icon" href="{{{ asset('assets/ico/favicon.png') }}}">
 	</head>
 
-<body   >
+<body>
 <!-- To make sticky footer need to wrap in a div -->
 <div id="wrap">
 	<!-- Navbar -->
@@ -113,13 +113,26 @@
                 <li class="dropdown-submenu">
                   <a tabindex="-1" href="#">HSA:1/2/8/20</a>
 	                <ul class="dropdown-menu">
-		                 <li><a tabindex="-1" href="{{{ URL::to('hox-info') }}}">Info</a></li>
-						 <li><a tabindex="-1" href="{{{ URL::to('hox-synteny') }}}">Synteny</a></li>
-						 <li><a tabindex="-1" href="{{{ URL::to('hox-time-period') }}}">Time Period</a></li>
-						 <li><a tabindex="-1" href="{{{ URL::to('hox-co-duplicated-groups') }}}">Co-duplicated groups</a></li>
-		                 <li><a tabindex="-1" href="#">Trees</a></li>
+		                 <li><a tabindex="-1" href="{{{ URL::to('hsa12820') }}}">Info</a></li>
+						 <li><a tabindex="-1" href="{{{ URL::to('hsa12820-synteny') }}}">Synteny</a></li>
+						 <li><a tabindex="-1" href="{{{ URL::to('hsa12820-time-period') }}}">Time Period</a></li>
+						 <li><a tabindex="-1" href="{{{ URL::to('hsa12820-topology') }}}">Co-duplicated groups</a></li>
+		                 <li><a tabindex="-1" href="{{{ URL::to('hsa12820-phylogenetic-trees') }}}">Trees</a></li>
 		                  <li><a tabindex="-1" href="{{{ URL::to('/find') }}}">Sequence Files</a></li>
-						  <li><a tabindex="-1" href="{{{ URL::to('summary') }}}">Summary Table</a></li>
+						  <li><a tabindex="-1" href="{{{ URL::to('summary2012') }}}">Summary Table</a></li>
+	                </ul>
+                </li>
+                <li class="divider"></li>
+                <li class="dropdown-submenu">
+                  <a tabindex="-1" href="#">HSA:4/5/8/10 (FGFR-cluster paralogon)</a>
+	                <ul class="dropdown-menu">
+		                 <li><a tabindex="-1" href="{{{ URL::to('hsa12820') }}}"> FGFR Info</a></li>
+						 <li><a tabindex="-1" href="{{{ URL::to('hsa12820-synteny') }}}">Synteny</a></li>
+						 <li><a tabindex="-1" href="{{{ URL::to('hsa12820-time-period') }}}">Time Period</a></li>
+						 <li><a tabindex="-1" href="{{{ URL::to('hsa12820-topology') }}}">Co-duplicated groups</a></li>
+		                 <li><a tabindex="-1" href="{{{ URL::to('hsa12820-phylogenetic-trees') }}}">Trees</a></li>
+		                  <li><a tabindex="-1" href="{{{ URL::to('/find') }}}">Sequence Files</a></li>
+						  <li><a tabindex="-1" href="{{{ URL::to('summaryfgfr') }}}">Summary Table</a></li>
 	                </ul>
                 </li>
             </ul>
@@ -194,14 +207,13 @@
 	<footer class="site-footer ">
 	    <div class="container">
 	    	<div class="row">
-	      		<p class="muted credit"><a href="http://ncb.qau.edu.pk/">National Center for Bioinformatics <a href="http://ncb.qau.edu.pk/">Quaid-e-Azam University</a>.</p>
+	      		<p class="muted credit"><a href="http://ncb.qau.edu.pk/">National Center for Bioinformatics <a href="http://ncb.qau.edu.pk/">Quaid-i-Azam University</a>.</p>
 				<div class="bottom-footer">	
 					<div class="col-md-2">@ Copyright HOX 2015</div>
 					<div class="col-md-10">
 						<ul class="footer-nav"> 		
 							<li><a href="http://twitter.com" onclick="_gaq.push(['_trackEvent', 'exit', 'footer', 'Twitter']);"><i class="fa fa-twitter"></i> Twitter</a></li>	
 							<li><a href="{{{ URL::to('/faqs') }}}" onclick="_gaq.push(['_trackEvent', 'exit', 'footer', 'FAQs']);"><i class="fa fa-github"></i> FAQs</a></li>
-							<li><a href="https://www.facebook.com/waqaskhokhar7" onclick="_gaq.push(['_trackEvent', 'exit', 'footer', 'Facebook']);"><i class="fa fa-facebook"></i> Facebook</a></li>
 							<li><a href="{{{ URL::to('/contact') }}} "><span class="glyphicon glyphicon-phone-alt"> Contact</a></li> 
 						</ul>
 					</div>

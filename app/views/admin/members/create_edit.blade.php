@@ -48,14 +48,6 @@
 					</div>
 				</div>
 				<!-- ./ post title -->
-	<!-- Post Title -->
-				<div class="form-group {{{ $errors->has('syntany') ? 'error' : '' }}}">
-		    <div class="col-md-12">
-                        <label class="control-label" for="syntany">Syntany</label>
-						{{ Form::file('sn','',array('id'=>'sn','class'=>'sn')) }}
-						{{ $errors->first('syntany', '<span class="help-block">:message</span>') }}
-					</div>
-				</div>
 				<!-- ./ post title -->
 				<div class="form-group {{{ $errors->has('seqfile') ? 'error' : '' }}}">
 		    <div class="col-md-12">
@@ -64,6 +56,17 @@
 						{{ $errors->first('sequence', '<span class="help-block">:message</span>') }}
 					</div>
 				</div>
+	<!-- Post Title -->
+				<div class="form-group {{{ $errors->has('syntany') ? 'error' : '' }}}">
+		    <div class="col-md-12">
+                        <label class="control-label" for="syntany">Syntany</label>
+						{{ Form::file('sn','',array('id'=>'sn','class'=>'sn')) }}
+						{{ $errors->first('syntany', '<span class="help-block">:message</span>') }}
+					</div>
+				</div>
+
+			
+				
 	<!-- Post Title -->
 	
 			</div>

@@ -13,16 +13,16 @@
 @section('content')
 	<div class="col-md-9">
 		<div class="well" style="padding: 15px">
-   			 <h4><strong> Families </strong></h4><h6> List of human gene families used in the phylogenetic analysis. Please click on particular family to view its members. </h6>
+   			 <h4><strong> Gene Family Table </strong></h4><h6> List of human gene families used in the phylogenetic analysis. Please click on particular family to view its members. </h6>
 		</div>
 	</div>
 		<div class="col-md-3 pull-right">
             <div class="alert alert-defsult fade in" style="width:300px; padding: 8px 0; margin-bottom: 10px; background-color: #f5f5f5; ">                     
                 <h4>&nbsp;&nbsp;Database Summary</h4><hr style="margin: 10px 0; color: #f5f5f5; background-color: #f5f5f5;">
                         
-                <strong>&nbsp;&nbsp;Number of Paralogons:</strong>&nbsp;&nbsp;<div class="pull-right"><a href="#"><span class="label label-default">2</span>&nbsp;&nbsp;&nbsp;</a></div><br>          
-                <strong>&nbsp;&nbsp;Number of Families:</strong>&nbsp;&nbsp;<div class="pull-right"><span class="label label-default">73</span>&nbsp;&nbsp;&nbsp;</div><br>
-                <strong>&nbsp;&nbsp;Number of Family Members:</strong>&nbsp;&nbsp;<div class="pull-right"><span class="label label-default">402</span>&nbsp;&nbsp;&nbsp;</div><br>
+                <strong>&nbsp;&nbsp;Number of Paralogons:</strong>&nbsp;&nbsp;<div class="pull-right"><a href="#"><span class="label label-default">3</span>&nbsp;&nbsp;&nbsp;</a></div><br>          
+                <strong>&nbsp;&nbsp;Number of Families:</strong>&nbsp;&nbsp;<div class="pull-right"><span class="label label-default">153</span>&nbsp;&nbsp;&nbsp;</div><br>
+                <strong>&nbsp;&nbsp;Number of Family Members:</strong>&nbsp;&nbsp;<div class="pull-right"><span class="label label-default">941</span>&nbsp;&nbsp;&nbsp;</div><br>
                             
             </div>
         </div>

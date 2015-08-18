@@ -58,6 +58,7 @@ class AdminFamilyController extends AdminController {
 	public function postCreate()
 	{
 
+
         // Declare the rules for the form validation
         $rules = array(
             'year'   => 'required',
@@ -92,6 +93,12 @@ class AdminFamilyController extends AdminController {
             $this->family->seqfile = Input::get('seqfile');
             //$this->family->TPName = Str::slug(Input::get('title'));
             $this->family->Year = Input::get('year');
+            $seqfile = Input::file('seqfile');
+            if(isset($seqfile)){
+
+                $this->family->seqfile = file_get_contents($seqfile->getRealPath());
+            }
+
             $this->family->TPPic = base64_encode(file_get_contents($tp->getRealPath()));
             $this->family->NJTreePic = base64_encode(file_get_contents($nj->getRealPath()));
 	    $this->family->MLTreePic = base64_encode(file_get_contents($ml->getRealPath()));

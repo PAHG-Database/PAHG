@@ -3,13 +3,13 @@
 @section('content')
 <div class= "container">
 	<div class="row">
-		<div class= "col-sm-6 col-md-5" style=" height: 530px;">
-			<div class="panel panel-primary">
-						<div class="panel-heading">
+		<div class= "col-sm-6 col-md-5" >
+			<div class="panel panel-primary " style=" height: 390px;" id="svf">
+						<div class="panel-heading" >
 							 <h4 class="panel-title text-center">Search via Family</h4>
 				 		</div> 
-				<div class="panel-body">
-					<div class="panel-body">
+				
+					<div class="panel-body" id="svfb">
 						<div class="row">
 							<div class="well">
 								<form method="GET" action="{{url('search')}}">
@@ -29,16 +29,15 @@
 		   					</div>
 						</div>
 					</div>
-				</div>
 			</div>
 		</div>
 
-			<div class= "col-sm-6 col-md-7">
-				<div class="panel panel-primary">
+			<div class= "col-sm-6 col-md-7" style=" height: 530px;">
+				<div class="panel panel-primary" style=" height: 390px;" id="svs">
 						<div class="panel-heading">
 							 <h4 class="panel-title text-center">Search via Sequence</h4>
 				 		</div> 
-				 	<div class="panel-body">
+				 	
 						<div class="panel-body">
 							<div class="row">
 								<div class="well">
@@ -87,7 +86,7 @@
 								</div>
 							</div>
 						</div>
-					</div>
+					
 				</div>	
 
 			</div>

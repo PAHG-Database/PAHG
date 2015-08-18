@@ -6,6 +6,7 @@
 border-bottom: 1px solid #3E87C6;
 border-right: 1px solid #3E87C6;
 border-left: 1px solid #3E87C6;
+
   
 }
   
@@ -46,16 +47,30 @@ border-left: 1px solid #3E87C6;
 }
 #pubs {
 
-
-	padding: 10px;
+	padding: 15px;
+	
 }
 #figs {
 	padding: 25px;
 
 }
+#svfb {
+	margin-top: 30px;
+
+}
+#svf {
+	margin-top: 50px;
+
+}
+#svs {
+	margin-top: 50px;
+
+}
+
+
 
 .modal-dialog {
-        width: 80%; /* respsonsive width */   
+        width: 90%; /* respsonsive width */   
     }
     .tooltip{
         z-index: 2000 !important;
@@ -64,7 +79,15 @@ border-left: 1px solid #3E87C6;
         background-color:white;
         border:1px solid blue;
         position:absolute;
-        left:-400px;
+        left:-800px;
         top:100px;
     }
 
+.carousel-control .glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right, .carousel-control .icon-prev, .carousel-control .icon-next{
+
+	color: #357ebd
+}
+.panel-heading p{
+
+	margin: 0px;
+}

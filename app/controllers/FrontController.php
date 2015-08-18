@@ -19,32 +19,37 @@ class FrontController extends BaseController {
 	public function getIndex()
 	{
 		$posts = Genefamily::all();
+		$banner_title = 'Duplication trends in Vertebrates';
 
-		return View::make('site/front/index', compact('posts'));
+		return View::make('site/front/index', compact('posts','banner_title'));
 	}
     
     	public function getGenes()
 	{
+		
 		//$posts = Genefamily::all();
 
-		return View::make('site/front/genes');
+		return View::make('site/front/genes' , compact('posts'));
 	}
 
 	public function getSearchForm()
 	{
-		$posts = Genefamily::all();
+		$posts = Genefamily::where('year','!=','2015')-> get();
+		$banner_title = 'Search HSA:2/7/12/17 (HOX-cluster Paralogon) Information';
 
-		return View::make('site/front/search', compact('posts'));
+		return View::make('site/front/search', compact('posts','banner_title'));
 	}
 	public function getfetchForm()
 	{
 		$posts = Genefamily::where('year','=','2015')-> get();
+		$banner_title = 'Search HSA:1/2/8/20 Information';
 
-		return View::make('site/front/search', compact('posts'));
+		return View::make('site/front/search', compact('posts','banner_title'));
 	}
 
 	public function getMembers($fid)
 	{
+		
 		$posts = Members::select(array('MemberName as name','MID as id'
 	    ))->where('FID', '=', $fid)->get()->toArray();
 
@@ -75,8 +80,8 @@ class FrontController extends BaseController {
 	public function getContactForm()
 	{
 		
-
-		return View::make('site/front/contact');
+$banner_title = 'Contact';
+		return View::make('site/front/contact', compact('posts','banner_title'));
 	}
 		#Lab Contact Form
 	public function getLabContactForm()
@@ -109,9 +114,9 @@ class FrontController extends BaseController {
 #Blast Front
 	public function getBlastForm()
 	{
-		
+		$banner_title = 'Blast';
 
-		return View::make('site/front/blast');
+		return View::make('site/front/blast' , compact('posts','banner_title'));
 	}
 
 	public function getBlastResult()
@@ -160,16 +165,16 @@ class FrontController extends BaseController {
 	public function getFaqForm()
 	{
 		
-
-		return View::make('site/front/faqs');
+		$banner_title = 'FAQs';
+		return View::make('site/front/faqs', compact('posts','banner_title'));
 	}
 
 #About
 	public function getAboutForm()
 	{
 		
-
-		return View::make('site/front/about');
+		$banner_title = 'About';
+		return View::make('site/front/about', compact('posts','banner_title'));
 	}
 
 }

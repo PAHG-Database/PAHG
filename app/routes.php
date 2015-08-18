@@ -77,9 +77,14 @@ Route::get('summary/create', 'AdminSummaryController@getCreate');
     Route::get('summary/{sid}/delete', 'AdminSummaryController@getDelete');
     Route::post('summary/{sid}/delete', 'AdminSummaryController@postDelete');
 
+# summary FGFR
+    Route::get('summaryfgfr', 'AdminSummaryController@getIndexfgfr');
+    Route::get('summaryfgfr/data', 'AdminSummaryController@getDatafgfr');
     # summary 2012 
     Route::get('summary2012', 'AdminSummaryController@getIndex2012');
     Route::get('summary2012/data', 'AdminSummaryController@getData2012');
+
+     
 
 
     # Comment Management
@@ -147,6 +152,9 @@ Route::get('summary', 'AdminSummaryController@getIndexUser');
 
     Route::get('summary2012', 'AdminSummaryController@getIndex2012');
     Route::get('summary2012/data', 'AdminSummaryController@getData2012');
+
+    Route::get('summaryfgfr', 'AdminSummaryController@getIndexfgfr');
+    Route::get('summaryfgfr/data', 'AdminSummaryController@getDatafgfr');
 
 // User reset routes
 Route::get('user/reset/{token}', 'UserController@getReset');
