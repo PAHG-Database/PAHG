@@ -59,6 +59,18 @@ public function getIndex2012()
         // Show the page
         return View::make('admin/summary/summary2012', compact('title'));
     }
+    //summary FGFR
+public function getIndexfgfr()
+    {
+        // Title
+        $title = 'Summary Management';
+
+        // Grab all the blog posts
+       // $posts = $this->summary;
+
+        // Show the page
+        return View::make('admin/summary/summaryfgfr', compact('title'));
+    }
 	/**
 	 * Show the form for creating a new resource.
 	 *
@@ -255,15 +267,25 @@ public function getIndex2012()
 		));
         return Datatables::of($posts)
 
-->add_column('actions', '<a href="{{{ URL::to(\'admin/summary/\' . $id . \'/edit\' ) }}}" class="btn btn-default btn-xs iframe" >{{{ Lang::get(\'button.edit\') }}}</a>
-           <a href="{{{ URL::to(\'admin/summary/\' . $id . \'/delete\' ) }}}" class="btn btn-xs btn-danger iframe">{{{ Lang::get(\'button.delete\') }}}</a>
-          
-           ')
+
+
  ->remove_column('id')
         ->make();
     }
 
+ public function getDatafgfr()
+    {
+    $posts = DB::table('summaryfgfr')->select(array('summaryfgfr.Family_Name as Name', 'summaryfgfr.Hsa4/2a', 'summaryfgfr.Hsa5', 'summaryfgfr.Hsa8/20b', 'summaryfgfr.Hsa10/11c', 'Consistency_with_FGFR_Phylogeny', 'Topology'
+            //, 'genefamily.TPPic as tppic' 
+            //, 'genefamily.NJTreePic as njtppic' 
+            //, 'genefamily.MLTreePic as mltppic')
+        ));
+        return Datatables::of($posts)
 
+
+        ->make();
+
+    }
     public function getData2012()
     {
     $posts = DB::table('summary2012')->select(array('summary2012.Family_Name as Name', 'summary2012.Hsa1', 'summary2012.Hsa2/6a', 'summary2012.Hsa8/18b', 'summary2012.Hsa20', 'Topology'
@@ -278,6 +300,7 @@ public function getIndex2012()
 
     }
 
+   
     public function getDataUser()
     {
     $posts = Summary::select(array('SID as id', 'summary.Family_Name as Name', 'summary.Hsa21', 'summary.Hsa73', 'summary.Hsa12', 'summary.Hsa17', 'Consistency_with_HOX_Phylogeny', 'Topology'

@@ -77,9 +77,14 @@ Route::get('summary/create', 'AdminSummaryController@getCreate');
     Route::get('summary/{sid}/delete', 'AdminSummaryController@getDelete');
     Route::post('summary/{sid}/delete', 'AdminSummaryController@postDelete');
 
+# summary FGFR
+    Route::get('summaryfgfr', 'AdminSummaryController@getIndexfgfr');
+    Route::get('summaryfgfr/data', 'AdminSummaryController@getDatafgfr');
     # summary 2012 
     Route::get('summary2012', 'AdminSummaryController@getIndex2012');
     Route::get('summary2012/data', 'AdminSummaryController@getData2012');
+
+     
 
 
     # Comment Management
@@ -148,6 +153,9 @@ Route::get('summary', 'AdminSummaryController@getIndexUser');
     Route::get('summary2012', 'AdminSummaryController@getIndex2012');
     Route::get('summary2012/data', 'AdminSummaryController@getData2012');
 
+    Route::get('summaryfgfr', 'AdminSummaryController@getIndexfgfr');
+    Route::get('summaryfgfr/data', 'AdminSummaryController@getDatafgfr');
+
 // User reset routes
 Route::get('user/reset/{token}', 'UserController@getReset');
 // User password reset
@@ -162,7 +170,7 @@ Route::post('user/login', 'UserController@postLogin');
 Route::controller('user', 'UserController');
 
 //:: Application Routes ::
-
+Route::get('labtest', 'LabtestController@getIndex');
 
 Route::get('/hoxfamily', 'HoxFamily@index');
 Route::get('/download/seqs/{fid}', array('as' => 'seq.download', 'uses' => 'HoxFamily@downloadSequence'));
@@ -182,6 +190,10 @@ Route::get('/search', 'FrontController@getSearch');
 Route::get('/genes', 'FrontController@getGenes');
 Route::get('/fetch', 'FrontController@getfetchForm');
 
+# Search paralogon FGFR
+Route::get('/search', 'FrontController@getSearch');
+Route::get('/genes', 'FrontController@getGenes');
+Route::get('/fetchfgfr', 'FrontController@getfetchfgfrForm');
 # Posts - Second to last set, match slug
 Route::get('{postSlug}', 'BlogController@getView');
 Route::post('{postSlug}', 'BlogController@postView');

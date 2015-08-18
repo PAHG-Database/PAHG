@@ -47,8 +47,7 @@
 															      <span class="infoTitle">by</span>
 															      <span class="progInfo">performing</span>
 									    						  <span class="progDescr">protein-protein search approach </span><br>
-									      							<input class="newwin" type="checkbox" name="NEWWIN" id="nw1" form="searchForm" wintype="random">
-									        						<label class="inlineLabel all" for="nw1">Show results in a new window</label>
+									      							
 									     					 </div>
 									  					</div>
 													</div>

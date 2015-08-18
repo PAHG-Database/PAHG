@@ -3,13 +3,13 @@
 @section('content')
 <div class= "container">
 	<div class="row">
-		<div class= "col-sm-6 col-md-5" style=" height: 530px;">
-			<div class="panel panel-primary">
-						<div class="panel-heading">
+		<div class= "col-sm-6 col-md-5" >
+			<div class="panel panel-primary " style=" height: 390px;" id="svf">
+						<div class="panel-heading" >
 							 <h4 class="panel-title text-center">Search via Family</h4>
 				 		</div> 
-				<div class="panel-body">
-					<div class="panel-body">
+				
+					<div class="panel-body" id="svfb">
 						<div class="row">
 							<div class="well">
 								<form method="GET" action="{{url('search')}}">
@@ -29,20 +29,19 @@
 		   					</div>
 						</div>
 					</div>
-				</div>
 			</div>
 		</div>
 
-			<div class= "col-sm-6 col-md-7">
-				<div class="panel panel-primary">
+			<div class= "col-sm-6 col-md-7" style=" height: 530px;">
+				<div class="panel panel-primary" style=" height: 390px;" id="svs">
 						<div class="panel-heading">
 							 <h4 class="panel-title text-center">Search via Sequence</h4>
 				 		</div> 
-				 	<div class="panel-body">
+				 	
 						<div class="panel-body">
 							<div class="row">
 								<div class="well">
-									<form name="searchForm" action="{{url('blastresult')}}" enctype="multipart/form-data" method="post" class="f-wrap-1 all" id="searchForm">
+									<form name="searchForm" action="{{url('blastresult')}}" target="_blank" enctype="multipart/form-data" method="post" class="f-wrap-1 all" id="searchForm">
 									      <input type="hidden" name="_token" value="{{{ csrf_token() }}}" />
 									        <div id="query" class="section">                
 									   			<fieldset>
@@ -77,8 +76,7 @@
 															      <span class="infoTitle">by</span>
 															      <span class="progInfo">performing</span>
 									    						  <span class="progDescr">protein-protein search approach </span><br>
-									      							<input class="newwin" type="checkbox" name="NEWWIN" id="nw1" form="searchForm" wintype="random">
-									        						<label class="inlineLabel all" for="nw1">Show results in a new window</label>
+									      							
 									     					 </div>
 									  					</div>
 													</div>
@@ -87,7 +85,7 @@
 								</div>
 							</div>
 						</div>
-					</div>
+					
 				</div>	
 
 			</div>

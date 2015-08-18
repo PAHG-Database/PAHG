@@ -5,16 +5,18 @@
 <div class="content row">	
 <div class= "col-md-8 col-md-push-2 ">
 	<div class="jumbotron " >
-        			
-		    <img src="{{asset('assets/img/main.png')}}" class="img-responsive img-rounded pull-right" alt="Responsive image" style="width:300px;height:300px;">
-		 	<h2 class="no-margin text-primary">VGA~ Vertebrate Genome Architecture</h2>
-		 	<p> VGA is a database which throws light on the concept of 2R and !2R. It elucidate the evolution of organismal complexity in animal lineage.</p>
-		    <p><a button type="button" class="btn btn-primary btn-xs" href="#" role="button">Read more</a></p>			 		
-		
+        	<a href=" {{asset('assets/img/sfinal.png')}}" data-toggle="lightbox" data-html="true" data-title="Synteny" data-footer="" title="">
+				<img  src=" {{asset('assets/img/sfinal.png')}}"  id="rotateimage" class="img-responsive img-rounded pull-right" title="Synteny" style="width:300px;height:300px;">
+			
+			</a>		
+		    <h2 class="no-margin text-primary">VGA~ Vertebrate Genome Architecture</h2>
+		 	<h4>VGA: Vertebrate genome Architechture. A complete refference to 2R and !2R evidence, elucidating evolution of organismal complexity in animal lineage.</h4>
+		    <p><a button type="button" class="btn btn-primary btn-xs" href="{{{ URL::to('hox-main') }}}" role="button">Read more</a></p>			 		
+
 	</div>
 </div>
 
-	<aside class= " col-md-2 col-md-pull-9 " >
+	<aside class= " col-md-2 col-md-pull-9 ">
    		<div class="panel panel-primary">
    			<div class="panel-heading">
 				<h4 class="panel-title">Vertebrate History</h4>
@@ -26,6 +28,7 @@
 	         					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Duplication Mechanism </span></a>
 									<ul class="dropdown-menu" role="menu">
 	           							 <li><a href="{{{ URL::to('introduction') }}}">Introduction</a></li>
+	           							 
 	            						 <li><a href="{{{ URL::to('independent-gene-duplications') }}}">Independent Gene Duplications</a></li>
 	           							 <li><a href="{{{ URL::to('segmental-duplication') }}}">Segmental Duplications</a></li>
 	           							 <li><a href="{{{ URL::to('whole-genome-duplication-hypothesis-or-2r-hypothesis') }}}">Whole Genome Duplications</a></li>
@@ -33,186 +36,27 @@
 	         						</ul>
          					</li>
          					<li><a href="{{{ URL::to('methodology') }}}">Methodology</a></li>
+         					
 					</ul>       
 				</div>
-   				<div class="panel-heading">
-					<h4 class="panel-title"> Publications </h4>
-				</div>
-				<div class="news_section clearfix">
-      				 <!--<div class="latest_news fLeft">Latest News</div>-->
-			      	<div class="news_details fRight">           
-			        	<style>:host { display: inline-block; width:100% -webkit-fill-available; overflow: hidden; text-align: initial; white-space: nowrap; }:host([direction="up"]), :host([direction="down"]) { overflow: initial; overflow-x: hidden; white-space: initial; }</style>
-					  	
-					    <marquee behavior="scroll" direction="up" onmouseover="stop();" onmouseout="start();" style="height:160px;" padding-right= "25px;" >
-					    	<ul class="nav  nav-stacked" id="pubs">	
-				    										<li><p class="text-justify"><a href="http://www.biomedcentral.com/1471-2148/7/239" target="_blank">An insight into the phylogenetic history of HOX linked gene families in vertebrates   </a></p></li>
-				    										<li><p class="text-justify"><a href="http://www.sciencedirect.com/science/article/pii/S1055790310003209" target="_blank">Unraveling ancient segmental duplication events in human genome by phylogenetic analysis of multigene families residing on HOX-cluster paralogons</a></p></li>
-															<li><p class="text-justify"><a href="http://www.sciencedirect.com/science/article/pii/S1055790312000814" target="_blank">Phylogenetic history of paralogous gene quartets on human chromosomes 1, 2, 8 and 20 provides no evidence in favor of the vertebrate octoploidy hypothesis</a></p></li>														
-														    <li><p class="text-justify"><a href="http://www.sciencedirect.com/science/article/pii/S1055790312004307" target="_blank">Fourfold paralogy regions on human HOX-bearing chromosomes: Role of ancient segmental duplications in the evolution of vertebrate genome</a></p></li>															
-														    <li><p class="text-justify"><a href="http://www.sciencedirect.com/science/article/pii/S1055790314001614" target="_blank">Integrating large-scale phylogenetic datasets to dissect the ancient evolutionary history of vertebrate genome</a></p></li>
-															
-						</ul>
-						</marquee>
-					</div>
-    			</div>         
-  		</div>
+   				
     </aside>
     <div class= "col-md-2 col-md-push-1">
 		 	<div class="panel panel-primary">
 		 		<div class="panel-heading">
-				<h4 class="panel-title"><a href="{{asset('assets/img/stree.png')}}" > <font color="#FFFFFF" >Species Tree</font></a></h4>
+				<h4 class="panel-title"><a href="{{asset('assets/img/estree.png')}}" > <font color="#FFFFFF" >Species Employed</font></a></h4>
 				 </div>
+				 
    						<div class="panel-body">
-								<style>
-								        #carousel-example-generic
-								        {
-								        	width:200px;
-								        }
-								</style>
-								<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+							
+								<a href=" {{asset('assets/img/especies.png')}}" data-toggle="lightbox" data-html="true" data-title="Species Tree" data-footer="" title="">
+									<img  src=" {{asset('assets/img/especies.png')}}" class="img-responsive" title="Species Employed" style="width:140px;height:120px;">
+								</a>
+								<a <button type="button" class="btn btn-primary btn-xs"  href="{{asset('assets/img/estree.png')}}">   <span class="glyphicon glyphicon-zoom-in" aria-hidden="true"> </span> Enlarged tree </button>  </a>
+				   		
 								
-										<div class="carousel-inner">
-												<div class="item active">
-													<img src="{{asset('assets/img/tree.png')}}" alt="Species Tree" style="width:140px;height:120px;">
-														
-												</div>													
-										</div>
-								</div>
 			  			</div>	 
-		 		<div class="panel-heading">
-				 	<h4 class="panel-title"><a href="#" > <font color="#FFFFFF" >Species</font></a></h4>
-				 </div>
-   			<div class="news_section clearfix">
-      				 <!--<div class="latest_news fLeft">Latest News</div>-->
-			      	<div class="news_details fRight">           
-			        	<style>:host { display: inline-block; width:100% -webkit-fill-available; overflow: hidden; text-align: initial; white-space: nowrap; }:host([direction="up"]), :host([direction="down"]) { overflow: initial; overflow-x: hidden; white-space: initial; }</style>
-					  	
-					    <marquee behavior="scroll" direction="up" onmouseover="stop();" onmouseout="start();" style="height:200px;" id="figs">
-				    										<div class="item active">
-																<img src="{{asset('assets/img/sidebar/homo.png')}}" alt="Human" style="width:100px;height:100px;">	
-															</div>
-															<div class="item">
-																<img src="{{asset('assets/img/sidebar/chimpanzee.png')}}" alt="chimpanzee" style="width:100px;height:100px;">		
-															</div>	
-																
-															<div class="item">
-																<img src="{{asset('assets/img/sidebar/gorilla.png')}}" alt="gorilla2"  style="width:100px;height:100px;">		
-															</div>	
-															<div class="item">
-																<img src="{{asset('assets/img/sidebar/Orangutan.png')}}" alt="Orangutan"  style="width:100px;height:100px;">		
-															</div>	
-															<div class="item">
-																<img src="{{asset('assets/img/sidebar/macaque.png')}}" alt="macaque"  style="width:100px;height:100px;">		
-															</div>	
-															<div class="item">
-																<img src="{{asset('assets/img/sidebar/marmoset.png')}}" alt="marmoset"  style="width:100px;height:100px;">		
-															</div>	
-															<div class="item">
-																<img src="{{asset('assets/img/sidebar/mouse.png')}}" alt="mouse"  style="width:100px;height:100px;">		
-															</div>		
-															<div class="item">
-																<img src="{{asset('assets/img/sidebar/rat.png')}}" alt="rat"  style="width:100px;height:100px;">		
-															</div>	
-															<div class="item">
-																<img src="{{asset('assets/img/sidebar/rabbit.png')}}" alt="rabbit"  style="width:100px;height:100px;">		
-															</div>	
-															<div class="item">
-																<img src="{{asset('assets/img/sidebar/dog.png')}}" alt="dog"  style="width:100px;height:100px;">		
-															</div>	
-															<div class="item">
-																<img src="{{asset('assets/img/sidebar/cat.png')}}" alt="cat"  style="width:100px;height:100px;">		
-															</div>	
-															<div class="item">
-																<img src="{{asset('assets/img/sidebar/cow.png')}}" alt="cow"  style="width:100px;height:100px;">		
-															</div>	
-															<div class="item">
-																<img src="{{asset('assets/img/sidebar/horse.png')}}" alt="horse"  style="width:100px;height:100px;">		
-															</div>	
-															<div class="item">
-																<img src="{{asset('assets/img/sidebar/elephant.png')}}" alt="elephant"  style="width:100px;height:100px;">		
-															</div>	
-															<div class="item">
-																<img src="{{asset('assets/img/sidebar/Armadillo.png')}}" alt="Armadillo" style="width:100px;height:100px;">		
-															</div>	
-															<div class="item">
-																<img src="{{asset('assets/img/sidebar/microbat.png')}}" alt="microbat" style="width:100px;height:100px;">		
-															</div>	
-															<div class="item">
-																<img src="{{asset('assets/img/sidebar/megabat.png')}}" alt="megabat" style="width:100px;height:100px;">		
-															</div>	
-															<div class="item">
-																<img src="{{asset('assets/img/sidebar/opossum.png')}}" alt="opossum" style="width:100px;height:100px;">		
-															</div>	
-															<div class="item">
-																<img src="{{asset('assets/img/sidebar/hedgehog.png')}}" alt="hedgehog" style="width:100px;height:100px;">		
-															</div>	
-															<div class="item">
-																<img src="{{asset('assets/img/sidebar/platypus.png')}}" alt="platypus" style="width:100px;height:100px;">		
-															</div>	
-															<div class="item">
-																<img src="{{asset('assets/img/sidebar/chicken.png')}}" alt="chicken" style="width:100px;height:100px;">		
-															</div>	
-															<div class="item">
-																<img src="{{asset('assets/img/sidebar/zebrafinch.png')}}" alt="zebrafinch" style="width:100px;height:100px;">		
-															</div>	
-															<div class="item">
-																<img src="{{asset('assets/img/sidebar/anolelizard.png')}}" alt="anolelizard" style="width:100px;height:100px;">		
-															</div>	
-															<div class="item">
-																<img src="{{asset('assets/img/sidebar/Softshellturtle.png')}}" alt="Softshellturtle" style="width:100px;height:100px;">		
-															</div>	
-															<div class="item">
-																<img src="{{asset('assets/img/sidebar/Xenopus.png')}}" alt="Xenopus" style="width:100px;height:100px;">		
-															</div>	
-															<div class="item">
-																<img src="{{asset('assets/img/sidebar/zebrafish.png')}}" alt="zebrafish" style="width:100px;height:100px;">		
-															</div>	
-															<div class="item">
-																<img src="{{asset('assets/img/sidebar/fugu.png')}}" alt="fugu" style="width:100px;height:100px;">		
-															</div>	
-															<div class="item">
-																<img src="{{asset('assets/img/sidebar/tetraodon.png')}}" alt="tetraodon" style="width:100px;height:100px;">		
-															</div>	
-															<div class="item">
-																<img src="{{asset('assets/img/sidebar/stickleback.png')}}" alt="stickleback" style="width:100px;height:100px;">		
-															</div>
-															<div class="item">
-																<img src="{{asset('assets/img/sidebar/medaka.png')}}" alt="medaka" style="width:100px;height:100px;">		
-															</div>
-															<div class="item">
-																<img src="{{asset('assets/img/sidebar/C.intestinalis.png')}}" alt="C.intestinalis" style="width:100px;height:100px;">		
-															</div>
-															<div class="item">
-																<img src="{{asset('assets/img/sidebar/Cionasavignyi.png')}}" alt="Cionasavignyi" style="width:100px;height:100px;">		
-															</div>
-															<div class="item">
-																<img src="{{asset('assets/img/sidebar/Floridalancele.png')}}" alt="Floridalancele" style="width:100px;height:100px;">		
-															</div>
-															
-															<div class="item">
-																<img src="{{asset('assets/img/sidebar/seaurchin.png')}}" alt="seaurchin" style="width:100px;height:100px;">		
-															</div>
-															<div class="item">
-																<img src="{{asset('assets/img/sidebar/Honeybees.png')}}" alt="Honeybees" style="width:100px;height:100px;">		
-															</div>
-															<div class="item">
-																<img src="{{asset('assets/img/sidebar/drosophila.png')}}" alt="drosophila" style="width:100px;height:100px;">		
-															</div>
-															<div class="item">
-																<img src="{{asset('assets/img/sidebar/mosquitoes.png')}}" alt="mosquitoes" style="width:100px;height:100px;">		
-															</div>
-															<div class="item">
-																<img src="{{asset('assets/img/sidebar/Celegans.png')}}" alt="C.elegans" style="width:100px;height:100px;">		
-															</div>
-															<div class="item">
-																<img src="{{asset('assets/img/sidebar/nematostella.png')}}" alt="nematostella" style="width:100px;height:100px;">		
-															</div>
-															<div class="item">
-																<img src="{{asset('assets/img/sidebar/hydra.png')}}" alt="hydra" style="width:100px;height:100px;">		
-															</div>
-							</marquee>
-					</div>
-    			</div>
+		 		
 		</div>
 		</div>
 </div>
@@ -237,13 +81,16 @@
 									
 								</ol>
 										<div class="carousel-inner">
+											
 												<div class="item active">
-													<img src="{{asset('assets/img/Synteny/hoxblack.png')}}" alt="Synteny" style="width:200px;height:130px;">
-														
+													<a href=" {{asset('assets/img/Synteny/hoxblack.png')}}" data-toggle="lightbox" data-html="true" data-title="HSA:2/7/12/17 Synteny" data-footer="" title="">
+												<img  src=" {{asset('assets/img/Synteny/hoxblack.png')}}" class="img-responsive img-rounded pull-right" title="HSA:2/7/12/17 Synteny" style="width:200px;height:130px;">
+												</a>
 												</div>
 												<div class="item">
-													<img src="{{asset('assets/img/Synteny/one.png')}}" alt="Synteny" style="width:200px;height:130px;">
-														
+													<a href=" {{asset('assets/img/Synteny/one.png')}}" data-toggle="lightbox" data-html="true" data-title="HSA:1/2/8/20 Synteny" data-footer="" title="">
+												<img  src=" {{asset('assets/img/Synteny/one.png')}}" class="img-responsive img-rounded pull-right" title="HSA:1/2/8/20 Synteny" style="width:200px;height:130px;">
+												</a>
 												</div>
 																							
 										</div>
@@ -280,6 +127,7 @@
 													<img src="{{asset('assets/img/topology/one.png')}}" alt="Topology" style="width:200px;height:130px;">
 														
 												</div>
+																			
 												<div class="item">
 													<img src="{{asset('assets/img/topology/three.png')}}" alt="Topology" style="width:200px;height:130px;">
 														
@@ -319,14 +167,15 @@
 								</ol>
 										<div class="carousel-inner">
 												<div class="item active">
-													<img src="{{asset('assets/img/timeperiod/one.png')}}" alt="timeperiod" style="width:200px;height:130px;">
-														
+													<a href="{{asset('assets/img/timeperiod/one.png')}}" data-toggle="lightbox" data-html="true" data-title="HSA:2/7/12/17 Time period" data-footer="" title="">
+														<img  src=" {{asset('assets/img/timeperiod/one.png')}}" class="img-responsive img-rounded pull-right" title="HSA:2/7/12/17 Time period" style="width:200px;height:130px;">
+													</a>	
 												</div>
 												<div class="item">
-													<img src="{{asset('assets/img/timeperiod/two.png')}}" alt="timeperiod" style="width:200px;height:130px;">
-														
-												</div>
-																							
+													<a href="{{asset('assets/img/timeperiod/two.png')}}" data-toggle="lightbox" data-html="true" data-title="HSA:1/2/8/20 Time period" data-footer="" title="">
+														<img  src="{{asset('assets/img/timeperiod/two.png')}}" class="img-responsive img-rounded pull-right" title="HSA: 1/2/8/20 Time period" style="width:200px;height:130px;">
+													</a>
+												</div>													
 										</div>
 								<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
 								<span class="glyphicon glyphicon-chevron-left"></span></a>
@@ -356,16 +205,27 @@
 								</ol>
 										<div class="carousel-inner">
 												<div class="item active">
-													<img src="{{asset('assets/img/t.png')}}" alt="Topology" style="width:200px;height:130px;">
-														<div class="carousel-caption">
-															<h2 class="text-info">N.J</h2>	
-														</div>
+													<a href=" {{asset('assets/img/phylotrees/SLC4A.png')}}" data-toggle="lightbox" data-html="true" data-title="HSA:2/7/12/17 N.J Tree" data-footer="" title="">
+														<img  src="{{asset('assets/img/phylotrees/SLC4A.png')}}" class="img-responsive img-rounded pull-right" title="HSA:2/7/12/17 N.J Tree" style="width:200px;height:130px;">
+													</a>
 												</div>
 												<div class="item">
-													<img src="{{asset('assets/img/t.png')}}" alt="Topology" style="width:200px;height:130px;">
-														<div class="carousel-caption">
-															<h2 class="text-info">M.L</h2>
-														</div>
+													<a href=" {{asset('assets/img/phylotrees/SLC4Aml.png')}}" data-toggle="lightbox" data-html="true" data-title="HSA:2/7/12/17 M.L Tree" data-footer="" title="">
+														<img  src="{{asset('assets/img/phylotrees/SLC4Aml.png')}}" class="img-responsive img-rounded pull-right" title="HSA:2/7/12/17 M.L Tree" style="width:200px;height:130px;">
+													</a>
+														
+												</div>
+												<div class="item">
+													<a href=" {{asset('assets/img/phylotrees/MYB.png')}}" data-toggle="lightbox" data-html="true" data-title="HSA:1/2/8/20 M.L Tree" data-footer="" title="">
+														<img  src="{{asset('assets/img/phylotrees/MYB.png')}}" class="img-responsive img-rounded pull-right" title="HSA:1/2/8/20 M.L Tree" style="width:200px;height:130px;">
+													</a>
+														
+												</div>
+												<div class="item">
+													<a href=" {{asset('assets/img/phylotrees/MYBml.png')}}" data-toggle="lightbox" data-html="true" data-title="HSA:1/2/8/20 M.L Tree" data-footer="" title="">
+														<img  src="{{asset('assets/img/phylotrees/MYBml.png')}}" class="img-responsive img-rounded pull-right" title="HSA:1/2/8/20 M.L Tree" style="width:200px;height:130px;">
+													</a>
+														
 												</div>
 										</div>
 								<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">

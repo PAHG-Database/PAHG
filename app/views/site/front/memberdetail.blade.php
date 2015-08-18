@@ -53,15 +53,11 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+        <h4 class="modal-title" id="myModalLabel">Please wait......</h4>
       </div>
       <div class="modal-body">
         <canvas id="tree"></canvas>
-        <canvas id="tip" width=100 height=25></canvas>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <canvas id="tip" width=300 height=25></canvas>
       </div>
     </div>
   </div>
@@ -70,31 +66,31 @@
 					            <div class="row">
 								  <div class="col-sm-6 col-md-4">
 								    <div class="thumbnail">
-								    <a href="data:image/jpeg;base64, {{{ $family['family']['TPPic'] }}}" data-toggle="lightbox" data-title="TPPic" data-footer="" title="">
+								    <a href="data:image/jpeg;base64, {{{ $family['family']['TPPic'] }}}" data-toggle="lightbox" data-title="Time Period" data-footer="" title="">
 										<img src="data:image/jpeg;base64, {{{ $family['family']['TPPic'] }}}" class="img-responsive" title="" style="width:200px">
 									</a>
 								      
 								      <div class="caption">
-								        <h3>Time Period</h3>
+								        <h6><b>Time Period</b></h6>
 								      </div>
                                     </div>
 								  </div>
 								  <div class="col-sm-6 col-md-4">
 								    <div class="thumbnail">
 
-                                        <img id="njt" src="data:image/jpeg;base64, {{{ $family['family']['NjTreePic'] }}}" class="img-responsive" title="" style="width:200px">
+                                        <img id="njt" src="data:image/jpeg;base64, {{{ $family['family']['NjTreePic'] }}}" class="img-responsive" title=" Neighbour Joining Tree" style="width:200px">
 								      <div class="caption">
-								        <h3>Neighbour Joining Tree</h3>
+								        <h6><b>Neighbour Joining Tree</b></h6>
 								      </div>
 								    </div>
 								  </div>
 								  <div class="col-sm-6 col-md-4">
 								    <div class="thumbnail">
-								    <a href="data:image/jpeg;base64, {{{ $family['family']['MLTreePic'] }}}" data-toggle="lightbox" data-title="MLTreePic" data-footer="" title="">
+								    <a href="data:image/jpeg;base64, {{{ $family['family']['MLTreePic'] }}}" data-toggle="lightbox" data-title="Maximum Likelihood Tree" data-footer="" title="">
 										<img src="data:image/jpeg;base64, {{{ $family['family']['MLTreePic'] }}}" class="img-responsive" title="" style="width:200px">
 									</a>
 								      <div class="caption">
-								        <h5>Maximum Likelihood Tree</h5>
+								        <h6><b>Maximum Likelihood Tree</b></h6>
 								      </div>
 								    </div>
 								  </div>
@@ -150,23 +146,23 @@
 					            <div class="row">
 								  <div class="col-sm-6 col-md-4">
 								    <div class="thumbnail">
-								    <a href="data:image/jpeg;base64, {{{ $family['member']['Topology'] }}}" data-toggle="lightbox" data-html="true" data-title="#" data-footer="" title="">
+								    <a href="data:image/jpeg;base64, {{{ $family['member']['Topology'] }}}" data-toggle="lightbox" data-html="true" data-title="Co-duplicated groups" data-footer="" title="">
 										<img src="data:image/jpeg;base64, {{{ $family['member']['Topology'] }}}" class="img-responsive" title="" style="width:200px">
 									</a>
 								      
 								      <div class="caption">
-								        <h3>co-duplicated groups</h3>
+								        <h6><b>Co-duplicated groups</b></h6>
 								      </div>
 								    </div>
 								  </div>
 								  <div class="col-sm-6 col-md-4">
 								    <div class="thumbnail">
-								    <a href="data:image/jpeg;base64, {{{ $family['member']['Syntany'] }}}" data-toggle="lightbox" data-html="true" data-title="#" data-footer="" title="">
+								    <a href="data:image/jpeg;base64, {{{ $family['member']['Syntany'] }}}" data-toggle="lightbox" data-html="true" data-title="Synteny" data-footer="" title="">
 										<img src="data:image/jpeg;base64, {{{ $family['member']['Syntany'] }}}" class="img-responsive" title="" style="width:200px">
 									</a>
 								      
 								      <div class="caption">
-								        <h3>Synteny</h3>
+								        <h6><b>Synteny</b></h6>
 								      </div>
 								    </div>
 								  </div>
@@ -204,8 +200,7 @@ function getUrlParameter(sParam)
 jQuery( document ).ready( function( $ ) {
  
     $( '#form-seq-download' ).submit( function(e) {
- 		alert('test');
- 		return false;
+ 		
         //.....
         //show some spinner etc to indicate operation in progress
         //.....
@@ -263,25 +258,85 @@ $('#myModal').on('shown.bs.modal', function (e) {
 
             canvas.setHover([
     {
+        color: [ 112, 48, 160, 255 ],
+            newColor: [ 112, 48, 160, 255 ],            // you can set this to show the detected area
+            difference: 36,                          // the color/alpha values can have a difference of 36
+            func: function() {                       // this is called on hover of the detected points
+                showTooltip( canvas, 'Vertebrate Specific Duplication: In tetrapod history', event );
+            }
+    },
+        {
         color: [ 121, 145, 71, 255 ],
             newColor: [ 121, 145, 71, 255 ],            // you can set this to show the detected area
             difference: 36,                          // the color/alpha values can have a difference of 36
             func: function() {                       // this is called on hover of the detected points
-                showTooltip( canvas, 'Tooltip-Content!', event );
+                showTooltip( canvas, 'Vertebrate Specific Duplication: Prior to fish-tetrapod split', event );
             }
-    }
-            ]);
-
-            canvas.setHover([
+    },
     {
-        color: [ 251, 2, 0, 255 ],
-            newColor: [ 251, 2, 0, 255 ],            // you can set this to show the detected area
+        color: [ 255, 0, 0, 255 ],
+            newColor: [ 255, 0, 0, 255 ],            // you can set this to show the detected area
             difference: 36,                          // the color/alpha values can have a difference of 36
             func: function() {                       // this is called on hover of the detected points
-                showTooltip( canvas, 'Content!', event );
+                showTooltip( canvas, 'Ancient Duplication: Prior to Vertebrate-Invertebrate split', event );
+            }
+    },
+    
+    {
+        color: [ 55, 96, 146, 255 ],
+            newColor: [ 55, 96, 146, 255 ],            // you can set this to show the detected area
+            difference: 36,                          // the color/alpha values can have a difference of 36
+            func: function() {                       // this is called on hover of the detected points
+                showTooltip( canvas, 'Vertebrate Specific Duplication: In Mammalian history', event );
+            }
+    },
+    {
+        color: [ 255, 255, 0, 255 ],
+            newColor: [ 255, 255, 0, 255 ],            // you can set this to show the detected area
+            difference: 36,                          // the color/alpha values can have a difference of 36
+            func: function() {                       // this is called on hover of the detected points
+                showTooltip( canvas, 'Recent Duplication: Primates Specific', event );
+            }
+    },
+
+ {
+        color: [ 255, 192, 0, 255 ],
+            newColor: [ 255, 192, 0, 255 ],            // you can set this to show the detected area
+            difference: 36,                          // the color/alpha values can have a difference of 36
+            func: function() {                       // this is called on hover of the detected points
+                showTooltip( canvas, 'HSA 2/7/17/17: Co-duplicated group B', event );
+            }
+    },
+
+ {
+        color: [ 0, 176, 240, 255 ],
+            newColor: [ 0, 176, 240, 255 ],            // you can set this to show the detected area
+            difference: 36,                          // the color/alpha values can have a difference of 36
+            func: function() {                       // this is called on hover of the detected points
+                showTooltip( canvas, 'HSA 2/7/17/17: Co-duplicated group C', event );
+            }
+    },
+    {
+        color: [ 255, 51, 201, 255 ],
+            newColor: [ 255, 51, 201, 255 ],            // you can set this to show the detected area
+            difference: 36,                          // the color/alpha values can have a difference of 36
+            func: function() {                       // this is called on hover of the detected points
+                showTooltip( canvas, 'HSA 2/7/17/17: Co-duplicated group A', event );
+            }
+    },
+ 
+     {
+        color: [ 146, 208, 80, 255 ],
+            newColor: [ 146, 208, 80, 255 ],            // you can set this to show the detected area
+            difference: 36,                          // the color/alpha values can have a difference of 36
+            func: function() {                       // this is called on hover of the detected points
+                showTooltip( canvas, 'HSA 2/7/17/17: Co-duplicated group D', event );
             }
     }
+            
             ]);
+
+        
 
 
             canvas.tooltip({
@@ -289,8 +344,11 @@ $('#myModal').on('shown.bs.modal', function (e) {
                     content: '',
                     track: true
             });
+             $('#myModalLabel').html('NJ Tree');
         });
         }
+
+
 };
 
 $.fn.setHover = function( options ) {
@@ -322,6 +380,7 @@ props: this
                 }
                 }
                 });
+
 }
 
 imgData.data = rgbaData;
@@ -340,6 +399,7 @@ canvas.on( 'mousemove.tooltipDetection', function( event ) {
 
         if( show ) {
         show.props.func( event );
+
         } else {
         hideTooltip( canvas );
         }
@@ -373,7 +433,7 @@ function showTooltip( element, content, e ) {
 
 function hideTooltip( element ) {
     canvas.css( 'cursor', '' );
-    tipCanvas.style.left = "-400px";
+    tipCanvas.style.left = "-800px";
 }
 
 }); 

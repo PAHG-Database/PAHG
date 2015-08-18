@@ -18,8 +18,8 @@
 	<table id="blogs" class="table table-striped table-hover">
 		<thead>
 			<tr>
-				<th class="col-md-2">Family Names</th>
-				<th class="col-md-1">Hsa21</th>
+				<th class="col-md-2">Family Name</th>
+				<th class="col-md-1">Hsa2</th>
 				<th class="col-md-1">Hsa7</th>
 				<th class="col-md-1">Hsa12</th>
 				<th class="col-md-1">Hsa17</th>
