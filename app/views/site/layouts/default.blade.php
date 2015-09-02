@@ -100,7 +100,7 @@
                 <li class="dropdown-submenu">
                   <a tabindex="-1" href="#">HSA:2/7/12/17 (HOX-cluster paralogon)</a>
 	                <ul class="dropdown-menu">
-		                 <li><a tabindex="-1" href="{{{ URL::to('hox-info') }}}"> HOX Info</a></li>
+		                 <li><a tabindex="-1" href="{{{ URL::to('hox-paralogon-information') }}}"> HOX Info</a></li>
 						 <li><a tabindex="-1" href="{{{ URL::to('hox-synteny') }}}">Synteny</a></li>
 						 <li><a tabindex="-1" href="{{{ URL::to('hox-time-period') }}}">Time Period</a></li>
 						 <li><a tabindex="-1" href="{{{ URL::to('hox-co-duplicated-groups') }}}">Co-duplicated groups</a></li>
@@ -113,7 +113,7 @@
                 <li class="dropdown-submenu">
                   <a tabindex="-1" href="#">HSA:1/2/8/20</a>
 	                <ul class="dropdown-menu">
-		                 <li><a tabindex="-1" href="{{{ URL::to('hsa12820') }}}">Info</a></li>
+		                 <li><a tabindex="-1" href="{{{ URL::to('hsa12820-information') }}}">Info</a></li>
 						 <li><a tabindex="-1" href="{{{ URL::to('hsa12820-synteny') }}}">Synteny</a></li>
 						 <li><a tabindex="-1" href="{{{ URL::to('hsa12820-time-period') }}}">Time Period</a></li>
 						 <li><a tabindex="-1" href="{{{ URL::to('hsa12820-topology') }}}">Co-duplicated groups</a></li>
@@ -126,7 +126,7 @@
                 <li class="dropdown-submenu">
                   <a tabindex="-1" href="#">HSA:4/5/8/10 (FGFR-cluster paralogon)</a>
 	                <ul class="dropdown-menu">
-		                 <li><a tabindex="-1" href="{{{ URL::to('hsa12820') }}}"> FGFR Info</a></li>
+		                 <li><a tabindex="-1" href="{{{ URL::to('fgfr-paralogon-information') }}}"> FGFR Info</a></li>
 						 <li><a tabindex="-1" href="{{{ URL::to('hsa12820-synteny') }}}">Synteny</a></li>
 						 <li><a tabindex="-1" href="{{{ URL::to('hsa12820-time-period') }}}">Time Period</a></li>
 						 <li><a tabindex="-1" href="{{{ URL::to('hsa12820-topology') }}}">Co-duplicated groups</a></li>

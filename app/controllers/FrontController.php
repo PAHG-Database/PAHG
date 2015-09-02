@@ -159,13 +159,6 @@ $banner_title = 'Contact';
 		}
 
 
-		
-
-
-		
-			
-
-
 		print_r($result);
 		exit;
 

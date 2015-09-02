@@ -281,13 +281,6 @@ public function getIndexfgfr()
             //, 'genefamily.MLTreePic as mltppic')
         ));
         return Datatables::of($posts)
-<<<<<<< HEAD
-
-
-=======
-
-
->>>>>>> origin/master
         ->make();
 
     }
