@@ -100,11 +100,11 @@
                 <li class="dropdown-submenu">
                   <a tabindex="-1" href="#">HSA:2/7/12/17 (HOX-cluster paralogon)</a>
 	                <ul class="dropdown-menu">
-		                 <li><a tabindex="-1" href="{{{ URL::to('hox-paralogon-information') }}}"> HOX Info</a></li>
-						 <li><a tabindex="-1" href="{{{ URL::to('hox-synteny') }}}">Synteny</a></li>
-						 <li><a tabindex="-1" href="{{{ URL::to('hox-time-period') }}}">Time Period</a></li>
-						 <li><a tabindex="-1" href="{{{ URL::to('hox-co-duplicated-groups') }}}">Co-duplicated groups</a></li>
-		                  <li><a tabindex="-1" href="#">Trees</a></li>
+		                 <li><a tabindex="-1" href="{{{ URL::to('hox-hsa-271217-paralogon-information') }}}"> HOX Info</a></li>
+						 <li><a tabindex="-1" href="{{{ URL::to('synteny-of-hox-paralogon') }}}">Synteny</a></li>
+						 <li><a tabindex="-1" href="{{{ URL::to('age-estimates-of-duplications-hox-paralogon') }}}">Time Period</a></li>
+						 <li><a tabindex="-1" href="{{{ URL::to('hox-paralogon-co-duplicated-groups') }}}">Co-duplicated groups</a></li>
+		                  <li><a tabindex="-1" href="{{{ URL::to('hox-paralogon-phylogenomic-analysis') }}}">Trees</a></li>
 		                  <li><a tabindex="-1" href="{{{ URL::to('/find') }}}">Sequence Files</a></li>
 						  <li><a tabindex="-1" href="{{{ URL::to('summary') }}}">Summary Table</a></li>
 	                </ul>
@@ -113,12 +113,12 @@
                 <li class="dropdown-submenu">
                   <a tabindex="-1" href="#">HSA:1/2/8/20</a>
 	                <ul class="dropdown-menu">
-		                 <li><a tabindex="-1" href="{{{ URL::to('hsa12820-information') }}}">Info</a></li>
-						 <li><a tabindex="-1" href="{{{ URL::to('hsa12820-synteny') }}}">Synteny</a></li>
-						 <li><a tabindex="-1" href="{{{ URL::to('hsa12820-time-period') }}}">Time Period</a></li>
-						 <li><a tabindex="-1" href="{{{ URL::to('hsa12820-topology') }}}">Co-duplicated groups</a></li>
-		                 <li><a tabindex="-1" href="{{{ URL::to('hsa12820-phylogenetic-trees') }}}">Trees</a></li>
-		                  <li><a tabindex="-1" href="{{{ URL::to('/find') }}}">Sequence Files</a></li>
+		                 <li><a tabindex="-1" href="{{{ URL::to('hsa12820-paralogon-information') }}}">Info</a></li>
+						 <li><a tabindex="-1" href="{{{ URL::to('synteny-of-hsa12820-paralogon') }}}">Synteny</a></li>
+						 <li><a tabindex="-1" href="{{{ URL::to('age-estimates-of-duplications-hsa-12820-paralogon') }}}">Time Period</a></li>
+						 <li><a tabindex="-1" href="{{{ URL::to('hsa12820-paralogon-co-duplicated-groups') }}}">Co-duplicated groups</a></li>
+		                 <li><a tabindex="-1" href="{{{ URL::to('hsa-12820-paralogon-phylogenomic-analysis') }}}">Trees</a></li>
+		                  <li><a tabindex="-1" href="{{{ URL::to('/fetch') }}}">Sequence Files</a></li>
 						  <li><a tabindex="-1" href="{{{ URL::to('summary2012') }}}">Summary Table</a></li>
 	                </ul>
                 </li>
@@ -126,12 +126,12 @@
                 <li class="dropdown-submenu">
                   <a tabindex="-1" href="#">HSA:4/5/8/10 (FGFR-cluster paralogon)</a>
 	                <ul class="dropdown-menu">
-		                 <li><a tabindex="-1" href="{{{ URL::to('fgfr-paralogon-information') }}}"> FGFR Info</a></li>
-						 <li><a tabindex="-1" href="{{{ URL::to('hsa12820-synteny') }}}">Synteny</a></li>
-						 <li><a tabindex="-1" href="{{{ URL::to('hsa12820-time-period') }}}">Time Period</a></li>
-						 <li><a tabindex="-1" href="{{{ URL::to('hsa12820-topology') }}}">Co-duplicated groups</a></li>
-		                 <li><a tabindex="-1" href="{{{ URL::to('hsa12820-phylogenetic-trees') }}}">Trees</a></li>
-		                  <li><a tabindex="-1" href="{{{ URL::to('/find') }}}">Sequence Files</a></li>
+		                 <li><a tabindex="-1" href="{{{ URL::to('fgfr-hsa-45810-paralogon-information') }}}"> FGFR Info</a></li>
+						 <li><a tabindex="-1" href="{{{ URL::to('synteny-of-fgfr-paralogon') }}}">Synteny</a></li>
+						 <li><a tabindex="-1" href="{{{ URL::to('age-estimates-of-duplications-fgfr-paralogon') }}}">Time Period</a></li>
+						 <li><a tabindex="-1" href="{{{ URL::to('fgfr-paralogon-co-duplicated-groups') }}}">Co-duplicated groups</a></li>
+		                 <li><a tabindex="-1" href="{{{ URL::to('fgfr-paralogon-phylogenomic-analysis') }}}">Trees</a></li>
+		                  <li><a tabindex="-1" href="{{{ URL::to('/fetchfgfr') }}}">Sequence Files</a></li>
 						  <li><a tabindex="-1" href="{{{ URL::to('summaryfgfr') }}}">Summary Table</a></li>
 	                </ul>
                 </li>

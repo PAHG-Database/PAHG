@@ -35,7 +35,7 @@ class FrontController extends BaseController {
 	public function getSearchForm()
 	{
 
-		$posts = Genefamily::where('year','!=','2015')-> get();
+		
 
 		$posts = Genefamily::where('year','!=','2015')->where('year','!=','2011')->get();
 
@@ -45,7 +45,7 @@ class FrontController extends BaseController {
 	}
 	public function getfetchForm()
 	{
-		$posts = Genefamily::where('year','=','2011')-> get();
+		$posts = Genefamily::where('year','=','2015')-> get();
 		$banner_title = 'Search HSA:1/2/8/20 Information';
 
 		return View::make('site/front/search', compact('posts','banner_title'));
@@ -55,9 +55,9 @@ class FrontController extends BaseController {
 	
 	public function getfetchfgfrForm()
 	{
-		$posts = Genefamily::where('year','=','2015')-> get();
+		$posts = Genefamily::where('year','=','2011')-> get();
 
-		$banner_title = 'Search HSA:1/2/8/20 Information';
+	
 
 		$banner_title = 'Search HSA:4/5/8/10 Information';
 

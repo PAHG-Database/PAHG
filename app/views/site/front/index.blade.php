@@ -189,7 +189,7 @@
 	<div class= "col-sm-6 col-md-3">
 			<div class="panel panel-primary">
 				<div class="panel-heading">
-					<p><a href="{{asset('assets/img/t.png')}}" ><b> <font color="#FFFFFF" >Phylogenetic Trees</font></b></a></p>				 
+					<p><a href="{{{ URL::to('phylogenetic-analysis') }}}" ><b> <font color="#FFFFFF" >Phylogenetic Trees</font></b></a></p>				 
 				 </div>
 						<div class="panel-body">
 								<style>
