@@ -339,4 +339,30 @@ class UserController extends BaseController {
         }
         return $redirect;
     }
+
+public function getIndexmhc()
+    {
+        // Title
+        $title = 'Summary Management';
+
+        // Grab all the blog posts
+       // $posts = $this->summary;
+
+        // Show the page
+        return View::make('admin/summary/summarymhc', compact('title'));
+    }
+    
+     public function getDatamhc()
+    {
+    $posts = DB::table('summarymhc')->select(array('summarymhc.Family_Name as Name', 'summarymhc.Hsa1/15a', 'summarymhc.Hsa6', 'summarymhc.Hsa9', 'summarymhc.Hsa19', 'Topology'
+            //, 'genefamily.TPPic as tppic' 
+            //, 'genefamily.NJTreePic as njtppic' 
+            //, 'genefamily.MLTreePic as mltppic')
+        ));
+        return Datatables::of($posts)
+
+
+        ->make();
+
+    }
 }

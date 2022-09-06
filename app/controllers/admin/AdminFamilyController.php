@@ -55,8 +55,9 @@ class AdminFamilyController extends AdminController {
 	 *
 	 * @return Response
 	 */
-	public function postCreate()
-	{
+	
+        public function postCreate()
+    {
 
 
         // Declare the rules for the form validation
@@ -65,14 +66,18 @@ class AdminFamilyController extends AdminController {
             'genefamily'   => 'required',
             'taxa'   => 'required',
             'function'   => 'required',
+            'seqfile' => 'required',
             'seq'   => 'required',
             'tp'   => 'required',
             'nj'   => 'required',
             'ml'   => 'required',
             'tree'   => 'required',
             'syntany'   => 'required',
-            'seqfile' => 'required',
+            'alignfile' => 'required',
         );
+
+            
+
 
         // Validate the inputs
         $validator = Validator::make(Input::all(), $rules);
@@ -80,37 +85,74 @@ class AdminFamilyController extends AdminController {
         // Check if the form validates with success
         if ($validator->passes())
         {
-	    $tp = Input::file('tp');
-	    $nj = Input::file('nj');
-	    $ml = Input::file('ml');
-	    $tree = Input::file('tree');
-	    $syntany = Input::file('syntany');
+        $tp = Input::file('tp');
+        $nj = Input::file('nj');
+        $ml = Input::file('ml');
+        $tree = Input::file('tree');
+        $syntany = Input::file('syntany');
             // Update the blog post data
             $this->family->GeneFamilyName = Input::get('genefamily');
             $this->family->NoIncludedTaxa = Input::get('taxa');
             $this->family->Function = Input::get('function');
             $this->family->NoSeqIncluded = Input::get('seq');
             $this->family->seqfile = Input::get('seqfile');
+            $this->family->alignfile = Input::get('alignfile');
             //$this->family->TPName = Str::slug(Input::get('title'));
             $this->family->Year = Input::get('year');
             $seqfile = Input::file('seqfile');
             if(isset($seqfile)){
 
                 $this->family->seqfile = file_get_contents($seqfile->getRealPath());
+            }else{
+                $this->family->seqfile = '';
+            }
+            $alignfile = Input::file('alignfile');
+            if(isset($alignfile)){
+
+                $this->family->alignfile = file_get_contents($alignfile->getRealPath());
+            }else
+            {
+
+                $this->family->alignfile = '';
             }
 
-            $this->family->TPPic = base64_encode(file_get_contents($tp->getRealPath()));
-            $this->family->NJTreePic = base64_encode(file_get_contents($nj->getRealPath()));
-	    $this->family->MLTreePic = base64_encode(file_get_contents($ml->getRealPath()));
-	    $this->family->Tree = base64_encode(file_get_contents($tree->getRealPath()));
-	    $this->family->Syntany = base64_encode(file_get_contents($syntany->getRealPath()));
-	    $this->family->TPPicName = $tp->getClientOriginalName();
-            $this->family->NJTreePicName = $nj->getClientOriginalName();
-            $this->family->MLTreePicName = $ml->getClientOriginalName();
+             if(isset($ml)){
 
-	    // Was the blog post created?
+                $this->family->MLTreePicName = $ml->getClientOriginalName();
+            }
+
+            if(isset($tp)){
+
+                $this->family->TPPicName = $tp->getClientOriginalName();
+            }
+
+            if(isset($nj)){
+
+                $this->family->NJTreePicName = $nj->getClientOriginalName();
+            }
+
+            $this->family->MLTreePicName = $ml->getClientOriginalName();
+            $this->family->TPPicName = $tp->getClientOriginalName();
+            $this->family->NJTreePicName = $nj->getClientOriginalName();
+            
+
+        // Was the blog post created?
             if($this->family->save())
-	    {
+        {
+            
+                $tp->move('family', 'TPPic'.$this->family->FID.'.'.$tp->getClientOriginalExtension());
+                $nj->move('family', 'NJTreePic'.$this->family->FID.'.'.$nj->getClientOriginalExtension());
+                $ml->move('family', 'MLTreePic'.$this->family->FID.'.'.$ml->getClientOriginalExtension());
+                $tree->move('family', 'Tree'.$this->family->FID.'.'.$tree->getClientOriginalExtension());
+                $syntany->move('family', 'Syntany'.$this->family->FID.'.'.$syntany->getClientOriginalExtension());
+
+                $this->family->TPPicPath = 'family/TPPic'.$this->family->FID.'.'.$tp->getClientOriginalExtension();
+                $this->family->NJTreePicPath = 'family/NJTreePic'.$this->family->FID.'.'.$nj->getClientOriginalExtension();
+                $this->family->MLTreePicPath = 'family/MLTreePic'.$this->family->FID.'.'.$ml->getClientOriginalExtension();
+                $this->family->TreePath = 'family/Tree'.$this->family->FID.'.'.$tree->getClientOriginalExtension();
+                $this->family->SyntanyPath = 'family/Syntany'.$this->family->FID.'.'.$syntany->getClientOriginalExtension();
+                $this->family->save();
+
                 // Redirect to the new blog post page
                 return Redirect::to('admin/family/' . $this->family->FID . '/edit')->with('success', Lang::get('admin/blogs/messages.create.success'));
             }
@@ -121,7 +163,29 @@ class AdminFamilyController extends AdminController {
 
         // Form validation failed
         return Redirect::to('admin/family/create')->withInput()->withErrors($validator);
-	}
+    }
+    /**
+     * File conversion
+     * @param $post
+     * @return Response
+     */
+    public function getFileConvert()
+    {
+        // Title
+        $all = Members::select('MID','Topology','Syntany')->skip(700)->take(300)->get();
+        foreach ($all as $key => $value) {
+            //print_r($value->TPPic);
+            $image = base64_decode($value->Syntany);
+            
+            $path = public_path('members/Syntany' . $value->MID.'.png');
+            
+            Members::where('MID', $value->MID)->update(array('SyntanyPath' => 'members/Syntany' . $value->MID.'.png'));
+            
+            Image::make($image)->save($path);
+        }
+        exit;
+        // Show the page
+    }
 
     /**
      * Display the specified resource.
@@ -193,34 +257,46 @@ class AdminFamilyController extends AdminController {
         if ($validator->passes())
 	{
 		$this->family = GeneFamily::find($fid);
-		
+
 		$tp = Input::file('tp');
 		if(isset($tp)){
 
-			$this->family->TPPic = base64_encode(file_get_contents($tp->getRealPath()));
+            $tp->move('family', 'TPPic'.$this->family->FID.'.'.$tp->getClientOriginalExtension());
+            $this->family->TPPicPath = 'family/TPPic'.$this->family->FID.'.'.$tp->getClientOriginalExtension();
+
+			//$this->family->TPPic = base64_encode(file_get_contents($tp->getRealPath()));
 			$this->family->TPPicName = $tp->getClientOriginalName();
 		}
 		$nj = Input::file('nj');
 		if(isset($nj)){
 
-			$this->family->NJTreePic = base64_encode(file_get_contents($nj->getRealPath()));
+            $nj->move('family', 'NJTreePic'.$this->family->FID.'.'.$nj->getClientOriginalExtension());
+            $this->family->NJTreePicPath = 'family/NJTreePic'.$this->family->FID.'.'.$nj->getClientOriginalExtension();
+
+			//$this->family->NJTreePic = base64_encode(file_get_contents($nj->getRealPath()));
 			$this->family->NJTreePicName = $nj->getClientOriginalName();
 		}
 		$ml = Input::file('ml');
 		if(isset($ml)){
-
-			$this->family->MLTreePic = base64_encode(file_get_contents($ml->getRealPath()));
+            $ml->move('family', 'MLTreePic'.$this->family->FID.'.'.$ml->getClientOriginalExtension());
+            $this->family->MLTreePicPath = 'family/MLTreePic'.$this->family->FID.'.'.$ml->getClientOriginalExtension();
+			
+            //$this->family->MLTreePic = base64_encode(file_get_contents($ml->getRealPath()));
 			$this->family->MLTreePicName = $ml->getClientOriginalName();
 		}
 		$tree = Input::file('tree');
 		if(isset($tree)){
 
-			$this->family->Tree = base64_encode(file_get_contents($tree->getRealPath()));
+            $tree->move('family', 'Tree'.$this->family->FID.'.'.$tree->getClientOriginalExtension());
+            $this->family->TreePath = 'family/Tree'.$this->family->FID.'.'.$tree->getClientOriginalExtension();
+
+			//$this->family->Tree = base64_encode(file_get_contents($tree->getRealPath()));
 		}
 		$syntany = Input::file('syntany');
 		if(isset($syntany)){
-
-			$this->family->Syntany = base64_encode(file_get_contents($syntany->getRealPath()));
+            $syntany->move('family', 'Syntany'.$this->family->FID.'.'.$syntany->getClientOriginalExtension());
+            $this->family->SyntanyPath = 'family/Syntany'.$this->family->FID.'.'.$syntany->getClientOriginalExtension();
+			//$this->family->Syntany = base64_encode(file_get_contents($syntany->getRealPath()));
 		}
         $seqfile = Input::file('seqfile');
         if(isset($seqfile)){
@@ -228,6 +304,11 @@ class AdminFamilyController extends AdminController {
             $this->family->seqfile = file_get_contents($seqfile->getRealPath());
         }
 
+   $alignfile = Input::file('AlignmentFile');
+        if(isset($alignfile)){
+
+            $this->family->AlignmentFile = file_get_contents($alignfile->getRealPath());
+        }
 
 
 

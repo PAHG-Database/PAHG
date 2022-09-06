@@ -59,6 +59,32 @@ public function getIndex2012()
         // Show the page
         return View::make('admin/summary/summary2012', compact('title'));
     }
+
+    //summaryotherhumangenefamily
+public function getIndexotherhumangenefamily()
+    {
+        // Title
+        $title = 'Summary Management';
+
+        // Grab all the blog posts
+       // $posts = $this->summary;
+
+        // Show the page
+        return View::make('admin/summary/summaryotherhumangenefamily', compact('title'));
+    }
+
+    //summarymhc
+public function getIndexmhc()
+    {
+        // Title
+        $title = 'Summary Management';
+
+        // Grab all the blog posts
+       // $posts = $this->summary;
+
+        // Show the page
+        return View::make('admin/summary/summarymhc', compact('title'));
+    }
     //summary FGFR
 public function getIndexfgfr()
     {
@@ -71,6 +97,44 @@ public function getIndexfgfr()
         // Show the page
         return View::make('admin/summary/summaryfgfr', compact('title'));
     }
+    //New Rozina functions for getting summary data
+  
+    //summary HOX
+    public function getHoxSummaryData()
+{
+// Title
+        $title = 'HOX Summary ';
+
+        // Show the page
+        return View::make('admin/summary/admin-summaryhox', compact('title'));
+}
+  //summary FGFR
+    public function getFGFRSummaryData()
+{
+// Title
+        $title = 'FGFR Summary ';
+
+        // Show the page
+        return View::make('admin/summary/admin-summaryfgfr', compact('title'));
+}
+   //summary 1/2/8/20
+    public function getParalogonSummaryData()
+{
+// Title
+        $title = '1/2/8/20 Summary ';
+
+        // Show the page
+        return View::make('admin/summary/admin-summary2012', compact('title'));
+}
+//summary MHC
+    public function getMHCSummaryData()
+{
+// Title
+        $title = 'MHC Summary ';
+
+        // Show the page
+        return View::make('admin/summary/admin-summarymhc', compact('title'));
+}
 	/**
 	 * Show the form for creating a new resource.
 	 *
@@ -134,7 +198,6 @@ public function getIndexfgfr()
         // Form validation failed
         return Redirect::to('admin/summary/create')->withInput()->withErrors($validator);
 	}
-
     /**
      * Display the specified resource.
      *
@@ -258,6 +321,40 @@ public function getIndexfgfr()
         // Was the blog post deleted?
         $summary = Summary::find($id);
      */
+     
+     
+     
+      //Gene_Family_Statistics
+public function getIndex_Gene_Family_Statistics()
+    {
+        // Title
+        $title = 'Gene_Family_Statistics';
+
+        // Grab all the blog posts
+       // $posts = $this->summary;
+
+        // Show the page
+        return View::make('admin/summary/Gene_Family_Statistics', compact('title'));
+    }
+
+     
+        public function getData_Gene_Family_Statistics()
+    {
+    $posts = DB::table('Gene_Family_Statistics')->select(array('Gene_Family_Statistics.Human_Paralogon as Name', 'Gene_Family_Statistics.No_of_Gene_Families', 'Gene_Family_Statistics.No_of_Gene_members', 'Gene_Family_Statistics.No_of_Sequences_employed_for_Phylogenomic_Analysis'
+            //, 'genefamily.TPPic as tppic' 
+            //, 'genefamily.NJTreePic as njtppic' 
+            //, 'genefamily.MLTreePic as mltppic')
+        ));
+        return Datatables::of($posts)
+
+
+        ->make();
+
+    }
+     
+     
+     
+     
     public function getData()
     {
 	$posts = Summary::select(array('SID as id', 'summary.Family_Name as Name', 'summary.Hsa21', 'summary.Hsa73', 'summary.Hsa12', 'summary.Hsa17', 'Consistency_with_HOX_Phylogeny', 'Topology'
@@ -287,6 +384,33 @@ public function getIndexfgfr()
     public function getData2012()
     {
     $posts = DB::table('summary2012')->select(array('summary2012.Family_Name as Name', 'summary2012.Hsa1', 'summary2012.Hsa2/6a', 'summary2012.Hsa8/18b', 'summary2012.Hsa20', 'Topology'
+            //, 'genefamily.TPPic as tppic' 
+            //, 'genefamily.NJTreePic as njtppic' 
+            //, 'genefamily.MLTreePic as mltppic')
+        ));
+        return Datatables::of($posts)
+
+
+        ->make();
+
+    }
+
+     public function getDataotherhumangenefamily()
+    {
+    $posts = DB::table('summaryotherhumangenefamily')->select(array('summaryotherhumangenefamily.Family_Name as Name', 'summaryotherhumangenefamily.Hsa1', 'summaryotherhumangenefamily.Hsa2/6a', 'summaryotherhumangenefamily.Hsa8/18b', 'summaryotherhumangenefamily.Hsa20', 'Topology'
+            //, 'genefamily.TPPic as tppic' 
+            //, 'genefamily.NJTreePic as njtppic' 
+            //, 'genefamily.MLTreePic as mltppic')
+        ));
+        return Datatables::of($posts)
+
+
+        ->make();
+
+    }
+    public function getDatamhc()
+    {
+    $posts = DB::table('summarymhc')->select(array('summarymhc.Family_Name as Name', 'summarymhc.Hsa1/15a', 'summarymhc.Hsa6', 'summarymhc.Hsa9', 'summarymhc.Hsa19', 'Topology'
             //, 'genefamily.TPPic as tppic' 
             //, 'genefamily.NJTreePic as njtppic' 
             //, 'genefamily.MLTreePic as mltppic')

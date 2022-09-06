@@ -83,7 +83,9 @@ Route::get('summary/create', 'AdminSummaryController@getCreate');
     # summary 2012 
     Route::get('summary2012', 'AdminSummaryController@getIndex2012');
     Route::get('summary2012/data', 'AdminSummaryController@getData2012');
-
+ # summary MHC 
+    Route::get('/summarymhc', 'AdminSummaryController@getIndexmhc');
+    Route::get('summarymhc/data', 'AdminSummaryController@getDatamhc');
      
 
 
@@ -117,9 +119,12 @@ Route::get('summary/create', 'AdminSummaryController@getCreate');
     Route::get('roles/{role}/delete', 'AdminRolesController@getDelete');
     Route::post('roles/{role}/delete', 'AdminRolesController@postDelete');
     Route::controller('roles', 'AdminRolesController');
+    # Admin File conversion
+    Route::get('fileconversion', 'AdminFamilyController@getFileConvert');
 
     # Admin Dashboard
     Route::controller('/', 'AdminDashboardController');
+    
 });
 
 
@@ -131,12 +136,16 @@ Route::get('summary/create', 'AdminSummaryController@getCreate');
 Route::get('/faqs', 'FrontController@getFaqForm');
 # About Page
 Route::get('/about', 'FrontController@getAboutForm');
-# Blast front Page
-Route::get('/blast', 'FrontController@getBlastForm');
 
+Route::get('/patternarticle', 'FrontController@getpatternarticle');
+# Coduplication Page
+Route::get('/coduplication', 'FrontController@getcoduplicationForm');
+# GeneFamilyAnalysis PageFrizzledfamilydata
+Route::get('/GeneFamilyAnalysis', 'FrontController@getGeneFamilyAnalysisForm');
+# DuplicationSummary Page
+Route::get('/DuplicationSummary', 'FrontController@getDuplicationSummaryForm');
+# Blast Page
 Route::post('/blastresult', 'FrontController@getBlastResult');
-# Blast Result Page
-Route::get('/vlast', 'FrontController@getVlastForm');
 # Lab Page
 Route::get('/lab', 'FrontController@getLabForm');
 # Lines of Research
@@ -148,13 +157,23 @@ Route::get('/labcontact', 'FrontController@getLabContactForm');
 # contact Form
 Route::get('/contact', 'FrontController@getContactForm');
 Route::get('summary', 'AdminSummaryController@getIndexUser');
-    Route::get('summary/data', 'AdminSummaryController@getDataUser');
+Route::get('summary/data', 'AdminSummaryController@getDataUser');
 
-    Route::get('summary2012', 'AdminSummaryController@getIndex2012');
-    Route::get('summary2012/data', 'AdminSummaryController@getData2012');
+Route::get('summary2012', 'AdminSummaryController@getIndex2012');
+Route::get('summary2012/data', 'AdminSummaryController@getData2012');
 
-    Route::get('summaryfgfr', 'AdminSummaryController@getIndexfgfr');
-    Route::get('summaryfgfr/data', 'AdminSummaryController@getDatafgfr');
+Route::get('summaryfgfr', 'AdminSummaryController@getIndexfgfr');
+Route::get('summaryfgfr/data', 'AdminSummaryController@getDatafgfr');
+
+Route::get('summarymhc', 'AdminSummaryController@getIndexmhc');
+Route::get('summarymhc/data', 'AdminSummaryController@getDatamhc');
+
+Route::get('summaryotherhumangenefamily', 'AdminSummaryController@getIndexotherhumangenefamily');
+Route::get('summaryotherhumangenefamily/data', 'AdminSummaryController@getDataotherhumangenefamily');
+
+
+Route::get('Gene_Family_Statistics', 'AdminSummaryController@getIndex_Gene_Family_Statistics');
+Route::get('Gene_Family_Statistics/data', 'AdminSummaryController@getData_Gene_Family_Statistics');
 
 // User reset routes
 Route::get('user/reset/{token}', 'UserController@getReset');
@@ -173,30 +192,68 @@ Route::controller('user', 'UserController');
 Route::get('labtest', 'LabtestController@getIndex');
 
 Route::get('/hoxfamily', 'HoxFamily@index');
+Route::get('/hoxfamilydata', 'HoxFamily@hoxindex');
+Route::get('/hoxfamily/hoxdata', 'HoxFamily@getHoxData');
+Route::get('/fgfrfamilydata', 'HoxFamily@fgfrindex');
+Route::get('/fgfrfamily/fgfrdata', 'HoxFamily@getFgfrData');
+Route::get('/paralogonfamilydata', 'HoxFamily@paralogonindex');
+Route::get('/paralogonfamily/paralogondata', 'HoxFamily@getParalogonData');
 Route::get('/download/seqs/{fid}', array('as' => 'seq.download', 'uses' => 'HoxFamily@downloadSequence'));
+Route::get('/download/alignment/{fid}', array('as' => 'align.download', 'uses' => 'HoxFamily@downloadAlignment'));
+Route::get('/view/alignment/{fid}',  'HoxFamily@viewAlignment');
+Route::get('/view/seqs/{fid}',  'HoxFamily@viewSequence');
+
+Route::get('/mhcfamilydata', 'HoxFamily@mhcindex');
+Route::get('/mhcfamily/mhcdata', 'HoxFamily@getmhcData');
+Route::get('/mhcfamilydata/{id}', 'HoxFamily@mhcdata');
+
+Route::get('/Otherhumangenefamily', 'HoxFamily@otherhumanindex');
+Route::get('/Otherhumangenefamily/Otherhumangenefamilydata', 'HoxFamily@getOtherhumangenefamilyData');
+
+Route::get('/otherhumanfamilydata/{id}', 'HoxFamily@otherhumandata');
 
 Route::get('/download/seq/{mid}', array('as' => 'seq.download', 'uses' => 'HoxFamily@downloadSeq'));
+Route::get('/view/seq/{mid}', array('as' => 'seq.view', 'uses' => 'HoxFamily@viewSeq'));
 Route::get('/hoxfamily/data', 'HoxFamily@getData');
 Route::get('/hoxfamily/{id}', 'HoxFamily@getMember');
+Route::get('/hoxfamilydata/{id}', 'HoxFamily@getHoxMember');
+Route::get('/fgfrfamilydata/{id}', 'HoxFamily@getFgfrMember');
+Route::get('/paralogonfamilydata/{id}', 'HoxFamily@getParalogonMember');
 Route::get('/hoxfamily/{id}/data', 'HoxFamily@getMemberData');
 
 Route::get('/getmembers/{fid}', 'FrontController@getMembers');
 
+Route::get('/findmember', 'FrontController@getSearchFormAbc');
 Route::get('/search', 'FrontController@getSearch');
+Route::get('/searchfamily', 'FrontController@getSearchFamily');
+Route::get('/searchmember', 'FrontController@getSearchMember');
 Route::get('/genes', 'FrontController@getGenes');
 Route::get('/find', 'FrontController@getSearchForm');
+Route::get('/searchseq', 'FrontController@getSearchviaseqform');
 # Search paralogon 1/2/8/20
 Route::get('/search', 'FrontController@getSearch');
 Route::get('/genes', 'FrontController@getGenes');
 Route::get('/fetch', 'FrontController@getfetchForm');
+Route::get('/fetchviaseq', 'FrontController@getfetchviaseqForm');
+#search other Human gene family
+Route::get('/fetchotherhumanfamily', 'FrontController@getfetchFrizzledfamilyForm');
+Route::get('/fetchviaFrizzledfamilyseq', 'FrontController@getfetchviaFrizzledfamilyseqForm');
 
 # Search paralogon FGFR
 Route::get('/search', 'FrontController@getSearch');
 Route::get('/genes', 'FrontController@getGenes');
 Route::get('/fetchfgfr', 'FrontController@getfetchfgfrForm');
+Route::get('/fetchfgfrviaseq', 'FrontController@getfetchfgfrviaseqForm');
+# Search paralogon 1/6/9/19 MHC Paralogon
+Route::get('/search', 'FrontController@getSearch');
+Route::get('/genes', 'FrontController@getGenes');
+Route::get('/fetchMHC', 'FrontController@getfetchMHCForm');
+Route::get('/fetchviaseq', 'FrontController@getfetchviaseqForm');
 # Posts - Second to last set, match slug
 Route::get('{postSlug}', 'BlogController@getView');
 Route::post('{postSlug}', 'BlogController@postView');
 
 # Index Page - Last route, no matches
 Route::get('/', array('before' => 'detectLang', 'uses' => 'FrontController@getIndex'));
+
+ 

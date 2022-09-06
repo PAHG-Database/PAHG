@@ -1,4 +1,3 @@
-
 <html xmlns="http://www.w3.org/1999/xhtml" itemscope="" itemtype="http://schema.org/WebPage" xmlns:jot="http://www.google.com/ns/jotspot/srvtmpl/"><head>
 <meta http-equiv="X-UA-Compatible" content="chrome=1">
 <iframe width="0" height="0" class="es53-guest-frame" style="display: none;"></iframe><iframe width="0" height="0" class="es53-taming-frame" style="display: none;"></iframe><script async="" src="//www.google-analytics.com/analytics.js"></script><script type="text/javascript">/* Copyright 2008 Google. */ (function() { var b=window,e="chrome",g="tick",h="wtsrt_",l="tbsd_",m="tbnd_",n="start",p="_wtsrt",q="_tbnd",r="CSI/";(function(){function k(a){this.t={};this.tick=function(a,d,c){this.t[a]=[void 0!=c?c:(new Date).getTime(),d];if(void 0==c)try{b.console.timeStamp(r+a)}catch(f){}};this[g](n,null,a)}var a;b.performance&&(a=b.performance.timing);var t=a?new k(a.responseStart):new k;b.jstiming={Timer:k,load:t};if(a){var d=a.navigationStart,f=a.responseStart;0<d&&f>=d&&(b.jstiming.srt=f-d)}if(a){var c=b.jstiming.load;0<d&&f>=d&&(c[g](p,void 0,d),c[g](h,p,f),c[g](l,h))}try{a=null,b[e]&&b[e].csi&&(a=Math.floor(b[e].csi().pageT),
@@ -51,7 +50,8 @@ var JOT_siteRelTimeStrs = ["a minute ago","__duration__ minutes ago","an hour ag
 <script type="text/javascript">
                 window.jstiming.load.tick('cl');
               </script><style type="text/css"></style>
-<script src="https://ssl.google-analytics.com/ga.js"></script><style type="text/css">.vdoc-container___ {position:relative!important;overflow:auto!important;clip:rect(auto,auto,auto,auto)!important;}caja-v-base,caja-v-basefont,caja-v-head,caja-v-link,caja-v-meta,caja-v-noembed,caja-v-noframes,caja-v-param,caja-v-source,caja-v-track,caja-v-title{display:none;}caja-v-html, caja-v-body {display:block;}</style></head>
+<script src="https://ssl.google-analytics.com/ga.js"></script>
+<style type="text/css">.vdoc-container___ {position:relative!important;overflow:auto!important;clip:rect(auto,auto,auto,auto)!important;}caja-v-base,caja-v-basefont,caja-v-head,caja-v-link,caja-v-meta,caja-v-noembed,caja-v-noframes,caja-v-param,caja-v-source,caja-v-track,caja-v-title{display:none;}caja-v-html, caja-v-body {display:block;}</style></head>
 <body xmlns="http://www.google.com/ns/jotspot" id="body" class=" en            ">
 <script src="//www.gstatic.com/caja/5712m/caja.js"> </script>
 <script src="https://ssl.gstatic.com/sites/p/fca1b5/system/js/jot_caja.js"> </script>
@@ -69,7 +69,31 @@ var JOT_siteRelTimeStrs = ["a minute ago","__duration__ minutes ago","an hour ag
 </tr>
 <tr class="sites-header-secondary-row" id="sites-chrome-horizontal-nav">
 <td colspan="2" id="sites-chrome-header-horizontal-nav-container" role="navigation">
-<div class="sites-header-nav"><ul class="sites-header-nav-container-links"><li class="current"><a class="sites-navigation-link current" href="{{{ URL::to('/lab') }}}"><font color="#FFFFFF">Home</font></a></li><li class="unselected"><a class="sites-navigation-link unselected" href="{{{ URL::to('/labresearch') }}}"><font color="#FFFFFF"> Lines of Research</font></a></li><li class="unselected"><a class="sites-navigation-link unselected" href="{{{ URL::to('/scholars') }}}"><font color="#FFFFFF">Scholars</font></a></li><li class="unselected"><a class="sites-navigation-link unselected" href="{{{ URL::to('/labcontact') }}}"><font color="#FFFFFF">Contact us</font></a></li></ul><div style="clear: both;"></div></div>
+<div class="sites-header-nav">
+  <ul class="sites-header-nav-container-links">
+    <li class="unselected">
+      <a class="sites-navigation-link unselected" href="{{{ URL::to('') }}}">
+        <font color="#FFFFFF">Home</font>
+      </a>
+    </li>
+    <li class="current">
+      <a class="sites-navigation-link current" href="{{{ URL::to('/scholars') }}}">
+        <font color="#FFFFFF">Contributors</font>
+      </a>
+    </li>
+    <li class="unselected">
+      <a class="sites-navigation-link unselected" href="{{{ URL::to('/labresearch') }}}">
+        <font color="#FFFFFF"> Lines of Research</font>
+      </a>
+    </li>
+    <li class="unselected">
+      <a class="sites-navigation-link unselected" href="{{{ URL::to('/labcontact') }}}">
+        <font color="#FFFFFF">Contact us</font>
+      </a>
+    </li>
+  </ul>
+  <div style="clear: both;"></div>
+</div>
 
 </td>
 </tr>
@@ -80,15 +104,47 @@ var JOT_siteRelTimeStrs = ["a minute ago","__duration__ minutes ago","an hour ag
 <table id="sites-chrome-main" class="sites-layout-hbox" cellspacing="0" cellpadding="{scmCellpadding}" border="0">
 <tbody><tr>
 <td id="sites-chrome-sidebar-left" class="sites-layout-sidebar-left initial" style="width:250px">
-<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_42743531079031527" class="sites-embed" role="complementary"><h4 class="sites-embed-title">Principal Investigator (PI)</h4><div class="sites-embed-content sites-embed-content-sidebar-textbox"><div dir="ltr"><font color="#000000" size="2"><b>Amir Ali Abbasi, PhD<br>
-Assistant Professor<br>
-National Center for Bioinformatics<br>
-Quaid-i-Azam University<br>
-Islamabad Pakistan</b></font><div><font size="3"><b>
-</b></font></div></div></div></div>
+
+
 <div xmlns="http://www.w3.org/1999/xhtml" id="COMP_6339915918651968" class="sites-embed" role="navigation"><h4 class="sites-embed-title">PI Profile</h4><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="http://www.researchgate.net/profile/Amir_Abbasi3" class="sites-navigation-link" target="_blank">ResearchGate</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="http://ncb.qau.edu.pk/index.php/dr-amir-ali-abbasi.html" class="sites-navigation-link" target="_blank">QAU Profile</a></div></li></ul></div></div>
 
-<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_971751696197316" class="sites-embed" role="navigation"><h4 class="sites-embed-title">Links</h4><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="http://genome.ucsc.edu/cgi-bin/hgGateway" class="sites-navigation-link">UCSC Human Genome Browser</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="http://asia.ensembl.org/index.html" class="sites-navigation-link">Ensembl Genome Browser</a></div></li> <li class=""><div dir="ltr" style="padding-left: 5px;"><a href="http://www.uniprot.org/" class="sites-navigation-link">Uniprot</a></div></li> <li class=""><div dir="ltr" style="padding-left: 5px;"><a href="http://www.ncbi.nlm.nih.gov/" class="sites-navigation-link">NCBI</a></div></li>  <li class=""><div dir="ltr" style="padding-left: 5px;"><a href="http://www.uniprot.org/" class="sites-navigation-link">Uniprot</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="{{{ URL::to('') }}}" class="sites-navigation-link">VGA~ Genome Architecture</a></div></li></ul></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_971751696197316" class="sites-embed" role="navigation">
+  <h4 class="sites-embed-title">Links</h4>
+  <div class="sites-embed-content sites-sidebar-nav">
+    <ul role="navigation" jotid="navList">
+      <li class="nav-first ">
+        <div dir="ltr" style="padding-left: 5px;">
+          <a href="http://genome.ucsc.edu/cgi-bin/hgGateway" class="sites-navigation-link">UCSC Human Genome Browser</a>
+        </div>
+      </li>
+        <li class="">
+          <div dir="ltr" style="padding-left: 5px;">
+            <a href="http://asia.ensembl.org/index.html" class="sites-navigation-link">Ensembl Genome Browser</a>
+          </div>
+        </li> 
+          <li class="">
+            <div dir="ltr" style="padding-left: 5px;">
+              <a href="http://www.uniprot.org/" class="sites-navigation-link">Uniprot</a>
+            </div>
+          </li> 
+            <li class="">
+              <div dir="ltr" style="padding-left: 5px;">
+                <a href="http://www.ncbi.nlm.nih.gov/" class="sites-navigation-link">NCBI</a>
+              </div>
+            </li>  
+            <li class="">
+              <div dir="ltr" style="padding-left: 5px;">
+                <a href="http://www.megasoftware.net/" class="sites-navigation-link">MEGA</a>
+              </div>
+            </li>
+            <li class="">
+              <div dir="ltr" style="padding-left: 5px;">
+                <a href="{{{ URL::to('') }}}" class="sites-navigation-link">PAHG</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
 </td>
 <td id="sites-canvas-wrapper">
 <div id="sites-canvas" role="main">
@@ -96,26 +152,110 @@ Islamabad Pakistan</b></font><div><font size="3"><b>
 <div xmlns="http://www.w3.org/1999/xhtml" id="title-crumbs" style="">
 </div>
 <h3 xmlns="http://www.w3.org/1999/xhtml" id="sites-page-title-header" style="" align="left">
-<span id="sites-page-title" dir="ltr" tabindex="-1" style="outline: none">Scholars</span>
+<span id="sites-page-title" dir="ltr" tabindex="-1" style="outline: none">Contributors</span>
 </h3>
 <div id="sites-canvas-main" class="sites-canvas-main">
 <div id="sites-canvas-main-content">
 <table style="width: 100%;" border="0" cellpadding="5">
+<th>Principal Investigator (PI):</th>
+<tbody>
+   <td style="padding: 60px;"><strong><strong>Dr. Amir Ali Abbasi &nbsp;</strong></strong> <br> <a href="http://ncb.qau.edu.pk/index.php/dr-amir-ali-abbasi.html">Professor</a>   <br>National Center for Bioinformatics <br>Quaid-i-Azam University Islamabad, Pakistan<br> </td>
+<td style="text-align: center; padding-right: 60px;"><a href="{{asset('assets/img/pic/drmairprofile.jpg')}}"> <img class="alignnone size-medium wp-image-944" title="" alt="" src="{{asset('assets/img/pic/drmairprofile.jpg')}}" width="120" height="150"></a></td>
+</tr>
+<tr class="alt"> 
+</tr>
+</tbody>
+<th>DEVELOPERS:</th>
+<tbody>
+    <td style="padding: 60px;"><strong><strong>Ramsha Azhar &nbsp;</strong></strong> <br>  M.Phil. Bioinformatics <br>National Center for Bioinformatics <br>Quaid-i-Azam University Islamabad, Pakistan<br><a href="http://live1.qau.edu.pk:7737">Dissertation Topic: "PhyloEasy: A Python Framework for Phylogeny Inference and its Integration into PAHG Database"</a> </td>
+<td style="text-align: center; padding-right: 60px;"><a href="{{asset('assets/img/pic/Ramsha.jpg')}}"> <img class="alignnone size-medium wp-image-944" title="" alt="" src="{{asset('assets/img/pic/Ramsha.jpg')}}" width="120" height="150"></a></td>
+</tr>
+<tr class="alt">
+<td style="padding: 60px;"><strong><strong>Neenish Rana &nbsp;</strong></strong> <br>  M.Phil. Bioinformatics <br>National Center for Bioinformatics <br>Quaid-i-Azam University Islamabad, Pakistan<br>Dissertation Topic: "Genome-wide Mapping of Duplications on Human Paralogy Blocks to Infer Their Impact on Vertebrate Evolution." </td>
+<td style="text-align: center; padding-right: 60px;"><a href="{{asset('assets/img/pic/Neenish.jpg')}}"> <img class="alignnone size-medium wp-image-944" title="" alt="" src="{{asset('assets/img/pic/s.jpg')}}" width="120" height="150"></a></td>
+</tr>
+<tr class="alt">
+<td style="padding: 60px;"><strong><strong>Muhammad Waqas Khokhar &nbsp;</strong></strong><br>  M.Phil. Bioinformatics <br>National Center for Bioinformatics <br>Quaid-i-Azam University Islamabad, Pakistan<br> Dissertation Topic: "Graphical Insight into Evolutionary History of Paralogy Blocks Residing on Vertebrate Genome." </td>
+<td style="text-align: center; padding-right: 60px;"><a href="{{asset('assets/img/pic/waqas.jpg')}}"> <img class="alignnone size-medium wp-image-944" title="" alt="" src="{{asset('assets/img/pic/waqas.jpg')}}" width="120" height="150"></a></td>
+</tr>
+<tr class="alt">
+<td style="padding: 60px;"><strong><strong>Yasir Mahmood Abbasi &nbsp;</strong></strong> <br>  Programmer/ Network Manager <br>National Center for Bioinformatics <br>Quaid-i-Azam University Islamabad, Pakistan<br></td>
+<td style="text-align: center; padding-right: 60px;"><a href="{{asset('assets/img/pic/Yasir.jpg')}}"> <img class="alignnone size-medium wp-image-944" title="" alt="" src="{{asset('assets/img/pic/Yasir.jpg')}}" width="120" height="150"></a></td>
+</tr>
+<tr class="alt">
+<td style="padding: 60px;"><strong><strong>Qanta Khalid &nbsp;</strong></strong><br>  M.Phil. Bioinformatics <br>National Center for Bioinformatics <br>Quaid-i-Azam University Islamabad, Pakistan<br></td>
+<td style="text-align: center; padding-right: 60px;"><a href="{{asset('assets/img/pic/Qanta.jpg')}}"> <img class="alignnone size-medium wp-image-944" title="" alt="" src="{{asset('assets/img/pic/Qanta.jpg')}}" width="120" height="150"></a></td>
+</tr>
+<tr class="alt">
+
+<tr class="alt"><td style="padding: 60px;"><strong><strong>Rozeena Arif &nbsp;</strong></strong> <br>  M.Phil. Bioinformatics <br>National Center for Bioinformatics <br>Quaid-i-Azam University Islamabad, Pakistan<br>Dissertation Topic: "Dynamic Framework for Comparative and Interactive Phylogenomic Analysis of Human Paralogy Blocks." </td>
+<td style="text-align: center; padding-right: 60px;"><a href="{{asset('assets/img/pic/Rozeena.jpg')}}"> <img class="alignnone size-medium wp-image-944" title="" alt="" src="{{asset('assets/img/pic/s.jpg')}}" width="120" height="150"></a></td>
+</tr>
+</tbody>
+</table>
+<table style="width: 100%;" border="0" cellpadding="5">
+<th>DATA CONTRIBUTORS:</th>
 <tbody>
 <tr class="alt">
-<td style="padding: 50px;"><strong><strong>Muhammad Waqas Khokhar, Mphil. Scholar &nbsp;</strong></strong>BS (Bioinformatics), Comsats University, Pakistan. 2009-2013.&nbsp;Mphil. National Center for Bioinformatics, Quaid-i-Azam University, Pakistan 2013-2015. Dissertation Topic: "Graphical Insight into Evolutionary History of Paralogy Blocks Residing on Vertebrate Genome". </td>
-
-<td><a href="/tmarques/wp-content/uploads/2011/02/marta_canaries2.jpg"> <img class="alignnone size-medium wp-image-944" title="marta_canaries2" alt="" src="{{asset('assets/img/pic/s.jpg')}}" width="100" height="150"></a></td>
-</tr>
-<tr class="">
-<td style="padding: 50px;"><strong><strong>Anabia Sohail, Mphil. Scholar &nbsp;</strong></strong>BS (Bioinformatics), Comsats University, Pakistan. 2009-2013&nbsp;Mphil. National Center for Bioinformatics, Quaid-i-Azam University, Pakistan 2013-2015. Dissertation Topic:Molecular Evolution of Mammalian Specific Desmoglein Genes. </td>
-<td><a href="/tmarques/wp-content/uploads/2011/02/300919_262916123746139_100000832616908_706476_640924954_n.jpg"><img class="size-medium wp-image-1160 aligncenter" title="300919_262916123746139_100000832616908_706476_640924954_n" alt="" src="{{asset('assets/img/pic/s.jpg')}}" width="100" height="150"></a></td>
+<td style="text-align: left; padding-left: 60px;"><strong><strong>Farhan Haq &nbsp;</strong></strong><br> PhD. Bioinformatics <br>National Center for Bioinformatics <br>Quaid-i-Azam University Islamabad, Pakistan<br>
+<a href=" http://www.sciencedirect.com/science/article/pii/S1055790312004307"> Fourfold paralogy regions on human HOX-bearing chromosomes: Role of ancient segmental duplications in the evolution of vertebrate genome, Molecular Phylogenetics and Evolution. 66(3): 737–747. </a></td>
+<td style="text-align: center;padding-right: 60px;"><a href="{{asset('assets/img/pic/Farhan.jpg')}}"><img class="alignnone size-full wp-image-1298" title="" alt="" src="{{asset('assets/img/pic/Farhan.jpg')}}" width="120" height="150"></a></td>
 </tr>
 <tr class="alt">
-<td style="text-align: left; padding-left: 60px;"><strong>Irum Javaid, Mphil. Scholar &nbsp;</strong>BS (Bioinformatics), Comsats University, Pakistan. 2009-2013&nbsp;Mphil. National Center for Bioinformatics, Quaid-i-Azam University, Pakistan 2013-2015. Dissertation Topic: Deciphering Evolutionary and Structural Insights of Alpha Synuclein (SNCA), a Gene Associated with Familial Parkinson’s Disease.</td>
-<td style="text-align: center;"><a href="/tmarques/wp-content/uploads/2011/02/369626_606845025_256109986_n1.jpg"><img class="alignnone size-full wp-image-1298" title="369626_606845025_256109986_n" alt="" src="{{asset('assets/img/pic/s.jpg')}}" width="100" height="150"></a></td>
+<td style="text-align: left; padding-left: 60px;"><strong><strong>Sadaf Ambreen &nbsp;</strong></strong><br>  M.Phil. Bioinformatics <br>National Center for Bioinformatics <br>Quaid-i-Azam University Islamabad, Pakistan<br>
+<a href="http://www.sciencedirect.com/science/article/pii/S1055790314001614"> Integrating large-scale phylogenetic datasets to dissect the ancient evolutionary history of vertebrate genome. Molecular Phylogenetics and Evolution. 78: 1-13. </a></td>
+<td style="text-align: center; padding-right: 60px;"><a href="{{asset('assets/img/pic/sadaf.JPG')}}"><img class="size-medium wp-image-1160 aligncenter" title="" alt="" src="{{asset('assets/img/pic/sadaf.JPG')}}" width="120" height="150"></a></td>
 </tr>
-
+<tr class="alt">
+<td style="text-align: left; padding-left: 60px;"><strong><strong>Faiqa Khalil &nbsp;</strong></strong><br>  M.Phil. Bioinformatics <br>National Center for Bioinformatics <br>Quaid-i-Azam University Islamabad, Pakistan<br>
+<a href="http://www.sciencedirect.com/science/article/pii/S1055790314001614"> Integrating large-scale phylogenetic datasets to dissect the ancient evolutionary history of vertebrate genome. Molecular Phylogenetics and Evolution. 78: 1-13. </a></td>
+<td style="text-align: center; padding-right: 60px;"><a href="{{asset('assets/img/pic/Faiqa.png')}}"><img class="alignnone size-full wp-image-1298" title="" alt="" src="{{asset('assets/img/pic/Faiqa.png')}}" width="120" height="150"></a></td>
+</tr>
+<tr class="alt">
+<td style="text-align: left; padding-left: 60px;"><strong><strong>Zainab Asrar &nbsp;</strong></strong><br>  M.Phil. Bioinformatics <br>National Center for Bioinformatics <br>Quaid-i-Azam University Islamabad, Pakistan<br>
+<a href=" http://www.sciencedirect.com/science/article/pii/S1055790312004307"> Fourfold paralogy regions on human HOX-bearing chromosomes: Role of ancient segmental duplications in the evolution of vertebrate genome Molecular Phylogenetics and Evolution. 66(3): 737–747. </a></td>
+<td style="text-align: center; padding-right: 60px;"><a href="{{asset('assets/img/pic/s.jpg')}}"><img class="alignnone size-full wp-image-1298" title="" alt="" src="{{asset('assets/img/pic/s.jpg')}}" width="120" height="150"></a></td>
+</tr>
+<tr class="alt">
+<td style="text-align: left; padding-left: 60px;"><strong><strong>Hafsa Hanif&nbsp;</strong></strong><br>  M.Phil. Bioinformatics <br>National Center for Bioinformatics <br>Quaid-i-Azam University Islamabad, Pakistan<br>
+<a href=" http://www.ncbi.nlm.nih.gov/pubmed/22425707"> Phylogenetic history of paralogous gene quartets on human chromosomes 1, 2, 8 and 20 provides no evidence in favor of the vertebrate octoploidy hypothesis. Molecular Phylogenetics and Evolution. 63: 922-927. </a></td>
+<td style="text-align: center; padding-right: 60px;"><a href="{{asset('assets/img/pic/s.jpg')}}"><img class="alignnone size-full wp-image-1298" title="" alt="" src="{{asset('assets/img/pic/s.jpg')}}" width="120" height="150"></a></td>
+</tr>
+<tr class="alt">
+<td style="text-align: left; padding-left: 60px;"><strong><strong>Wajiya Ajmal</strong></strong>&nbsp;<br>  M.Phil. Bioinformatics <br>National Center for Bioinformatics <br>Quaid-i-Azam University Islamabad, Pakistan<br> 
+<a href="http://www.sciencedirect.com/science/article/pii/S1055790314003212"> Phylogenetic investigation of human FGFR-bearing paralogons favors piecemeal duplication theory of vertebrate genome evolution. Molecular Phylogenetics and Evolution. 81: 49-60.</a></td>
+<td style="text-align: center; padding-right: 60px;"><a href="{{asset('assets/img/pic/s.jpg')}}"><img class="alignnone size-full wp-image-1298" title="" alt="" src="{{asset('assets/img/pic/s.jpg')}}" width="120" height="150"></a></td>
+</tr>
+<tr class="alt">
+<td style="text-align: left; padding-left: 60px;"><strong><strong>Hiba Khan &nbsp;</strong></strong> <br>  M.Phil. Bioinformatics <br>National Center for Bioinformatics <br>Quaid-i-Azam University Islamabad, Pakistan<br>
+<a href="http://www.sciencedirect.com/science/article/pii/S1055790314003212"> Phylogenetic investigation of human FGFR-bearing paralogons favors piecemeal duplication theory of vertebrate genome evolution. Molecular Phylogenetics and Evolution. 81: 49-60.</a></td>
+<td style="text-align: center; padding-right: 60px;"><a href="{{asset('assets/img/pic/s.jpg')}}"><img class="alignnone size-full wp-image-1298" title="" alt="" src="{{asset('assets/img/pic/s.jpg')}}" width="120" height="150"></a></td>
+</tr>
+<tr class="alt">
+<td style="text-align: left; padding-left: 60px;"><strong><strong>Madiha Hafeez &nbsp;</strong></strong><br>  M.Phil. Bioinformatics <br>National Center for Bioinformatics <br>Quaid-i-Azam University Islamabad, Pakistan<br>
+<a href="http://www.sciencedirect.com/science/article/pii/S105579031500250X"> Phylogenomic analysis reveals ancient segmental duplications in the human genome. Molecular Phylogenetics and Evolution. 94: 95-100.</a></td>
+<td style="text-align: center; padding-right: 60px;"><a href="{{asset('assets/img/pic/s.jpg')}}"><img class="alignnone size-full wp-image-1298" title="" alt="" src="{{asset('assets/img/pic/s.jpg')}}" width="120" height="150"></a></td>
+</tr>
+<tr class="alt">
+<td style="text-align: left; padding-left: 60px;"><strong><strong>Madeeha Shabeer &nbsp;</strong></strong><br>  M.Phil. Bioinformatics <br>National Center for Bioinformatics <br>Quaid-i-Azam University Islamabad, Pakistan<br>
+<a href="http://www.sciencedirect.com/science/article/pii/S105579031500250X"> Phylogenomic analysis reveals ancient segmental duplications in the human genome. Molecular Phylogenetics and Evolution. 94: 95-100.</a></td>
+<td style="text-align: center; padding-right: 60px;"><a href="{{asset('assets/img/pic/M_Shabir.jpg')}}"><img class="alignnone size-full wp-image-1298" title="" alt="" src="{{asset('assets/img/pic/M_Shabir.jpg')}}" width="120" height="150"></a></td>
+</tr>
+<tr class="alt">
+<td style="text-align: left; padding-left: 60px;"><strong><strong>Fouzia Altaf &nbsp;</strong></strong><br>  M.Phil. Bioinformatics <br>National Center for Bioinformatics <br>Quaid-i-Azam University Islamabad, Pakistan<br>
+<a href="http://www.sciencedirect.com/science/article/pii/S105579031500250X"> Phylogenomic analysis reveals ancient segmental duplications in the human genome. Molecular Phylogenetics and Evolution. 94: 95-100. </a></td>
+<td style="text-align: center; padding-right: 60px;"><a href="{{asset('assets/img/pic/Fouzia.jpg')}}"><img class="alignnone size-full wp-image-1298" title="" alt="" src="{{asset('assets/img/pic/s.jpg')}}" width="120" height="150"></a></td>
+</tr>
+<tr class="alt">
+<td style="text-align: left; padding-left: 60px;"><strong><strong>Roheena Naz &nbsp;</strong></strong><br>  M.Phil. Bioinformatics <br>National Center for Bioinformatics <br>Quaid-i-Azam University Islamabad, Pakistan<br>
+<a href="http://www.sciencedirect.com/science/article/pii/S1055790317301690"> An insight into the evolutionary history of human MHC paralogon. Molecular Phylogenetics and Evolution.</a></td>
+<td style="text-align: center; padding-right: 60px;"><a href="{{asset('assets/img/pic/Roheena.jpg')}}"><img class="size-medium wp-image-1160 aligncenter" title="" alt="" src="{{asset('assets/img/pic/s.jpg')}}" width="120" height="150"></a></td>
+</tr>
+<tr class="alt">
+<td style="text-align: left; padding-left: 60px;"><strong><strong>Sadaf Tahir &nbsp;</strong></strong><br>  M.Phil. Bioinformatics <br>National Center for Bioinformatics <br>Quaid-i-Azam University Islamabad, Pakistan<br>
+<a href="http://www.sciencedirect.com/science/article/pii/S1055790317301690"> An insight into the evolutionary history of human MHC paralogon. Molecular Phylogenetics and Evolution. </a></td>
+<td style="text-align: center; padding-right: 60px;"><a href="{{asset('assets/img/pic/Sadaf_Tahir.jpg')}}"><img class="size-medium wp-image-1160 aligncenter" title="" alt="" src="{{asset('assets/img/pic/Sadaf_Tahir.jpg')}}" width="120" height="150"></a></td>
+</tr>
 </tbody>
 </table>
 </div> 
@@ -237,5 +377,19 @@ Islamabad Pakistan</b></font><div><font size="3"><b>
           JOT_postEvent('usercontentrendered', this);
         </script>
 
-
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//localhost:8080/genomedb/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//localhost:8080/genomedb/piwik/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
 </body></html>

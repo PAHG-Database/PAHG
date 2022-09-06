@@ -1,0 +1,1 @@
+[03-Aug-2019 21:45:23 UTC] PHP Fatal error:  Class 'Illuminate\Database\Migrations\Migration' not found in /home/pahgncbc/public_html/genomedb/app/database/migrations/2013_02_05_024934_confide_setup_users_table.php on line 4

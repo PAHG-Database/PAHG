@@ -98,7 +98,13 @@ Route::filter('csrf', function()
 		throw new Illuminate\Session\TokenMismatchException;
 	}
 });
-
+/*
+Route::filter('csrf', function() {
+    if (csrf_token() != Input::get('_token')) {
+        throw new Illuminate\Session\TokenMismatchException;
+    }
+});
+*/
 /*
 |--------------------------------------------------------------------------
 | Language

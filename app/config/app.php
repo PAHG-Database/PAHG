@@ -108,11 +108,13 @@ return array(
         'Illuminate\Validation\ValidationServiceProvider',
         'Illuminate\View\ViewServiceProvider',
         'Illuminate\Workbench\WorkbenchServiceProvider',
+        
 		
         /* Additional Providers */
         'Zizaco\Confide\ConfideServiceProvider', // Confide Provider
         'Zizaco\Entrust\EntrustServiceProvider', // Entrust Provider for roles
         'Bllim\Datatables\DatatablesServiceProvider', // Datatables
+        'Intervention\Image\ImageServiceProvider'
 
         /* Uncomment for use in development */
 //        'Way\Generators\GeneratorsServiceProvider', // Generators
@@ -191,6 +193,7 @@ return array(
         'String'          => 'Andrew13\Helpers\String', // String
         'Carbon'          => 'Carbon\Carbon', // Carbon
         'Datatables'      => 'Bllim\Datatables\Datatables', // DataTables
+        'Image' => 'Intervention\Image\Facades\Image'
 
     ),
 

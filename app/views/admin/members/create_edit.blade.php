@@ -59,7 +59,7 @@
 	<!-- Post Title -->
 				<div class="form-group {{{ $errors->has('syntany') ? 'error' : '' }}}">
 		    <div class="col-md-12">
-                        <label class="control-label" for="syntany">Syntany</label>
+                        <label class="control-label" for="syntany">Synteny</label>
 						{{ Form::file('sn','',array('id'=>'sn','class'=>'sn')) }}
 						{{ $errors->first('syntany', '<span class="help-block">:message</span>') }}
 					</div>

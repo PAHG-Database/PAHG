@@ -64,6 +64,16 @@
 						{{ $errors->first('sequence', '<span class="help-block">:message</span>') }}
 					</div>
 				</div>
+												<!-- NEW CODE -->
+				<div class="form-group {{{ $errors->has('alignfile') ? 'error' : '' }}}">
+		    <div class="col-md-12">
+                        <label class="control-label" for="alignment">Alignment File</label>
+						{{ Form::file('alignfile','',array('id'=>'alignfile','class'=>'alignfile')) }}
+						{{ $errors->first('alignment', '<span class="help-block">:message</span>') }}
+					</div>
+				</div>
+												<!-- NEW CODE -->
+
 				<!-- ./ post title -->
 	<!-- Post Title -->
 				<div class="form-group {{{ $errors->has('tp') ? 'error' : '' }}}">
@@ -102,7 +112,7 @@
 				</div>
 				<!-- ./ post title -->
 <!-- Post Title -->
-				<div class="form-group {{{ $errors->has('syntany') ? 'error' : '' }}}">
+				<div class="form-group {{{ $errors->has('syntanyy') ? 'error' : '' }}}">
 		    <div class="col-md-12">
                         <label class="control-label" for="syntany">Combine Synteny </label>
 						<input class="form-control" type="file" name="syntany" id="syntany"/>

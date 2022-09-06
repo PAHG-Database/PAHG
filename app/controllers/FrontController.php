@@ -1,3 +1,4 @@
+
 <?php
 
 class FrontController extends BaseController {
@@ -19,9 +20,10 @@ class FrontController extends BaseController {
 	public function getIndex()
 	{
 		$posts = Genefamily::all();
+		$members=Members::all();
 		$banner_title = 'Duplication trends in Vertebrates';
 
-		return View::make('site/front/index', compact('posts','banner_title'));
+		return View::make('site/front/index', compact('posts','members','banner_title'));
 	}
     
     	public function getGenes()
@@ -32,7 +34,28 @@ class FrontController extends BaseController {
 		return View::make('site/front/genes' , compact('posts'));
 	}
 
-	public function getSearchForm()
+	public function getSearchForm()  
+	{
+		$posts = Genefamily::where('year','!=','2015')->where('year','!=','2011')->get();
+
+		$banner_title = 'Search HSA:2/7/12/17 (HOX-cluster Paralogon) Information';
+
+		return View::make('site/front/search', compact('posts','banner_title'));
+	}
+
+public function getSearchFormAbc()
+	{
+	
+		$members = Members::all();
+
+		$banner_title = 'Members search...';
+		//return Response::json($members);
+
+		return View::make('site/front/searchmember', compact('members','banner_title'));
+		
+	}
+	
+	public function  getSearchviaseqform() 
 	{
 
 		
@@ -41,28 +64,86 @@ class FrontController extends BaseController {
 
 		$banner_title = 'Search HSA:2/7/12/17 (HOX-cluster Paralogon) Information';
 
-		return View::make('site/front/search', compact('posts','banner_title'));
+		return View::make('site/front/searchviaseq', compact('posts','banner_title'));
 	}
+
 	public function getfetchForm()
 	{
-		$posts = Genefamily::where('year','=','2015')-> get();
+		$posts = Genefamily::where('year','=','2011')-> get();
 		$banner_title = 'Search HSA:1/2/8/20 Information';
 
 		return View::make('site/front/search', compact('posts','banner_title'));
+	}
+public function getfetch3Form()
+	{
+		$posts = Genefamily::where('year','=','2016')-> get();
+		$banner_title = 'Search HSA:1/6/9/19 Information';
+
+		return View::make('site/front/search', compact('posts','banner_title'));
+	}
+
+	public function getfetchviaseqForm()
+	{
+		$posts = Genefamily::where('year','=','2011')-> get();
+		$banner_title = 'Search HSA:1/2/8/20 Information';
+
+		return View::make('site/front/searchviaseq', compact('posts','banner_title'));
+	}
+
+	public function getfetchFrizzledfamilyForm()
+	{
+		$posts = Genefamily::where('year','=','2019')-> get();
+		$banner_title = 'Search Frizzledfamily Information';
+
+		return View::make('site/front/search', compact('posts','banner_title'));
+	}
+
+	public function getfetchMHCForm()
+	{
+		$posts = Genefamily::where('year','=','2011')-> get();
+		$banner_title = 'Search HSA:1/6/9/19 Information';
+
+		return View::make('site/front/search', compact('posts','banner_title'));
+	}
+
+
+	public function mypage()
+	{
+		$posts = Genefamily::where('year','=','2019')-> get();
+		$banner_title = 'Search Frizzledfamily Information';
+
+		return View::make('site/front/search', compact('posts','banner_title'));
+	}
+
+	public function getfetchviaFrizzledfamilyseqForm()
+	{
+		$posts = Genefamily::where('year','=','2011')-> get();
+		$banner_title = 'Search Frizzledfamily Information';
+
+		return View::make('site/front/searchviaseq', compact('posts','banner_title'));
 	}
 
 #FGFR view
 	
 	public function getfetchfgfrForm()
 	{
-		$posts = Genefamily::where('year','=','2011')-> get();
-
-	
+		$posts = Genefamily::where('year','=','2015')-> get();
 
 		$banner_title = 'Search HSA:4/5/8/10 Information';
 
 		return View::make('site/front/search', compact('posts','banner_title'));
 	}
+
+public function getfetchfgfrviaseqForm()
+	{
+		$posts = Genefamily::where('year','=','2015')-> get();
+
+	
+
+		$banner_title = 'Search HSA:4/5/8/10 Information';
+
+		return View::make('site/front/searchviaseq', compact('posts','banner_title'));
+	} 
 
 	public function getMembers($fid)
 	{
@@ -91,6 +172,42 @@ class FrontController extends BaseController {
 		}
 
 		//print_r($input);exit;
+
+	}
+public function getSearchFamily()
+	{
+		$get = Input::all();
+
+		if(!$get['fid']){
+
+			return Redirect::to('/');
+		}
+		else{
+			$family = Genefamily::where('FID', '=', $get['fid'])->first()->toArray();
+			return View::make('site/front/familydetail', compact('family'));
+		}
+
+		//print_r($input);exit;
+
+	}
+
+public function getSearchMember()
+	{
+		$get = Input::all();
+
+		if(!$get['mid']){
+
+			return Redirect::to('/');
+		}
+		
+		$member = Members::where('MID', '=', $get['mid'])->first()->toArray();
+		
+		$FID = $member['FID'];
+		
+		$family = array('family' => Genefamily::where('FID', '=', $FID)->first()->toArray(),
+		 'member' => Members::where('MID', '=', $get['mid'])->first()->toArray());
+		return View::make('site/front/memberdetail', compact('family'));
+		
 
 	}
 	#Contact Form
@@ -128,17 +245,10 @@ $banner_title = 'Contact';
 
 		return View::make('site/front/scholars');
 	}
-#Blast Front
-	public function getBlastForm()
-	{
-		$banner_title = 'Blast';
 
-		return View::make('site/front/blast' , compact('posts','banner_title'));
-	}
 
 	public function getBlastResult()
-	{
-		
+	{	
 		$query = Input::get('QUERY');
 		
 		$member = Members::where('seqfile', 'like', '%'.$query.'%')->get();
@@ -155,23 +265,20 @@ $banner_title = 'Contact';
 					return View::make('site/front/familydetail', compact('family'));
 				}else{
 					//show no result page
+					$_SESSION['Error'] = "Sequence is invalid.";
 				}
 		}
 
+				if( isset($_SESSION['Error']) )
+				{
+				        echo $_SESSION['Error'];
 
-		print_r($result);
-		exit;
+				        unset($_SESSION['Error']);
 
+				}	
 	}
 
 
-	#Blast Result
-	public function getVlastForm()
-	{
-		
-
-		return View::make('site/front/vlast');
-	}
 	#FAQs
 	public function getFaqForm()
 	{
@@ -188,4 +295,36 @@ $banner_title = 'Contact';
 		return View::make('site/front/about', compact('posts','banner_title'));
 	}
 
+#patternarical
+public function getpatternarticle()
+	{
+		
+		$banner_title = 'About';
+		return View::make('raheela/patternArticle', compact('posts','banner_title'));
+	}
+#Co-duplication
+public function getcoduplicationForm()
+	{
+		
+		$banner_title = 'coduplication';
+		return View::make('site/front/coduplication', compact('posts','banner_title'));
+	}
+
+	
+
+#GeneFamilyAnalysis
+	public function getGeneFamilyAnalysisForm()
+	{
+		
+		$banner_title = 'GeneFamilyAnalysis';
+		return View::make('site/front/GeneFamilyAnalysis', compact('posts','banner_title'));
+	}
+	
+#DuplicationSummary
+	public function getDuplicationSummaryForm()
+	{
+		
+		$banner_title = 'DuplicationSummary';
+		return View::make('site/front/DuplicationSummary', compact('posts','banner_title'));
+	}
 }

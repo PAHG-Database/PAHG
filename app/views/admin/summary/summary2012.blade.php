@@ -13,7 +13,12 @@
 @section('content')
 	
 		<div class="well" style="padding: 15px">
-   			 <h4><strong> Summary Table </strong></h4><h6> Summary of the phylogenetic analysis of gene families whose three or more members are residing on human paralogon HSA 1/2/8/20 </h6>
+   			 <h4><strong> Table: Duplication Summary </strong></h4><h6> Summary of the phylogenetic analysis of gene families whose three or more members are residing on human paralogon HSA 1/2/8/20 </h6>
+   			 <h6> For each gene family the chromosomal location and topologies (in the Newick format) of those genes are given, which arose through duplications after the invertebrates
+vertebrates split and before the tetrapod-fish divergence. The percentage bootstrap support of the internal branches is given with each relevant topology.</h6>
+<ul>
+<li> a Indicates that the gene family member is positioned on a different chromosome, i.e. Hsa6.</li>
+<li> b Indicates that the gene family member is positioned on a different chromosome, i.e. Hsa18.</li></ul></h6>
 		</div>
 	<div class="well" style="padding: 5px">
 
@@ -47,7 +52,7 @@
 				},
 				"bProcessing": true,
 		        "bServerSide": true,
-			"sAjaxSource": "{{ URL::to('admin/summary2012/data') }}",
+			"sAjaxSource": "{{ URL::to('summary2012/data') }}",
 		        "fnDrawCallback": function ( oSettings ) {
 	           		$(".iframe").colorbox({iframe:true, width:"80%", height:"80%"});
 	     		}

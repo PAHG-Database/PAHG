@@ -6,28 +6,30 @@
 	<h1 class="text-center">{{$family['GeneFamilyName']}}</h1>
     <div class="col-lg-4">
         <div class="panel panel-default">
-            <div class="panel-heading">
-                Details
-            </div>
+            <div class="panel-heading">Details</div>
             <div class="panel-body">
                 <h4>Number of Included Taxa:
                     <small>{{$family['NoIncludedTaxa']}}</small>
                 </h4>
-                <h4>Function:
+                <h4>Molecular Function:
                     <small>{{$family['Function']}}</small>
                 </h4>
                 <h4>Number of Sequences Included:
                     <small>{{$family['NoSeqIncluded']}}</small>
                 </h4>
-                
-                <h4>Year:
-                    <small>{{$family['Year']}}</small>
+                <h4>Data Submission:
+               <!-- <small> <a href="http://localhost:8080/genomedb/public/about#pub{{$family['Year']}}" target="_blank" >{{$family['Year']}}</a></small> -->
+                <small>{{$family['Year']}} :</small>
+                <small><a href="{{{ URL::to('/about#pub') }}}"><span>Concerned Citation</span></a></small>
                 </h4>
-                 <h4>Sequence:
-				                	
-				                </h4>
-				                <a href="{{url('download/seqs/'.$family['FID'])}}">Download</a>
-				              
+                 <h4>Sequence File:
+                    <a href="{{url('view/seqs/'.$family['FID'])}}" target="_blank">View</a>
+                    <a href="{{url('download/seqs/'.$family['FID'])}}">Download</a>
+                </h4> 
+                 <h4>Alignment File:
+                    <a href="{{url('view/alignment/'.$family['FID'])}}" target="_blank">View</a>
+                    <a href="{{url('download/alignment/'.$family['FID'])}}">Download</a>
+                </h4>          
             </div>
             <!-- /.panel-body -->
         </div>
@@ -40,89 +42,82 @@
                 <b>Images</b>
             </div>
             <!-- Modal -->
-<div class="modal fade large" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel"> Please wait....</h4>
-      </div>
-      <div class="modal-body">
-        <canvas id="tree"></canvas>
-        <canvas id="tip" width=300 height=25></canvas>
-      </div>
-    </div>
-  </div>
-</div>
-            <div class="panel-body">
-	            <div class="row">
-				  
-				  <div class="col-sm-12 col-md-4 ">
-				    <div class="thumbnail">
-				    	<div class="caption">
-				        <h6 ><b>Neighbour Joining Tree</b></h6>
-				      </div>
-				    <img id="njt" src="data:image/jpeg;base64, {{{ $family['NjTreePic'] }}}" class="img-responsive" title="" style="width:200px">
-								      
+                <div class="modal fade large" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel"> Please wait....</h4>
+                            </div>
+                            <div class="modal-body">
+                                <canvas id="tree"></canvas>
+                                <canvas id="tip" width=300 height=25></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body">
+	                <div class="row">
+				        <div class="col-sm-12 col-md-4 ">
+				            <div class="thumbnail">
+				    	       <div class="caption">
+				                    <h6 ><b>Neighbour Joining Tree</b></h6>
+				                </div>
+				                <img id="njt" src=" {{{ asset($family['NjTreePicPath']) }}}" class="img-responsive" title=""  style="width:200px">	      
+				            </div>
+				        </div>
+				        <div class="col-sm-12 col-md-4 col-md-offset-4">
+				            <div class="thumbnail">
+				    	       <div class="caption">
+				                    <h6><b>Maximum Likelihood Tree</b></h6>
+				                </div>
+				                <a href=" {{{ asset($family['MLTreePicPath']) }}}" data-toggle="lightbox" data-html="true" data-title="Maximum Likelihood Tree" data-footer="" title="">
+							     <img src="{{{asset($family['MLTreePicPath']) }}}" class="img-responsive" title="" style="width:200px">
+						        </a>
+				            </div>
+				        </div>
+				        <div class="col-sm-12 col-md-5 col-md-offset-4">
+				            <div class="thumbnail">
+				    	       <div class="caption">
+				                    <h6><b>Synteny</b></h6>
+				                </div>
+				                <a href="{{{asset($family['SyntanyPath']) }}}" data-toggle="lightbox"  data-html="true" data-title="Synteny" @if($family['Year'] != "2015")  @endif data-footer="" title="">
+							     <img src="{{{asset($family['SyntanyPath']) }}}" class="img-responsive" title="" style="width:200px">
+						        </a>
+				            </div>
+				        </div>
+				        <div class="col-sm-12 col-md-4  ">
+				            <div class="thumbnail ">
+				    	       <div class="caption">
+				                    <h6><b>Co-duplicated groups</b></h6>
+				                </div>
+				                <a href="{{{ asset($family['TreePath']) }}}" data-toggle="lightbox" data-html="true" data-title="Coduplicated groups" @if($family['Year'] != "2015")  @endif data-footer="Figure depicts consistencies in phylogenies of families including members on at least three of the four chromosomes in the paralogon. In each case the
+percentage bootstrap support of the internal branches is given in parentheses. The connecting bars on the left depict the close physical linkage of relevant genes." title="">
+							     <img src="{{{ asset($family['TreePath']) }}}" class="img-responsive" title="" style="width:200px">
+						        </a>
+				            </div>
+				        </div>
+        				<div class="col-sm-12 col-md-4 col-md-offset-4">
+        				    <div class="thumbnail">
+        				    	<div class="caption ">
+        				            <h6><b>Time Period</b></h6>
+        				        </div>
+        						<a href="{{{ asset($family['TPPicPath']) }}}" data-toggle="lightbox" data-html="true" data-title="Time Period"   @if($family['Year'] != "2015")  @endif data-footer="The relative timing of duplication events that expanded multigene families residing on the paralogon. The branching order within phylogenetic
+trees was used to estimate the time windows of gene duplication events relative to major cladogenetic events. The numbers enclosed within the parentheses in front of the gene family names represent
+number of duplications experienced by that gene family." title="">
+        							<img src="{{{ asset($family['TPPicPath']) }}}" class="img-responsive" title="" style="width:200px">
+        						</a>
+				            </div>
+				        </div>
 				    </div>
-				  </div>
-				  <div class="col-sm-12 col-md-4 col-md-offset-4">
-				    <div class="thumbnail">
-				    	<div class="caption">
-				        <h6><b>Maximum Likelihood Tree</b></h6>
-				      </div>
-				     <a href="data:image/jpeg;base64, {{{ $family['MLTreePic'] }}}" data-toggle="lightbox" data-html="true" data-title="Maximum Likelihood Tree" data-footer="" title="">
-							<img src="data:image/jpeg;base64, {{{ $family['MLTreePic'] }}}" class="img-responsive" title="" style="width:200px">
-						</a>
-				    </div>
-				  </div>
-				   <div class="col-sm-12 col-md-5 col-md-offset-4">
-				    <div class="thumbnail">
-				    	<div class="caption">
-				        <h6><b>Synteny</b></h6>
-				      </div>
-				     <a href="data:image/jpeg;base64, {{{ $family['Syntany'] }}}" data-toggle="lightbox"  data-html="true" data-title="Synteny" @if($family['Year'] != "2015")  @endif data-footer="" title="">
-							<img src="data:image/jpeg;base64, {{{ $family['Syntany'] }}}" class="img-responsive" title="" style="width:200px">
-						</a>
-				    </div>
-				  </div>
-				  
-				 <div class="col-sm-12 col-md-4  ">
-				    <div class="thumbnail ">
-				    	<div class="caption">
-				        <h6><b>Co-duplicated groups</b></h6>
-				      </div>
-				    <a href="data:image/jpeg;base64, {{{ $family['Tree'] }}}" data-toggle="lightbox" data-html="true" data-title="Coduplicated groups" @if($family['Year'] != "2015")  @endif data-footer="" title="">
-							<img src="data:image/jpeg;base64, {{{ $family['Tree'] }}}" class="img-responsive" title="" style="width:200px">
-						</a>
-				    </div>
-				  </div>
-				 <div class="col-sm-12 col-md-4 col-md-offset-4">
-				    <div class="thumbnail">
-				    	<div class="caption ">
-				        <h6><b>Time Period</b></h6>
-				      </div>
-						<a href="data:image/jpeg;base64, {{{ $family['TPPic'] }}}" data-toggle="lightbox" data-html="true" data-title="Time Period"   @if($family['Year'] != "2015")  @endif data-footer="" title="">
-							<img src="data:image/jpeg;base64, {{{ $family['TPPic'] }}}" class="img-responsive" title="" style="width:200px">
-						</a>
-				      
-				    </div>
-				  </div>
-
-				</div>
-            </div>
+                </div>
             <!-- /.panel-body -->
         </div>
         <!-- /.panel -->
     </div>
     <!-- /.col-lg-4 -->
-    
 </div>
-
 @stop
-
-
-
 @section('scripts')
 <script>
 function getUrlParameter(sParam)
@@ -138,24 +133,23 @@ function getUrlParameter(sParam)
         }
     }
 }  
-jQuery( document ).ready( function( $ ) {
- 
-    $( '#form-seq-download' ).submit( function(e) {
- 		
+jQuery( document ).ready( function( $ ) 
+{    $( '#form-seq-download' ).submit( function(e) 
+    {
         //.....
         //show some spinner etc to indicate operation in progress
         //.....
  		e.preventDefault();	
-
-
-        var jqxhr = $.post(
+        var jqxhr = $.post
+        (
             $( this ).prop( 'action' ),
             {
                 "_token": $( this ).find( 'input[name=_token]' ).val(),
                 "format": $( '#output' ).val(),
                 "mid"	: getUrlParameter('mid')
             },
-            function( data ) {
+            function( data ) 
+            {
                 //do something with data/response returned by server
                 console.log(data);
                 document.location = data.url;
@@ -169,7 +163,8 @@ jQuery( document ).ready( function( $ ) {
  
         //prevent the form from actually submitting in browser
         return false;
-    } );
+    } 
+    );
  
 } );
 var draw = false;
@@ -179,10 +174,8 @@ $('#myModal').on('shown.bs.modal', function (e) {
         console.clear();
         var canvas = $('canvas#tree');
         var ctx = canvas[0].getContext( '2d' );
-
         var tipCanvas = document.getElementById("tip");
         var tipCtx = tipCanvas.getContext("2d");
-
         var img = new Image;
         img.crossOrigin = '';
         img.src = $('#njt').attr('src');
@@ -191,12 +184,10 @@ $('#myModal').on('shown.bs.modal', function (e) {
         var height = img.height;
         canvas.attr( 'width', width );
         canvas.attr( 'height', height );
-
         setTimeout( function() {
             ctx.clearRect( 0, 0, width, height );
             ctx.drawImage( img, 0, 0, width, height );
             img.remove();
-
             canvas.setHover([
    {
         color: [ 112, 48, 160, 255 ],
@@ -276,12 +267,7 @@ $('#myModal').on('shown.bs.modal', function (e) {
     }
             
             ]);
-
-     
-        
-
-
-            canvas.tooltip({
+canvas.tooltip({
                 items: '*',
                     content: '',
                     track: true
@@ -365,31 +351,22 @@ function showTooltip( element, content, e ) {
     //                  tipCtx.rect(0,0,tipCanvas.width,tipCanvas.height);
     tipCtx.fillText(content, 5, 15);
 
-
-
 }
 
 function hideTooltip( element ) {
     canvas.css( 'cursor', '' );
     tipCanvas.style.left = "-800px";
 }
-
 }); 
-
 function getCursorPosition(canvas, event) {
     var x, y;
-
     canoffset = $(canvas).offset();
     x = event.clientX + document.body.scrollLeft + document.documentElement.scrollLeft - Math.floor(canoffset.left);
     y = event.clientY + document.body.scrollTop + document.documentElement.scrollTop - Math.floor(canoffset.top) + 1;
-
     return [x,y];
 }
-
 $('#njt').click(function(){
-
     $('#myModal').modal('show');
-
 });
 </script>
 @stop

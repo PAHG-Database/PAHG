@@ -12,7 +12,14 @@
 {{-- Content --}}
 @section('content')
 	<div class="well" style="padding: 15px">
-   			 <h4><strong> Summary Table </strong></h4><h6> Summary of the phylogenetic analysis of gene families whose three or more members are residing on HOX-cluster paralogons. </h6>
+   			 <h4><strong> Table: Duplication Summary </strong></h4><h6> Summary of the phylogenetic analysis of gene families whose three or more members are residing on HOX-cluster paralogons.</h6>
+   			 <h6> For each gene family the chromosomal location and topologies (in the Newick format) of those genes are given, which arose through duplications after the invertebrates
+vertebrates split and before the tetrapod-fish divergence. The percentage bootstrap support of the internal branches is given with each relevant topology.
+<ul>
+<li> * Represents the non-HOX bearing chromosomes.</li>
+<li> † indicates that the gene family member is positioned on a different chromosome, i.e. CACNB2 is on Hsa10 and CRYBA4 on Hsa22. </li></ul></h6>
+
+
 		</div>
 	<div class="well" style="padding: 5px">
 	<table id="blogs" class="table table-striped table-hover">
@@ -46,7 +53,7 @@
 				},
 				"bProcessing": true,
 		        "bServerSide": true,
-			"sAjaxSource": "{{ URL::to('admin/summary/data') }}",
+			"sAjaxSource": "{{ URL::to('summary/data') }}",
 		        "fnDrawCallback": function ( oSettings ) {
 	           		$(".iframe").colorbox({iframe:true, width:"80%", height:"80%"});
 	     		}

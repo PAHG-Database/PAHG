@@ -1,0 +1,2 @@
+[03-Aug-2019 21:48:57 UTC] PHP Fatal error:  Class 'BaseControllerTestCase' not found in /home/pahgncbc/public_html/genomedb/app/tests/views/site/pages/BlogArticleTest.php on line 3
+[03-Aug-2019 21:49:00 UTC] PHP Fatal error:  Class 'BaseControllerTestCase' not found in /home/pahgncbc/public_html/genomedb/app/tests/views/site/pages/BlogTest.php on line 3

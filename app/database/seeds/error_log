@@ -1,0 +1,2 @@
+[03-Aug-2019 21:45:19 UTC] PHP Fatal error:  Class 'Seeder' not found in /home/pahgncbc/public_html/genomedb/app/database/seeds/PermissionsTableSeeder.php on line 3
+[09-Mar-2021 17:14:23 UTC] PHP Fatal error:  Class 'Seeder' not found in /home/pahgncbc/public_html/genomedb/app/database/seeds/RolesTableSeeder.php on line 3

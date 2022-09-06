@@ -81,9 +81,11 @@ public function getDetail($mid)
             'acc' => 'required',
             'tp' => 'required',
             'sn' => 'required',
-             'seqfile' => 'required'
+            'seqfile' => 'required'
+            
         );
 
+           
         // Validate the inputs
         $validator = Validator::make(Input::all(), $rules);
 
@@ -99,18 +101,26 @@ public function getDetail($mid)
 	    
 	    $tp = Input::file('tp');
 	    $sn = Input::file('sn');
-         $seq = Input::file('seqfile');
-        
-	    $this->members->Topology = base64_encode(file_get_contents($tp->getRealPath()));
-            $this->members->Syntany = base64_encode(file_get_contents($sn->getRealPath()));
-	    $this->members->seqfile = (file_get_contents($seq->getRealPath()));
+        $seq = Input::file('seqfile');
+
+        $this->members->Topology = base64_encode(file_get_contents($tp->getRealPath()));
+        $this->members->Syntany = base64_encode(file_get_contents($sn->getRealPath()));
+        $this->members->seqfile = (file_get_contents($seq->getRealPath()));
 
 	    // Was the blog post created?
-            if($this->members->save())
+        if($this->members->save())
 	    {
+                $tp->move('members', 'Topology'.$this->members->MID.'.'.$tp->getClientOriginalExtension());
+                $sn->move('members', 'Syntany'.$this->members->MID.'.'.$sn->getClientOriginalExtension());
+               
+                $this->members->TopologyPath = 'members/Topology'.$this->members->MID.'.'.$tp->getClientOriginalExtension();
+                $this->members->SyntanyPath = 'members/Syntany'.$this->members->MID.'.'.$sn->getClientOriginalExtension();
+                
+                $this->members->save();
+
                 // Redirect to the new blog post page
                 return Redirect::to('admin/members/' . $this->members->MID . '/edit')->with('success', Lang::get('admin/blogs/messages.create.success'));
-            }
+        }
 
             // Redirect to the blog post create page
             return Redirect::to('admin/members/create/'.$fid)->with('error', Lang::get('admin/blogs/messages.create.error'));
@@ -179,16 +189,21 @@ public function getDetail($mid)
             $this->members->ChrLocation = Input::get('loc');
             $this->members->HumnaProAccNo = Input::get('acc');
 	    
+
+                
+
 	    $tp = Input::file('tp');
 	    if(isset($tp)){
-
-		    $this->members->Topology = base64_encode(file_get_contents($tp->getRealPath()));
+            $tp->move('members', 'Topology'.$this->members->MID.'.'.$tp->getClientOriginalExtension());
+            $this->members->TopologyPath = 'members/Topology'.$this->members->MID.'.'.$tp->getClientOriginalExtension();
+		    //$this->members->Topology = base64_encode(file_get_contents($tp->getRealPath()));
 	    }
 
 	    $sn = Input::file('sn');
 	    if(isset($sn)){
-
-		    $this->members->Syntany = base64_encode(file_get_contents($sn->getRealPath()));
+            $sn->move('members', 'Syntany'.$this->members->MID.'.'.$sn->getClientOriginalExtension());
+            $this->members->SyntanyPath = 'members/Syntany'.$this->members->MID.'.'.$sn->getClientOriginalExtension();
+		    //$this->members->Syntany = base64_encode(file_get_contents($sn->getRealPath()));
 	    }
 
         $seqfile = Input::file('seqfile');

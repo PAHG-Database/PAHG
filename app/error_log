@@ -1,0 +1,13 @@
+[03-Aug-2019 21:43:27 UTC] PHP Fatal error:  Uncaught Error: Class 'View' not found in /home/pahgncbc/public_html/genomedb/app/composers.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/pahgncbc/public_html/genomedb/app/composers.php on line 3
+[03-Aug-2019 21:45:35 UTC] PHP Fatal error:  Uncaught Error: Class 'Route' not found in /home/pahgncbc/public_html/genomedb/app/routes.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/pahgncbc/public_html/genomedb/app/routes.php on line 18
+[03-Aug-2019 21:48:48 UTC] PHP Fatal error:  Uncaught Error: Class 'App' not found in /home/pahgncbc/public_html/genomedb/app/filters.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/pahgncbc/public_html/genomedb/app/filters.php on line 14
+[25-May-2020 14:10:57 UTC] PHP Fatal error:  Class 'Route' not found in /home/pahgncbc/public_html/genomedb/app/routes.php on line 18

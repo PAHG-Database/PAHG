@@ -69,7 +69,32 @@ var JOT_siteRelTimeStrs = ["a minute ago","__duration__ minutes ago","an hour ag
 </tr>
 <tr class="sites-header-secondary-row" id="sites-chrome-horizontal-nav">
 <td colspan="2" id="sites-chrome-header-horizontal-nav-container" role="navigation">
-<div class="sites-header-nav"><ul class="sites-header-nav-container-links"><li class="current"><a class="sites-navigation-link current" href="{{{ URL::to('/lab') }}}"><font color="#FFFFFF">Home</font></a></li><li class="unselected"><a class="sites-navigation-link unselected" href="{{{ URL::to('/labresearch') }}}"><font color="#FFFFFF"> Lines of Research</font></a></li><li class="unselected"><a class="sites-navigation-link unselected" href="{{{ URL::to('/scholars') }}}"><font color="#FFFFFF">Scholars</font></a></li><li class="unselected"><a class="sites-navigation-link unselected" href="{{{ URL::to('/labcontact') }}}"><font color="#FFFFFF">Contact us</font></a></li></ul><div style="clear: both;"></div></div>
+<div class="sites-header-nav">
+  <ul class="sites-header-nav-container-links">
+    <li class="unselected">
+      <a class="sites-navigation-link unselected" href="{{{ URL::to('') }}}">
+        <font color="#FFFFFF">Home</font>
+      </a>
+    </li>
+        </li>
+    <li class="unselected">
+      <a class="sites-navigation-link unselected" href="{{{ URL::to('/scholars') }}}">
+        <font color="#FFFFFF">Contributors</font>
+      </a>
+    </li>
+    <li class="unselected">
+      <a class="sites-navigation-link unselected" href="{{{ URL::to('/labresearch') }}}">
+        <font color="#FFFFFF"> Lines of Research</font>
+      </a>
+
+    <li class="current">
+      <a class="sites-navigation-link current" href="{{{ URL::to('/labcontact') }}}">
+        <font color="#FFFFFF">Contact us</font>
+      </a>
+    </li>
+  </ul>
+  <div style="clear: both;"></div>
+</div>
 
 </td>
 </tr>
@@ -80,15 +105,64 @@ var JOT_siteRelTimeStrs = ["a minute ago","__duration__ minutes ago","an hour ag
 <table id="sites-chrome-main" class="sites-layout-hbox" cellspacing="0" cellpadding="{scmCellpadding}" border="0">
 <tbody><tr>
 <td id="sites-chrome-sidebar-left" class="sites-layout-sidebar-left initial" style="width:250px">
-<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_42743531079031527" class="sites-embed" role="complementary"><h4 class="sites-embed-title">Principal Investigator (PI)</h4><div class="sites-embed-content sites-embed-content-sidebar-textbox"><div dir="ltr"><font color="#000000" size="2"><b>Amir Ali Abbasi, PhD<br>
-Assistant Professor<br>
-National Center for Bioinformatics<br>
-Quaid-i-Azam University<br>
-Islamabad Pakistan</b></font><div><font size="3"><b>
-</b></font></div></div></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_42743531079031527" class="sites-embed" role="complementary">
+  <h4 class="sites-embed-title">Principal Investigator (PI)</h4>
+  <div class="sites-embed-content sites-embed-content-sidebar-textbox">
+    <div dir="ltr">
+      <font color="#000000" size="2">
+        <b>Amir Ali Abbasi, PhD<br>
+          Associate Professor<br>
+          National Center for Bioinformatics<br>
+          Quaid-i-Azam University<br>
+          Islamabad Pakistan</b>
+        </font>
+        <div>
+          <font size="3"><b>
+          </b>
+        </font>
+      </div>
+    </div>
+  </div>
+</div>
 <div xmlns="http://www.w3.org/1999/xhtml" id="COMP_6339915918651968" class="sites-embed" role="navigation"><h4 class="sites-embed-title">PI Profile</h4><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="http://www.researchgate.net/profile/Amir_Abbasi3" class="sites-navigation-link" target="_blank">ResearchGate</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="http://ncb.qau.edu.pk/index.php/dr-amir-ali-abbasi.html" class="sites-navigation-link" target="_blank">QAU Profile</a></div></li></ul></div></div>
 
-<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_971751696197316" class="sites-embed" role="navigation"><h4 class="sites-embed-title">Links</h4><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="http://genome.ucsc.edu/cgi-bin/hgGateway" class="sites-navigation-link">UCSC Human Genome Browser</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="http://asia.ensembl.org/index.html" class="sites-navigation-link">Ensembl Genome Browser</a></div></li> <li class=""><div dir="ltr" style="padding-left: 5px;"><a href="http://www.uniprot.org/" class="sites-navigation-link">Uniprot</a></div></li> <li class=""><div dir="ltr" style="padding-left: 5px;"><a href="http://www.ncbi.nlm.nih.gov/" class="sites-navigation-link">NCBI</a></div></li>  <li class=""><div dir="ltr" style="padding-left: 5px;"><a href="http://www.uniprot.org/" class="sites-navigation-link">Uniprot</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="{{{ URL::to('') }}}" class="sites-navigation-link">VGA~ Genome Architecture</a></div></li></ul></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_971751696197316" class="sites-embed" role="navigation">
+  <h4 class="sites-embed-title">Links</h4>
+  <div class="sites-embed-content sites-sidebar-nav">
+    <ul role="navigation" jotid="navList">
+      <li class="nav-first ">
+        <div dir="ltr" style="padding-left: 5px;">
+          <a href="http://genome.ucsc.edu/cgi-bin/hgGateway" class="sites-navigation-link">UCSC Human Genome Browser</a>
+        </div>
+      </li>
+      <li class="">
+        <div dir="ltr" style="padding-left: 5px;">
+          <a href="http://asia.ensembl.org/index.html" class="sites-navigation-link">Ensembl Genome Browser</a>
+        </div>
+      </li> 
+      <li class="">
+        <div dir="ltr" style="padding-left: 5px;">
+          <a href="http://www.uniprot.org/" class="sites-navigation-link">Uniprot</a>
+        </div>
+      </li> 
+      <li class="">
+        <div dir="ltr" style="padding-left: 5px;">
+          <a href="http://www.ncbi.nlm.nih.gov/" class="sites-navigation-link">NCBI</a>
+        </div>
+      </li>  
+      <li class="">
+        <div dir="ltr" style="padding-left: 5px;">
+          <a href="http://www.megasoftware.net/" class="sites-navigation-link">MEGA</a>
+        </div>
+      </li>
+      <li class="">
+        <div dir="ltr" style="padding-left: 5px;">
+          <a href="{{{ URL::to('') }}}" class="sites-navigation-link">PAHG</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
 
 </td>
 <td id="sites-canvas-wrapper">
@@ -231,5 +305,19 @@ Islamabad Pakistan</b></font><div><font size="3"><b>
           JOT_postEvent('usercontentrendered', this);
         </script>
 
-
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//localhost:8080/genomedb/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//localhost:8080/genomedb/piwik/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
 </body></html>

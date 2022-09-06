@@ -1,0 +1,1 @@
+[03-Aug-2019 21:44:59 UTC] PHP Fatal error:  Class 'BaseController' not found in /home/pahgncbc/public_html/genomedb/app/controllers/user/UserController.php on line 3

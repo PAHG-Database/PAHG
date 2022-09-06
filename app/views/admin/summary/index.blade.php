@@ -3,7 +3,7 @@
 {{-- Web site Title --}}
 @section('title')
 {{{ $title }}} :: @parent
-@stop
+@stop  
 
 @section('keywords')Blogs administration @stop
 @section('author')Laravel 4 Bootstrap Starter SIte @stop
@@ -11,7 +11,7 @@
 
 {{-- Content --}}
 @section('content')
-	<div class="page-header">
+		<div class="page-header">
 		<h3>
 			{{{ $title }}}
 
