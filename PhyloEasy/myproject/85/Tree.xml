@@ -1,0 +1,225 @@
+<phyloxml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.phyloxml.org" xsi:schemaLocation="http://www.phyloxml.org http://www.phyloxml.org/1.10/phyloxml.xsd">
+  <phylogeny rooted="false">
+    <clade>
+      <branch_length>0.0</branch_length>
+      <confidence type="unknown">100.0</confidence>
+      <clade>
+        <name>Caenorhabditis_elegans__Tra_</name>
+        <branch_length>0.26683</branch_length>
+      </clade>
+      <clade>
+        <branch_length>0.09625</branch_length>
+        <clade>
+          <branch_length>0.08831</branch_length>
+          <confidence type="unknown">100.0</confidence>
+          <clade>
+            <name>Apis_mellifera_XP_624136_</name>
+            <branch_length>0.11136</branch_length>
+          </clade>
+          <clade>
+            <name>Drosophila_melanogaster__Ci_</name>
+            <branch_length>0.11136</branch_length>
+          </clade>
+        </clade>
+        <clade>
+          <branch_length>0.02909</branch_length>
+          <clade>
+            <name>Strongylocentrotus_purpuratus_</name>
+            <branch_length>0.17058</branch_length>
+          </clade>
+          <clade>
+            <branch_length>0.01219</branch_length>
+            <clade>
+              <name>Ciona_savignyi_GLI</name>
+              <branch_length>0.15839</branch_length>
+            </clade>
+            <clade>
+              <branch_length>0.10356</branch_length>
+              <clade>
+                <branch_length>0.14179</branch_length>
+                <confidence type="unknown">100.0</confidence>
+                <clade>
+                  <name>Branchiostoma_floridae_GLIB</name>
+                  <branch_length>0.0</branch_length>
+                </clade>
+                <clade>
+                  <name>Branchiostoma_floridae_GLIA</name>
+                  <branch_length>0.0</branch_length>
+                </clade>
+              </clade>
+              <clade>
+                <branch_length>0.08696</branch_length>
+                <clade>
+                  <branch_length>0.05868</branch_length>
+                  <clade>
+                    <branch_length>0.03341</branch_length>
+                    <confidence type="unknown">90.0</confidence>
+                    <clade>
+                      <branch_length>0.01349</branch_length>
+                      <confidence type="unknown">95.0</confidence>
+                      <clade>
+                        <name>Danio_rerio_GLI3</name>
+                        <branch_length>0.04602</branch_length>
+                      </clade>
+                      <clade>
+                        <branch_length>0.00852</branch_length>
+                        <confidence type="unknown">89.0</confidence>
+                        <clade>
+                          <name>Gasterosteus_aculeatus_GLI3</name>
+                          <branch_length>0.0375</branch_length>
+                        </clade>
+                        <clade>
+                          <branch_length>0.02841</branch_length>
+                          <confidence type="unknown">95.0</confidence>
+                          <clade>
+                            <name>Takifugu_rubripes_GLI3</name>
+                            <branch_length>0.00909</branch_length>
+                          </clade>
+                          <clade>
+                            <name>Tetraodon_nigroviridis_GLI3</name>
+                            <branch_length>0.00909</branch_length>
+                          </clade>
+                        </clade>
+                      </clade>
+                    </clade>
+                    <clade>
+                      <branch_length>0.03906</branch_length>
+                      <confidence type="unknown">99.0</confidence>
+                      <clade>
+                        <name>Homo_sapiens_GLI3</name>
+                        <branch_length>0.02045</branch_length>
+                      </clade>
+                      <clade>
+                        <branch_length>0.01136</branch_length>
+                        <confidence type="unknown">99.0</confidence>
+                        <clade>
+                          <name>Rattus_norvegicus_GLI3</name>
+                          <branch_length>0.00909</branch_length>
+                        </clade>
+                        <clade>
+                          <name>Mus_musculus_GLI3</name>
+                          <branch_length>0.00909</branch_length>
+                        </clade>
+                      </clade>
+                    </clade>
+                  </clade>
+                  <clade>
+                    <branch_length>0.0246</branch_length>
+                    <clade>
+                      <branch_length>0.01832</branch_length>
+                      <confidence type="unknown">2.0</confidence>
+                      <clade>
+                        <branch_length>0.01417</branch_length>
+                        <confidence type="unknown">56.0</confidence>
+                        <clade>
+                          <name>Danio_rerio_GLI2b</name>
+                          <branch_length>0.05483</branch_length>
+                        </clade>
+                        <clade>
+                          <branch_length>0.01278</branch_length>
+                          <confidence type="unknown">80.0</confidence>
+                          <clade>
+                            <name>Danio_rerio_GLI2a</name>
+                            <branch_length>0.04205</branch_length>
+                          </clade>
+                          <clade>
+                            <branch_length>0.02273</branch_length>
+                            <confidence type="unknown">98.0</confidence>
+                            <clade>
+                              <name>Gasterosteus_aculeatus_GLI2</name>
+                              <branch_length>0.01932</branch_length>
+                            </clade>
+                            <clade>
+                              <branch_length>0.00795</branch_length>
+                              <confidence type="unknown">73.0</confidence>
+                              <clade>
+                                <name>Takifugu_rubripes_GLI2</name>
+                                <branch_length>0.01136</branch_length>
+                              </clade>
+                              <clade>
+                                <name>Tetraodon_nigroviridis_GLI2</name>
+                                <branch_length>0.01136</branch_length>
+                              </clade>
+                            </clade>
+                          </clade>
+                        </clade>
+                      </clade>
+                      <clade>
+                        <branch_length>0.05309</branch_length>
+                        <confidence type="unknown">100.0</confidence>
+                        <clade>
+                          <name>GLI2_Homo_sapiens</name>
+                          <branch_length>0.01591</branch_length>
+                        </clade>
+                        <clade>
+                          <branch_length>0.00682</branch_length>
+                          <confidence type="unknown">82.0</confidence>
+                          <clade>
+                            <name>Rattus_norvegicus_GLI2</name>
+                            <branch_length>0.00909</branch_length>
+                          </clade>
+                          <clade>
+                            <name>Mus_musculus_GLI2</name>
+                            <branch_length>0.00909</branch_length>
+                          </clade>
+                        </clade>
+                      </clade>
+                    </clade>
+                    <clade>
+                      <branch_length>0.0544</branch_length>
+                      <confidence type="unknown">100.0</confidence>
+                      <clade>
+                        <name>Danio_rerio_GLI1</name>
+                        <branch_length>0.01875</branch_length>
+                      </clade>
+                      <clade>
+                        <branch_length>0.00625</branch_length>
+                        <confidence type="unknown">83.0</confidence>
+                        <clade>
+                          <name>Gasterosteus_aculeatus_GLI1</name>
+                          <branch_length>0.0125</branch_length>
+                        </clade>
+                        <clade>
+                          <branch_length>0.00568</branch_length>
+                          <confidence type="unknown">84.0</confidence>
+                          <clade>
+                            <name>Takifugu_rubripes_GLI1</name>
+                            <branch_length>0.00682</branch_length>
+                          </clade>
+                          <clade>
+                            <name>Tetraodon_nigroviridis_GLI1</name>
+                            <branch_length>0.00682</branch_length>
+                          </clade>
+                        </clade>
+                      </clade>
+                    </clade>
+                  </clade>
+                </clade>
+                <clade>
+                  <branch_length>0.10101</branch_length>
+                  <confidence type="unknown">100.0</confidence>
+                  <clade>
+                    <name>Homo_sapiens_GLI1</name>
+                    <branch_length>0.0125</branch_length>
+                  </clade>
+                  <clade>
+                    <branch_length>0.00568</branch_length>
+                    <confidence type="unknown">70.0</confidence>
+                    <clade>
+                      <name>Rattus_norvegicus_GLI1</name>
+                      <branch_length>0.00682</branch_length>
+                    </clade>
+                    <clade>
+                      <name>Mus_musculus_GLI1</name>
+                      <branch_length>0.00682</branch_length>
+                    </clade>
+                  </clade>
+                </clade>
+              </clade>
+            </clade>
+          </clade>
+        </clade>
+      </clade>
+    </clade>
+  </phylogeny>
+</phyloxml>
